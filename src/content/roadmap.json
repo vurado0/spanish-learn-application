@@ -1,0 +1,9 @@
+[
+  { "order": 1, "level": "A1", "emoji": "👋", "title": "Meeting people & small talk", "description": "Friends, flatmates, Universidad de Alcalá" },
+  { "order": 2, "level": "A1", "emoji": "🍷", "title": "Food & bars", "description": "Bars, the free tapa, menú del día, the market" },
+  { "order": 3, "level": "A1", "emoji": "🚆", "title": "Getting around", "description": "Calle Mayor, Plaza de Cervantes, Cercanías to Madrid" },
+  { "order": 4, "level": "A2", "emoji": "✈️", "title": "Travel", "description": "Hotels, Latin American trips, pretérito vs pretérito perfecto" },
+  { "order": 5, "level": "A2", "emoji": "🏛️", "title": "Culture & history", "description": "Cervantes, the old university, the storks, Mercado Cervantino – imperfecto" },
+  { "order": 6, "level": "A2", "emoji": "🎶", "title": "Music", "description": "Flamenco, salsa, cumbia, reggaetón – tastes with gustar" },
+  { "order": 7, "level": "B1", "emoji": "💼", "title": "Work & study", "description": "Your studies, your job, future plans with “ir a”" }
+]

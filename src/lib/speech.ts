@@ -49,3 +49,30 @@ export function speak(text: string, variant: Variant, speed: 'normal' | 'slow' =
   u.rate = speed === 'slow' ? 0.7 : 0.95
   synth.speak(u)
 }
+
+/** speak several lines one after another; returns a cancel function */
+export function speakSequence(
+  items: { text: string; variant: Variant }[],
+  speed: 'normal' | 'slow' = 'normal',
+  onLine?: (index: number) => void,
+): () => void {
+  if (!speechSupported()) return () => {}
+  const synth = window.speechSynthesis
+  synth.cancel()
+  let cancelled = false
+  items.forEach((item, i) => {
+    const u = new SpeechSynthesisUtterance(item.text)
+    const voice = pickVoice(item.variant)
+    if (voice) u.voice = voice
+    u.lang = voice?.lang ?? (item.variant === 'spain' ? 'es-ES' : 'es-MX')
+    u.rate = speed === 'slow' ? 0.7 : 0.95
+    u.onstart = () => !cancelled && onLine?.(i)
+    if (i === items.length - 1) u.onend = () => !cancelled && onLine?.(-1)
+    synth.speak(u)
+  })
+  return () => {
+    cancelled = true
+    synth.cancel()
+    onLine?.(-1)
+  }
+}
