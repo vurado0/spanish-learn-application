@@ -6,7 +6,9 @@ import Dashboard from './pages/Dashboard'
 import Placement from './pages/Placement'
 import CourseMap from './pages/CourseMap'
 import LessonPage from './pages/LessonPage'
-import Review from './pages/Review'
+import VocabHome from './pages/vocab/VocabHome'
+import VocabBrowse from './pages/vocab/VocabBrowse'
+import VocabSession from './pages/vocab/VocabSession'
 import Settings from './pages/Settings'
 import Reference from './pages/Reference'
 import Compare from './pages/Compare'
@@ -23,10 +25,14 @@ export default function App() {
       <Route element={<ProtectedRoute />}>
         <Route path="/placement" element={<Placement />} />
         <Route path="/lesson/:lessonId" element={<LessonPage />} />
+        <Route path="/vocab/learn" element={<VocabSession mode="learn" />} />
+        <Route path="/vocab/review" element={<VocabSession mode="review" />} />
+        <Route path="/review" element={<Navigate to="/vocab/review" replace />} />
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/course" element={<CourseMap />} />
-          <Route path="/review" element={<Review />} />
+          <Route path="/vocab" element={<VocabHome />} />
+          <Route path="/vocab/words" element={<VocabBrowse />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/reference" element={<Reference />} />
           <Route path="/reference/latam-vs-spain" element={<Compare />} />

@@ -1,9 +1,11 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import type { Connector, Dialogue, Grammar, Pronunciation, Variant, VocabItem } from '../../types'
+import type { Connector, Dialogue, Grammar, Pronunciation, Variant } from '../../types'
+import { wordIndex } from '../../lib/vocab'
+import WordCard from '../vocab/WordCard'
 import { pick } from '../../lib/answers'
 import { speakSequence } from '../../lib/speech'
 import { useData } from '../../context/DataContext'
-import AudioButton from '../AudioButton'
+import AudioButton, { FLAG } from '../AudioButton'
 import VariantText from '../VariantText'
 import VariantToggle from '../VariantToggle'
 import EnglishToggle from '../EnglishToggle'
@@ -63,7 +65,11 @@ export function DialogueSection({
       <div className="mb-4 flex flex-wrap items-center gap-2">
         {/* Alcalá/Madrid scenes start in the Spain version; the other one is a toggle */}
         <VariantToggle value={variant} onChange={(v) => { stop?.(); onVariant(v) }} />
-        {setting === 'spain' && <span className="text-xs text-stone-500">Set in Alcalá/Madrid – Spain version first</span>}
+        {setting === 'spain' && variant !== 'spain' && (
+          <button type="button" onClick={() => { stop?.(); onVariant('spain') }} className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900 hover:bg-amber-200">
+            🇪🇸 Set in Alcalá – hear it as people say it here
+          </button>
+        )}
         {!hasDifferences && <span className="text-xs text-stone-500">Same words in both – listen to the accents!</span>}
       </div>
       <button type="button" onClick={playAll} className="btn-secondary mb-4 py-2">
@@ -89,6 +95,13 @@ export function DialogueSection({
                   </span>
                   <AudioButton text={text} variant={variant} />
                 </div>
+                {differs && settings.showOtherVariant && (
+                  <div className="mt-0.5 flex items-center gap-1.5 text-sm text-stone-500">
+                    <span>{FLAG[variant === 'spain' ? 'latam' : 'spain']}</span>
+                    <span>{pick(l, variant === 'spain' ? 'latam' : 'spain')}</span>
+                    <AudioButton text={pick(l, variant === 'spain' ? 'latam' : 'spain')} variant={variant === 'spain' ? 'latam' : 'spain'} />
+                  </div>
+                )}
                 {settings.showEnglish && <div className="mt-0.5 text-sm text-stone-500 italic">{l.en}</div>}
               </div>
             </div>
@@ -100,18 +113,13 @@ export function DialogueSection({
   )
 }
 
-export function VocabSection({ vocab, first }: { vocab: VocabItem[]; first: Variant }) {
-  const { settings } = useData()
+export function VocabSection({ vocab, variant }: { vocab: string[]; variant: Variant }) {
+  const list = vocab.map((id) => wordIndex.get(id)).filter((w) => !!w)
   return (
     <div>
-      <SectionTitle kicker="2 · New words" title={`${vocab.length} words for this conversation`} right={<EnglishToggle />} />
+      <SectionTitle kicker="2 · New words" title={`${list.length} words for this conversation`} right={<EnglishToggle />} />
       <div className="grid gap-3 sm:grid-cols-2">
-        {vocab.map((w) => (
-          <Card key={w.id} className="p-3 sm:p-4">
-            <VariantText text={w} first={first} en={w.en} showEn={settings.showEnglish} />
-            {w.note && settings.showEnglish && <p className="mt-1 text-xs text-stone-500">ℹ️ {w.note}</p>}
-          </Card>
-        ))}
+        {list.map((w) => <WordCard key={w.id} word={w} variant={variant} />)}
       </div>
     </div>
   )
@@ -134,7 +142,7 @@ export function GrammarSection({ grammar, pronunciation, first }: { grammar: Gra
       <Card>
         <div className="mb-2 text-sm font-bold text-stone-500">Examples</div>
         <div className="space-y-3">
-          {grammar.examples.map((e, i) => <VariantText key={i} text={e} first={first} en={e.en} showEn={settings.showEnglish} />)}
+          {grammar.examples.map((e, i) => <VariantText key={i} text={e} variant={first} en={e.en} showEn={settings.showEnglish} />)}
         </div>
       </Card>
       {grammar.compare && <CompareBox box={grammar.compare} showEn={settings.showEnglish} />}
@@ -182,7 +190,7 @@ export function ConnectorSection({ connector, first }: { connector: Connector; f
       )}
       <Card>
         <div className="space-y-3">
-          {connector.examples.map((e, i) => <VariantText key={i} text={e} first={first} en={e.en} showEn={settings.showEnglish} />)}
+          {connector.examples.map((e, i) => <VariantText key={i} text={e} variant={first} en={e.en} showEn={settings.showEnglish} />)}
         </div>
       </Card>
     </div>

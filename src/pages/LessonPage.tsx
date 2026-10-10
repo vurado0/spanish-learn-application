@@ -29,7 +29,7 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
   const [step, setStep] = useState<LessonStep>(saved?.step ?? 'dialogue')
   const [exerciseIndex, setExerciseIndex] = useState(saved?.exerciseIndex ?? 0)
   const [correct, setCorrect] = useState(saved?.correct ?? 0)
-  const [variant, setVariant] = useState<Variant>(lesson.setting === 'spain' ? 'spain' : settings.defaultVariant)
+  const [variant, setVariant] = useState<Variant>(settings.variant)
   const [result, setResult] = useState<{ score: number; newBadge?: string } | null>(null)
 
   // study-time tracking
@@ -91,7 +91,7 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
 
       <main className="mx-auto max-w-2xl px-4 pt-5 pb-48 sm:pb-12">
         {step === 'dialogue' && <DialogueSection dialogue={lesson.dialogue} variant={variant} onVariant={setVariant} setting={lesson.setting} />}
-        {step === 'vocab' && <VocabSection vocab={lesson.vocab} first={variant} />}
+        {step === 'vocab' && <VocabSection vocab={lesson.vocab} variant={variant} />}
         {step === 'grammar' && <GrammarSection grammar={lesson.grammar} pronunciation={lesson.pronunciation} first={variant} />}
         {step === 'connector' && <ConnectorSection connector={lesson.connector} first={variant} />}
 

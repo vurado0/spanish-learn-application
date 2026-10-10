@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { useData, displayStreak } from '../context/DataContext'
 import { allLessons, findLesson, units } from '../lib/content'
 import { daysUntilGoal, weekKey, WEEKLY_TARGET_MINUTES } from '../lib/dates'
-import { isDue } from '../lib/srs'
+import { vocabStats, unlockHint } from './vocab/vocabStats'
+import { LEVELS } from '../lib/vocab'
 import ProgressBar from '../components/ProgressBar'
 import Card from '../components/Card'
 
@@ -21,7 +22,7 @@ export default function Dashboard() {
   const completed = allLessons.filter((l) => progress[l.id]?.completed).length
   const coursePct = allLessons.length ? Math.round((completed / allLessons.length) * 100) : 0
   const minutes = stats.weeklyMinutes?.week === weekKey() ? stats.weeklyMinutes.minutes : 0
-  const due = Object.values(vocab).filter((v) => isDue(v)).length
+  const vs = vocabStats(vocab)
   const days = daysUntilGoal()
 
   const current = findLesson(stats.currentLesson) ?? findLesson(allLessons[0].id)!
@@ -86,17 +87,32 @@ export default function Dashboard() {
         </Card>
       </div>
 
-      <Link to="/review" className="flex items-center justify-between rounded-2xl border border-stone-200 bg-white p-4 shadow-sm hover:border-orange-300">
-        <div className="flex items-center gap-3">
-          <span className="text-3xl">🔁</span>
+      <Link to="/vocab" className="block rounded-2xl border border-stone-200 bg-white p-4 shadow-sm hover:border-orange-300">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="font-bold text-stone-900">📚 Vocabulary</div>
+          <span className="rounded-full bg-stone-100 px-2 py-0.5 text-xs font-bold text-stone-600">Level {vs.current.level}</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2 text-center">
           <div>
-            <div className="font-bold text-stone-900">Daily vocabulary review</div>
-            <div className="text-sm text-stone-500">
-              {due > 0 ? `${due} word${due > 1 ? 's' : ''} due today` : Object.keys(vocab).length ? 'All caught up – come back tomorrow' : 'Finish a lesson to fill your deck'}
-            </div>
+            <div className="text-xl font-extrabold text-stone-900">{vs.learned}</div>
+            <div className="text-xs text-stone-500">learned</div>
+          </div>
+          <div>
+            <div className="text-xl font-extrabold text-orange-600">{vs.due}</div>
+            <div className="text-xs text-stone-500">due today</div>
+          </div>
+          <div>
+            <div className="text-xl font-extrabold text-violet-700">{vs.mastered}</div>
+            <div className="text-xs text-stone-500">mastered</div>
           </div>
         </div>
-        {due > 0 && <span className="rounded-full bg-orange-600 px-3 py-1 text-sm font-bold text-white">{due}</span>}
+        {vs.next && (
+          <div className="mt-3">
+            <ProgressBar value={((vs.current.familiar) / Math.max(1, Math.ceil(vs.current.total * 0.7))) * 100} color="bg-emerald-500" />
+            <p className="mt-1 text-xs text-stone-500">{unlockHint(vs.next.needed, LEVELS[LEVELS.indexOf(vs.next.level) - 1], vs.next.level)}</p>
+          </div>
+        )}
+        <div className="mt-3 text-sm font-semibold text-orange-700">{vs.due > 0 ? `Review ${vs.due} word${vs.due > 1 ? 's' : ''} now →` : 'Learn new words →'}</div>
       </Link>
 
       <Card>

@@ -56,13 +56,16 @@ export default function Settings() {
         <Row title="Show English explanations" desc="Hide them to push yourself – Spanish explanations are shown where available.">
           <Segmented value={settings.showEnglish ? 'on' : 'off'} options={[{ value: 'on', label: 'Show' }, { value: 'off', label: 'Hide' }]} onChange={(v) => updateSettings({ showEnglish: v === 'on' })} />
         </Row>
-        <Row title="Default variant in dialogues" desc="Alcalá/Madrid scenes always start in the Spain version.">
-          <Segmented value={settings.defaultVariant} options={[{ value: 'latam', label: '🌎 Latin America' }, { value: 'spain', label: '🇪🇸 Spain' }]} onChange={(v) => updateSettings({ defaultVariant: v })} />
+        <Row title="Spanish variant" desc="Words, examples, dialogues and voices use this variant. Answers in the other one still count.">
+          <Segmented value={settings.variant} options={[{ value: 'latam', label: '🌎 Latin America' }, { value: 'spain', label: '🇪🇸 Spain' }]} onChange={(v) => updateSettings({ variant: v })} />
+        </Row>
+        <Row title="Show other variant too" desc="Words that differ also show the other variant as a small second line, e.g. celular · 🇪🇸 móvil.">
+          <Segmented value={settings.showOtherVariant ? 'on' : 'off'} options={[{ value: 'off', label: 'Off' }, { value: 'on', label: 'On' }]} onChange={(v) => updateSettings({ showOtherVariant: v === 'on' })} />
         </Row>
         <Row title="Audio speed">
           <div className="flex items-center gap-2">
             <Segmented value={settings.audioSpeed} options={[{ value: 'normal', label: 'Normal' }, { value: 'slow', label: '🐢 Slow' }]} onChange={(v) => updateSettings({ audioSpeed: v })} />
-            <button type="button" className="rounded-full bg-stone-100 px-3 py-1.5 text-sm" onClick={() => speak('Hola, ¿qué tal? Muchas gracias.', settings.defaultVariant, settings.audioSpeed)}>🔊 Test</button>
+            <button type="button" className="rounded-full bg-stone-100 px-3 py-1.5 text-sm" onClick={() => speak('Hola, ¿qué tal? Muchas gracias.', settings.variant, settings.audioSpeed)}>🔊 Test</button>
           </div>
         </Row>
         <Row

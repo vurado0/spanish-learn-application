@@ -5,8 +5,8 @@ import { useReminder } from '../lib/reminder'
 const NAV = [
   { to: '/', label: 'Home', icon: '🏠', end: true },
   { to: '/course', label: 'Course', icon: '🗺️' },
-  { to: '/review', label: 'Review', icon: '🔁' },
-  { to: '/reference', label: 'Reference', icon: '📚' },
+  { to: '/vocab', label: 'Vocab', icon: '📚' },
+  { to: '/reference', label: 'Reference', icon: '🧭' },
   { to: '/settings', label: 'Settings', icon: '⚙️' },
 ]
 
