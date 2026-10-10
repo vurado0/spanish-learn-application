@@ -31,19 +31,7 @@
           { "speaker": "Emma", "latam": "¡Genial! Bueno, ¡nos vemos en clase! ¡Chao!", "spain": "¡Genial! Bueno, ¡nos vemos en clase! ¡Hasta luego!", "en": "Great! Well, see you in class! Bye!" }
         ]
       },
-      "vocab": [
-        { "id": "me-llamo", "latam": "me llamo…", "en": "my name is…", "note": "Literally “I call myself”. Ask: ¿Cómo te llamas?" },
-        { "id": "mucho-gusto", "latam": "mucho gusto", "en": "nice to meet you" },
-        { "id": "encantado", "latam": "encantado / encantada", "en": "pleased to meet you (m / f)", "note": "Very common in Spain; in Latin America mucho gusto is more frequent." },
-        { "id": "de-donde-eres", "latam": "¿de dónde eres?", "en": "where are you from?" },
-        { "id": "soy-de", "latam": "soy de…", "en": "I'm from…" },
-        { "id": "estudiante", "latam": "el / la estudiante", "en": "student" },
-        { "id": "vivo-aqui", "latam": "vivo aquí", "en": "I live here" },
-        { "id": "que-cool", "latam": "¡qué padre!", "spain": "¡qué guay!", "en": "how cool!", "note": "¡Qué padre! is Mexican; other countries say ¡qué chévere! or ¡qué bacán!" },
-        { "id": "profesor", "latam": "el profesor / la profesora", "en": "teacher (m / f)" },
-        { "id": "nos-vemos", "latam": "nos vemos", "en": "see you" },
-        { "id": "bye", "latam": "chao", "spain": "hasta luego", "en": "bye", "note": "Spaniards say hasta luego even when they won't see you later today." }
-      ],
+      "vocab": ["me-llamo", "mucho-gusto", "encantado", "de-donde-eres", "soy-de", "estudiante", "vivo-aqui", "que-cool", "profesor", "nos-vemos", "bye"],
       "grammar": {
         "title": "Ser: who you are and where you're from",
         "explanation": "Ser means “to be” for identity: your name, where you're from, your job or studies.\n\nSoy de Inglaterra. – I'm from England.\nSoy estudiante. – I'm a student.\n\nSpanish usually drops the pronoun because the verb already shows who it is: “Soy Emma” instead of “Yo soy Emma”. Use yo/tú only for emphasis or contrast (“Yo soy de Inglaterra, ¿y tú?”).\n\nYou have two ways to say “you”: tú (friendly) and usted (polite). For a group, Latin America always uses ustedes. Spain uses vosotros with friends and ustedes only in formal situations.",
@@ -206,19 +194,7 @@
           { "speaker": "Emma", "latam": "¡Sí, muchas gracias!", "en": "Yes, thank you very much!" }
         ]
       },
-      "vocab": [
-        { "id": "flat", "latam": "el departamento", "spain": "el piso", "en": "flat / apartment", "note": "Also el apartamento in many countries." },
-        { "id": "flatmate", "latam": "el compañero de departamento", "spain": "el compañero de piso", "en": "flatmate" },
-        { "id": "bienvenido", "latam": "bienvenido / bienvenida", "en": "welcome (m / f)" },
-        { "id": "hablar", "latam": "hablar", "en": "to speak" },
-        { "id": "estudiar", "latam": "estudiar", "en": "to study" },
-        { "id": "trabajar", "latam": "trabajar", "en": "to work" },
-        { "id": "cocinar", "latam": "cocinar", "en": "to cook" },
-        { "id": "cenar", "latam": "cenar", "en": "to have dinner", "note": "In Spain dinner is late – 9 or 10 pm is normal!" },
-        { "id": "ok", "latam": "está bien", "spain": "vale", "en": "OK", "note": "You'll hear ¡vale! constantly in Spain. In Mexico also ¡sale! or ¡órale!" },
-        { "id": "juntos", "latam": "juntos / juntas", "en": "together" },
-        { "id": "por-la-noche", "latam": "en la noche", "spain": "por la noche", "en": "in the evening / at night", "note": "Many Latin American countries say en la noche; Spain says por la noche. Both are understood everywhere." }
-      ],
+      "vocab": ["flat", "flatmate", "bienvenido", "hablar", "estudiar", "trabajar", "cocinar", "cenar", "ok", "juntos", "por-la-noche"],
       "grammar": {
         "title": "Present tense: regular -ar verbs",
         "explanation": "Most Spanish verbs end in -ar, and they all follow the same pattern. Remove -ar and add the ending for the person:\n\nhablar → hablo, hablas, habla, hablamos, habláis 🇪🇸, hablan\n\nThe present tense covers “I speak”, “I'm speaking” and even near plans: “Cocino esta noche” = I'm cooking tonight.\n\nTo make a sentence negative, just put no before the verb: No trabajo. – I don't work.",
@@ -367,20 +343,7 @@
           { "speaker": "Emma", "latam": "Bueno, ¡tengo clase! Nos vemos, Diego.", "en": "Well, I have class! See you, Diego." }
         ]
       },
-      "vocab": [
-        { "id": "cansado", "latam": "cansado / cansada", "en": "tired" },
-        { "id": "contento", "latam": "contento / contenta", "en": "happy, pleased" },
-        { "id": "biblioteca", "latam": "la biblioteca", "en": "library", "note": "Careful: a librería is a bookshop!" },
-        { "id": "en-casa", "latam": "en casa", "en": "at home" },
-        { "id": "antiguo", "latam": "antiguo / antigua", "en": "old, historic" },
-        { "id": "bonito", "latam": "bonito / bonita", "en": "pretty, nice", "note": "In Latin America you'll also hear lindo / linda a lot." },
-        { "id": "simpatico", "latam": "simpático / simpática", "en": "nice, friendly" },
-        { "id": "serio", "latam": "serio / seria", "en": "serious" },
-        { "id": "hermano", "latam": "el hermano / la hermana", "en": "brother / sister" },
-        { "id": "cumpleanos", "latam": "el cumpleaños", "en": "birthday" },
-        { "id": "computer", "latam": "la computadora", "spain": "el ordenador", "en": "computer", "note": "Different gender too: la computadora nueva / el ordenador nuevo." },
-        { "id": "ahora", "latam": "ahora", "en": "now" }
-      ],
+      "vocab": ["cansado", "contento", "biblioteca", "en-casa", "antiguo", "bonito", "simpatico", "serio", "hermano", "cumpleanos", "computer", "ahora"],
       "grammar": {
         "title": "Ser vs estar",
         "explanation": "Spanish has two verbs for “to be”.\n\nSER – what something IS: identity, origin, job, personality, what it's like.\nEs profesora. Es de México. Es simpática.\n\nESTAR – HOW or WHERE something is: feelings, temporary states, location.\nEstoy cansada. Está contenta. Estoy en la biblioteca.\n\nMemory trick: “How you feel and where you are – that's when you use estar.”",
@@ -527,20 +490,7 @@
           { "speaker": "Emma", "latam": "¡Qué rico!", "en": "Yum!" }
         ]
       },
-      "vocab": [
-        { "id": "fin-de-semana", "latam": "el fin de semana", "en": "weekend" },
-        { "id": "sabado", "latam": "el sábado", "en": "Saturday" },
-        { "id": "domingo", "latam": "el domingo", "en": "Sunday" },
-        { "id": "tener", "latam": "tener", "en": "to have" },
-        { "id": "ir", "latam": "ir", "en": "to go" },
-        { "id": "hacer", "latam": "hacer", "en": "to do / to make" },
-        { "id": "querer", "latam": "querer", "en": "to want" },
-        { "id": "comer", "latam": "comer", "en": "to eat", "note": "In Spain comer also means “to have lunch” – the big meal around 2–3 pm." },
-        { "id": "tren", "latam": "el tren", "en": "train" },
-        { "id": "dinero", "latam": "el dinero", "en": "money", "note": "Informal: la lana (Mexico), la pasta (Spain)." },
-        { "id": "gratis", "latam": "gratis", "en": "free (no cost)" },
-        { "id": "siempre", "latam": "siempre", "en": "always" }
-      ],
+      "vocab": ["fin-de-semana", "sabado", "domingo", "tener", "ir", "hacer", "querer", "comer", "tren", "dinero", "gratis", "siempre"],
       "grammar": {
         "title": "Everyday irregular verbs + -er / -ir verbs",
         "explanation": "The verbs you use most are irregular – learn them as chunks: tengo, voy, hago, quiero.\n\nRegular -er and -ir verbs work like -ar verbs, with different endings:\ncomer → como, comes, come, comemos, coméis 🇪🇸, comen\nvivir → vivo, vives, vive, vivimos, vivís 🇪🇸, viven\n\nTalking to a group of friends: Spain says ¿Qué hacéis? (vosotros); Latin America says ¿Qué hacen? (ustedes).",

@@ -29,10 +29,44 @@ export interface Dialogue {
   lines: DialogueLine[]
 }
 
-export interface VocabItem extends VText {
+export type Level = 'A1' | 'A2' | 'B1'
+export type WordType = 'noun' | 'verb' | 'adjective' | 'adverb' | 'connector' | 'phrase' | 'preposition' | 'pronoun' | 'number' | 'interjection'
+export type Article = 'el' | 'la' | 'el/la' | 'los' | 'las'
+export type Gender = 'm' | 'f' | 'mf'
+
+/** One entry of the vocabulary database (src/data/vocab/<topic>.json). `id` is stable – never rename it. */
+export interface VocabWord {
   id: string
-  en: string
+  spanishLatam: string
+  /** only when different from spanishLatam */
+  spanishSpain?: string
+  english: string
+  /** nouns only */
+  article?: Article
+  /** when the Spain word has a different article (la computadora / el ordenador) */
+  articleSpain?: Article
+  gender?: Gender
+  genderSpain?: Gender
+  /** feminine form of adjectives / people nouns (cansado → cansada) */
+  feminine?: string
+  feminineSpain?: string
+  type: WordType
+  topic: string
+  level: Level
+  exampleLatam: string
+  exampleSpain?: string
+  exampleEnglish: string
+  /** emoji, a /vocab/*.svg path, or "" for abstract words (topic icon + text card) */
+  visual: string
   note?: string
+}
+
+export interface VocabTopic {
+  id: string
+  name: string
+  nameEs: string
+  icon: string
+  target: number
 }
 
 export interface ConjugationRow {
@@ -151,7 +185,8 @@ export interface Lesson {
   setting: 'latam' | 'spain'
   scenario: string
   dialogue: Dialogue
-  vocab: VocabItem[]
+  /** word ids from the vocabulary database (src/data/vocab) */
+  vocab: string[]
   grammar: Grammar
   connector: Connector
   pronunciation?: Pronunciation
@@ -191,8 +226,13 @@ export interface PlacementTest {
 
 export interface Settings {
   showEnglish: boolean
-  defaultVariant: Variant
+  /** selected Spanish variant – drives words, examples, dialogues and voices */
+  variant: Variant
+  /** also show the other variant as a small secondary line */
+  showOtherVariant: boolean
   audioSpeed: 'normal' | 'slow'
+  /** legacy name of `variant` (accounts created before the vocabulary section) */
+  defaultVariant?: Variant
 }
 
 export interface PlacementResult {

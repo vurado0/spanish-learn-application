@@ -12,11 +12,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
       - run: npm ci
       - name: Validate lesson JSON
         run: npm run validate-content
+      - name: Validate vocabulary
+        run: npm run validate:vocab
       - name: Typecheck
         run: npm run typecheck
       - name: Build

@@ -31,20 +31,7 @@
           { "speaker": "Señora", "latam": "De nada, mija. ¡Que disfrutes!", "spain": "De nada, guapa. ¡Que disfrutes!", "en": "You're welcome, dear. Enjoy!" }
         ]
       },
-      "vocab": [
-        { "id": "excuse-me", "latam": "disculpe", "spain": "perdone", "en": "excuse me (polite)", "note": "Both are used everywhere; with friends: disculpa / perdona." },
-        { "id": "donde-esta", "latam": "¿dónde está…?", "en": "where is…?" },
-        { "id": "cerca", "latam": "cerca (de)", "en": "near, close (to)" },
-        { "id": "lejos", "latam": "lejos (de)", "en": "far (from)" },
-        { "id": "al-lado-de", "latam": "al lado de", "en": "next to" },
-        { "id": "enfrente-de", "latam": "enfrente de", "en": "opposite, across from" },
-        { "id": "al-final-de", "latam": "al final de", "en": "at the end of" },
-        { "id": "hay", "latam": "hay", "en": "there is / there are" },
-        { "id": "farmacia", "latam": "la farmacia", "en": "pharmacy" },
-        { "id": "banco", "latam": "el banco", "en": "bank (also: bench)" },
-        { "id": "calle", "latam": "la calle", "en": "street" },
-        { "id": "museo", "latam": "el museo", "en": "museum" }
-      ],
+      "vocab": ["excuse-me", "donde-esta", "cerca", "lejos", "al-lado-de", "enfrente-de", "al-final-de", "hay", "farmacia", "banco", "calle", "museo"],
       "grammar": {
         "title": "Hay vs está + where things are",
         "explanation": "HAY = there is / there are. Use it when something exists or when you don't know if it's there: ¿Hay una farmacia cerca? · Hay dos museos.\n\nESTÁ / ESTÁN = is / are (located). Use it for a specific, known thing: ¿Dónde está la farmacia? · La plaza está al final de la calle.\n\nUseful place words: cerca de, lejos de, al lado de, enfrente de, al final de, entre… y…\n\nContractions: de + el = del (al lado del banco) · a + el = al.",
@@ -167,20 +154,7 @@
           { "speaker": "Pablo", "latam": "¡De nada! ¡Suerte!", "en": "You're welcome! Good luck!" }
         ]
       },
-      "vocab": [
-        { "id": "straight-on", "latam": "sigue derecho", "spain": "sigue todo recto", "en": "go straight on" },
-        { "id": "girar", "latam": "girar", "en": "to turn", "note": "Also: doblar (Latin America)." },
-        { "id": "a-la-derecha", "latam": "a la derecha", "en": "to the right / on the right" },
-        { "id": "a-la-izquierda", "latam": "a la izquierda", "en": "to the left / on the left" },
-        { "id": "cruzar", "latam": "cruzar", "en": "to cross" },
-        { "id": "despues", "latam": "después", "en": "afterwards, then" },
-        { "id": "tener-que", "latam": "tener que…", "en": "to have to…" },
-        { "id": "on-foot", "latam": "caminando", "spain": "andando", "en": "walking, on foot", "note": "Both understood everywhere; a pie also works." },
-        { "id": "take-the-bus", "latam": "tomar el autobús", "spain": "coger el autobús", "en": "to take the bus", "note": "In Mexico the bus is el camión. Avoid coger in Latin America – it's vulgar there!" },
-        { "id": "mate", "latam": "amigo", "spain": "tío", "en": "mate, dude", "note": "Tío literally means uncle! In Mexico you'll also hear güey (very informal)." },
-        { "id": "no-hace-falta", "latam": "no hace falta", "en": "there's no need" },
-        { "id": "llegar", "latam": "llegar (a)", "en": "to arrive, to get to" }
-      ],
+      "vocab": ["straight-on", "girar", "a-la-derecha", "a-la-izquierda", "cruzar", "despues", "tener-que", "on-foot", "take-the-bus", "mate", "no-hace-falta", "llegar"],
       "grammar": {
         "title": "Tener que + infinitive & giving directions",
         "explanation": "TENER QUE + infinitive = to have to do something:\nTengo que estar allí a las diez. – I have to be there at ten.\nTienes que cruzar la plaza. – You have to cross the square.\n\nHAY QUE + infinitive = “one has to” (general rule, no person):\nHay que comprar el billete antes. – You need to buy the ticket first.\n\nDirections use short command forms (tú). Learn them as chunks:\nsigue (go on), gira (turn), cruza (cross), toma 🌎 / coge 🇪🇸 (take).",
@@ -330,20 +304,7 @@
           { "speaker": "Emma", "latam": "¡Está bien! Invito yo.", "spain": "¡Vale! Invito yo.", "en": "OK! My treat." }
         ]
       },
-      "vocab": [
-        { "id": "ticket", "latam": "el boleto", "spain": "el billete", "en": "ticket", "note": "In Spain, boleto is a lottery ticket; for trains it's billete." },
-        { "id": "ida-y-vuelta", "latam": "ida y vuelta", "en": "return (round trip)", "note": "Solo ida = one way." },
-        { "id": "estacion", "latam": "la estación", "en": "station" },
-        { "id": "anden", "latam": "el andén", "en": "platform" },
-        { "id": "a-que-hora", "latam": "¿a qué hora…?", "en": "at what time…?" },
-        { "id": "salir", "latam": "salir (sale)", "en": "to leave (it leaves)" },
-        { "id": "tardar", "latam": "tardar", "en": "to take (time)", "note": "¿Cuánto tarda? = How long does it take?" },
-        { "id": "proximo", "latam": "el próximo", "en": "the next" },
-        { "id": "ultimo", "latam": "el último", "en": "the last" },
-        { "id": "esperar", "latam": "esperar", "en": "to wait (also: to hope)" },
-        { "id": "y-cuarto", "latam": "y cuarto", "en": "quarter past" },
-        { "id": "y-media", "latam": "y media", "en": "half past" }
-      ],
+      "vocab": ["ticket", "ida-y-vuelta", "estacion", "anden", "a-que-hora", "salir", "tardar", "proximo", "ultimo", "esperar", "y-cuarto", "y-media"],
       "grammar": {
         "title": "Telling the time",
         "explanation": "¿Qué hora es? – What time is it?\nEs la una (1:00) – only one o'clock uses es la.\nSon las dos, son las tres… (2:00, 3:00…)\n\nAdd minutes: y cuarto (:15), y media (:30), menos cuarto (:45 – “quarter to”), or just the number: las diez y diez (10:10).\n\nFor schedules: ¿A qué hora sale el tren? – Sale a las diez y cuarto.\n\nAdd de la mañana / de la tarde / de la noche to be clear. Train stations in Spain also use the 24-hour clock: a las veintitrés treinta (23:30).",
@@ -479,20 +440,7 @@
           { "speaker": "Diego", "latam": "¡Ja, ja! ¡Así es España!", "en": "Ha ha! That's Spain for you!" }
         ]
       },
-      "vocab": [
-        { "id": "a-pie", "latam": "a pie", "en": "on foot" },
-        { "id": "llueve", "latam": "llueve", "en": "it rains / it's raining" },
-        { "id": "preferir", "latam": "preferir", "en": "to prefer" },
-        { "id": "metro", "latam": "el metro", "en": "underground, subway" },
-        { "id": "mucha-gente", "latam": "mucha gente", "en": "lots of people", "note": "Gente is singular in Spanish: la gente es simpática." },
-        { "id": "empezar", "latam": "empezar", "en": "to start, begin" },
-        { "id": "volver", "latam": "volver", "en": "to return, come back" },
-        { "id": "dormir", "latam": "dormir", "en": "to sleep" },
-        { "id": "poder", "latam": "poder", "en": "can, to be able to" },
-        { "id": "costar", "latam": "costar", "en": "to cost" },
-        { "id": "todos-los-dias", "latam": "todos los días", "en": "every day" },
-        { "id": "normalmente", "latam": "normalmente", "en": "usually, normally" }
-      ],
+      "vocab": ["a-pie", "llueve", "preferir", "metro", "mucha-gente", "empezar", "volver", "dormir", "poder", "costar", "todos-los-dias", "normalmente"],
       "grammar": {
         "title": "Stem-changing verbs: e → ie, o → ue",
         "explanation": "Some verbs change their vowel when it's stressed: e becomes ie, o becomes ue.\n\nempezar → empiezo, empiezas, empieza, empezamos, empezáis 🇪🇸, empiezan\nvolver → vuelvo, vuelves, vuelve, volvemos, volvéis 🇪🇸, vuelven\n\nThe nosotros and vosotros forms DON'T change – draw a line around the other forms and it looks like a boot. That's why they're called “boot verbs”.\n\nMore e → ie: preferir (prefiero), querer (quiero).\nMore o → ue: dormir (duermo), poder (puedo), costar (cuesta).",
