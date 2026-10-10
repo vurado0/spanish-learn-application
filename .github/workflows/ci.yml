@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate lesson JSON
+        run: npm run validate-content
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build
+        run: npx vite build
+        env:
+          # dummy values: the build only inlines them, nothing connects to Firebase in CI
+          VITE_FIREBASE_API_KEY: ci
+          VITE_FIREBASE_PROJECT_ID: ci
