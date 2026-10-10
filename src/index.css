@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  60% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-pop { animation: pop 0.35s ease-out; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+.animate-shake { animation: shake 0.3s ease-in-out; }
+
+@layer components {
+  .input {
+    @apply mt-1 block w-full rounded-xl border border-stone-300 bg-white px-3 py-2.5 text-base text-stone-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-5 py-3 font-bold text-white shadow-sm transition hover:bg-orange-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white px-5 py-3 font-semibold text-stone-800 transition hover:bg-stone-50 active:scale-[0.98] disabled:opacity-50;
+  }
+  .chip {
+    @apply rounded-xl border-2 border-stone-200 bg-white px-3 py-2 text-left font-semibold text-stone-800 shadow-sm transition hover:border-orange-300 active:scale-[0.98];
+  }
+}
