@@ -120,6 +120,29 @@ for (const file of files) {
   })
 }
 
+// examples must not use the other variant's words (e.g. “móvil” in the 🌎 example)
+const strip = (t: string) => t.toLowerCase().replace(/[¿?¡!.,…]/g, '').trim()
+const spainOnly = new Set<string>()
+const latamOnly = new Set<string>()
+for (const w of all) {
+  if (!w.spanishSpain) continue
+  const la = strip(w.spanishLatam)
+  const sp = strip(w.spanishSpain)
+  if (!sp.includes(la) && !la.includes(sp)) {
+    spainOnly.add(sp)
+    latamOnly.add(la)
+  }
+}
+const hasTerm = (text: string, term: string) => new RegExp(`(^|[^\\p{L}])${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^\\p{L}])`, 'iu').test(text)
+for (const w of all) {
+  // the word's own text may legitimately contain the term ("y cuarto" ≠ "el cuarto")
+  const own = (t: string) => strip(w.spanishLatam).includes(t) || strip(w.spanishSpain ?? '').includes(t)
+  for (const t of spainOnly) if (hasTerm(w.exampleLatam, t) && !own(t)) errors.push(`${w.topic}.json ${w.id}: 🌎 example uses the 🇪🇸 word “${t}”`)
+  const spainExample = w.exampleSpain ?? w.exampleLatam
+  for (const t of latamOnly) if (hasTerm(spainExample, t) && !own(t))
+    errors.push(`${w.topic}.json ${w.id}: 🇪🇸 example${w.exampleSpain ? '' : ' (falls back to 🌎)'} uses the 🌎 word “${t}”`)
+}
+
 // every lesson word must exist in the database
 const unitsDir = join(root, 'src', 'content', 'units')
 let lessonRefs = 0
