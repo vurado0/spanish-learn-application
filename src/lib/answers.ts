@@ -6,7 +6,7 @@ const stripAccents = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '')
 export function normalize(s: string): string {
   return s
     .toLowerCase()
-    .replace(/[¿?¡!.,;:"“”«»()]/g, ' ')
+    .replace(/[¿?¡!.,;:"“”«»()…]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
 }
@@ -60,4 +60,15 @@ export function shuffle<T>(arr: T[]): T[] {
 /** pick the text for a variant from a VText-like object */
 export function pick(t: { latam: string; spain?: string }, v: Variant): string {
   return v === 'spain' ? t.spain ?? t.latam : t.latam
+}
+
+/** Accepted typed answers for a vocab entry like "el profesor / la profesora" or "me llamo…":
+ *  every slash alternative, with and without the article. */
+export function vocabAnswers(text: string): string[] {
+  const out = new Set<string>()
+  for (const alt of text.split('/').map((a) => a.replace(/…/g, '').trim()).filter(Boolean)) {
+    out.add(alt)
+    out.add(alt.replace(/^(el|la|los|las|un|una|unos|unas)\s+/i, ''))
+  }
+  return [...out]
 }

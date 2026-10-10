@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useData } from '../context/DataContext'
 import { vocabIndex } from '../lib/content'
 import { isDue, BOX_INTERVALS } from '../lib/srs'
-import { checkAnswer, shuffle, variantLabel, type CheckResult } from '../lib/answers'
+import { checkAnswer, shuffle, variantLabel, vocabAnswers, type CheckResult } from '../lib/answers'
 import VariantText from '../components/VariantText'
 import { AccentBar } from '../components/exercises/FillGap'
 import ProgressBar from '../components/ProgressBar'
@@ -94,7 +94,7 @@ export default function Review() {
     if (res) return
     const r = giveUp
       ? { correct: false, expected: word.latam }
-      : checkAnswer(value, { latam: [word.latam], spain: word.spain ? [word.spain] : undefined }, settings.defaultVariant)
+      : checkAnswer(value, { latam: vocabAnswers(word.latam), spain: word.spain ? vocabAnswers(word.spain) : undefined }, settings.defaultVariant)
     setRes(r)
     if (r.correct) setRight((n) => n + 1)
     reviewWord(word.id, r.correct, minutes())

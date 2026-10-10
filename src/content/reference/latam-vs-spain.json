@@ -1,0 +1,116 @@
+{
+  "intro": "You'll learn Latin American Spanish first, but you live near Madrid – so here's everything that differs, side by side. Everyone understands both versions!",
+  "vocabulary": [
+    {
+      "category": "Everyday things",
+      "items": [
+        { "en": "mobile phone", "latam": "el celular", "spain": "el móvil" },
+        { "en": "computer", "latam": "la computadora", "spain": "el ordenador" },
+        { "en": "car", "latam": "el carro", "spain": "el coche" },
+        { "en": "flat / apartment", "latam": "el departamento", "spain": "el piso" },
+        { "en": "glasses", "latam": "los lentes", "spain": "las gafas" },
+        { "en": "ticket", "latam": "el boleto", "spain": "el billete" }
+      ]
+    },
+    {
+      "category": "Food & drink",
+      "items": [
+        { "en": "juice", "latam": "el jugo", "spain": "el zumo" },
+        { "en": "potato", "latam": "la papa", "spain": "la patata" },
+        { "en": "peach", "latam": "el durazno", "spain": "el melocotón" },
+        { "en": "waiter", "latam": "el mesero", "spain": "el camarero" },
+        { "en": "bar snack", "latam": "la botana", "spain": "la tapa" },
+        { "en": "set lunch", "latam": "la comida corrida", "spain": "el menú del día" }
+      ]
+    },
+    {
+      "category": "Getting around",
+      "items": [
+        { "en": "to drive", "latam": "manejar", "spain": "conducir" },
+        { "en": "to take the bus", "latam": "tomar el autobús", "spain": "coger el autobús" },
+        { "en": "go straight on", "latam": "sigue derecho", "spain": "sigue todo recto" },
+        { "en": "on foot", "latam": "caminando", "spain": "andando" },
+        { "en": "city block", "latam": "la cuadra", "spain": "la manzana" }
+      ]
+    },
+    {
+      "category": "Chatting with friends",
+      "items": [
+        { "en": "how cool!", "latam": "¡qué padre!", "spain": "¡qué guay!" },
+        { "en": "OK", "latam": "está bien", "spain": "vale" },
+        { "en": "mate, dude", "latam": "amigo", "spain": "tío" },
+        { "en": "what's up?", "latam": "¿qué onda?", "spain": "¿qué pasa?" },
+        { "en": "bye", "latam": "chao", "spain": "hasta luego" }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "title": "“You all”: ustedes vs vosotros",
+      "latam": [
+        { "label": "friends", "text": "¿Ustedes vienen?", "en": "Are you (all) coming?" },
+        { "label": "formal", "text": "¿Ustedes vienen?", "en": "Are you (all) coming?" }
+      ],
+      "spain": [
+        { "label": "friends", "text": "¿Vosotros venís?", "en": "Are you (all) coming?" },
+        { "label": "formal", "text": "¿Ustedes vienen?", "en": "Are you (all) coming?" }
+      ],
+      "note": "Vosotros has its own verb forms (-áis, -éis, -ís) and pronoun os: ¿Os gusta? Only Spain uses it. Conjugation tables in this app mark it with 🇪🇸 only."
+    },
+    {
+      "title": "Talking about today: pretérito vs pretérito perfecto",
+      "latam": [
+        { "text": "Hoy comí paella.", "en": "Today I ate paella." },
+        { "text": "¿Ya terminaste?", "en": "Have you finished yet?" }
+      ],
+      "spain": [
+        { "text": "Hoy he comido paella.", "en": "Today I've eaten paella." },
+        { "text": "¿Ya has terminado?", "en": "Have you finished yet?" }
+      ],
+      "note": "For yesterday and earlier, both use the pretérito: Ayer comí paella."
+    },
+    {
+      "title": "Tú and usted",
+      "latam": [
+        { "label": "stranger", "text": "¿Usted es de aquí?", "en": "Are you from here? (polite)" },
+        { "label": "friend", "text": "¿Tú eres de aquí?", "en": "Are you from here?" }
+      ],
+      "spain": [
+        { "label": "most people", "text": "¿Tú eres de aquí?", "en": "Are you from here?" },
+        { "label": "elderly / very formal", "text": "¿Usted es de aquí?", "en": "Are you from here? (polite)" }
+      ],
+      "note": "Spain uses tú with almost everyone. Mexico, Colombia and much of Latin America use usted more with strangers and older people. In Argentina and Uruguay you'll also hear vos instead of tú."
+    },
+    {
+      "title": "Watch out: coger",
+      "latam": [{ "text": "tomar el autobús", "en": "to take the bus" }],
+      "spain": [{ "text": "coger el autobús", "en": "to take the bus" }],
+      "note": "Coger is a totally normal verb in Spain (to take, to catch), but in Mexico and much of Latin America it's vulgar slang. Use tomar there."
+    }
+  ],
+  "pronunciation": [
+    {
+      "title": "Seseo 🌎 vs distinción 🇪🇸",
+      "explanation": "Latin America pronounces c (before e/i) and z like “s”. Central and northern Spain pronounce them like the English “th” in “think”. Listen to both voices:",
+      "words": [
+        { "text": "gracias", "latamNote": "GRA-syas", "spainNote": "GRA-thyas" },
+        { "text": "cerveza", "latamNote": "ser-VE-sa", "spainNote": "ther-VE-tha" },
+        { "text": "Plaza de Cervantes", "latamNote": "PLA-sa de ser-VAN-tes", "spainNote": "PLA-tha de ther-VAN-tes" }
+      ]
+    },
+    {
+      "title": "The j and g sound",
+      "explanation": "J (and g before e/i) is a breathy “h” in most of Latin America, and a stronger, raspy sound from the throat in Spain – like the “ch” in Scottish “loch”.",
+      "words": [
+        { "text": "jamón", "latamNote": "soft h: ha-MON", "spainNote": "raspy: kha-MON" },
+        { "text": "gente", "latamNote": "HEN-te", "spainNote": "KHEN-te" },
+        { "text": "Javi", "latamNote": "HA-vi", "spainNote": "KHA-vi" }
+      ]
+    }
+  ],
+  "usage": [
+    { "title": "Greetings", "text": "Spain: two kisses on the cheek (right cheek first) between women and between men and women, even when meeting for the first time.\nLatin America: usually one kiss on the right cheek, or a handshake in formal settings." },
+    { "title": "Meal times", "text": "Spain: lunch (la comida) at 2–3 pm, dinner (la cena) at 9–10 pm.\nMexico: la comida is also the big meal, around 2–4 pm; dinner is lighter." },
+    { "title": "Filler words you'll hear", "text": "🇪🇸 vale, tío/tía, guay, pues, venga (come on / OK, bye)\n🌎 órale (MX), chévere (CO/VE), bacán (CL/PE), ¿mande? (MX, polite “pardon?”)" }
+  ]
+}

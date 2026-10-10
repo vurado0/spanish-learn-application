@@ -1,0 +1,650 @@
+{
+  "id": "u2",
+  "order": 2,
+  "level": "A1",
+  "title": "Food & bars",
+  "titleEs": "Comida y bares",
+  "emoji": "🍷",
+  "description": "Order at a bar (with the free Alcalá tapa!), talk about food you like, get the menú del día and shop at the market.",
+  "badge": { "id": "badge-u2", "name": "Tapeador", "emoji": "🍢" },
+  "lessons": [
+    {
+      "id": "u2l1",
+      "title": "At the bar: the free tapa",
+      "titleEs": "En el bar",
+      "minutes": 12,
+      "setting": "spain",
+      "scenario": "Drinks and a free tapa in Alcalá",
+      "dialogue": {
+        "title": "Una caña y una tapa",
+        "setting": "A bar near the Plaza de Cervantes. In Alcalá, every drink comes with a free tapa. Lucía brings Emma for the first time.",
+        "lines": [
+          { "speaker": "Camarero", "latam": "¡Buenas tardes! ¿Qué les traigo?", "spain": "¡Buenas! ¿Qué os pongo?", "en": "Hi! What can I get you?" },
+          { "speaker": "Lucía", "latam": "Para mí, una cerveza, por favor.", "spain": "Para mí, una caña, por favor.", "en": "For me, a (small) beer, please." },
+          { "speaker": "Emma", "latam": "Y para mí, un refresco de limón. ¿Tienen algo de comer?", "spain": "Y para mí, un refresco de limón. ¿Tenéis algo de comer?", "en": "And for me, a lemon soda. Do you have anything to eat?" },
+          { "speaker": "Camarero", "latam": "Claro. Con la bebida, la botana es gratis. Hoy tenemos tortilla de papa.", "spain": "Claro. Con la bebida, la tapa es gratis. Hoy tenemos tortilla de patata.", "en": "Of course. With the drink, the tapa is free. Today we have potato omelette." },
+          { "speaker": "Emma", "latam": "¿En serio? ¿Gratis? ¡Entonces vuelvo mañana!", "en": "Really? Free? Then I'm coming back tomorrow!" },
+          { "speaker": "Lucía", "latam": "¡Ja, ja! Sí, en Alcalá es así: cada bebida, una botana.", "spain": "¡Ja, ja! Sí, en Alcalá es así: cada bebida, una tapa.", "en": "Ha ha! Yes, that's how it is in Alcalá: every drink, a tapa." },
+          { "speaker": "Camarero", "latam": "Aquí tienen: la cerveza, el refresco y dos botanas.", "spain": "Aquí tenéis: la caña, el refresco y dos tapas.", "en": "Here you go: the beer, the soda and two tapas." },
+          { "speaker": "Emma", "latam": "¡Qué rica la tortilla! ¿Cuánto es?", "en": "The omelette is delicious! How much is it?" },
+          { "speaker": "Camarero", "latam": "Son cuatro euros con cincuenta.", "en": "That's four fifty." },
+          { "speaker": "Lucía", "latam": "Te invito yo.", "en": "It's on me." },
+          { "speaker": "Emma", "latam": "¡Gracias! La próxima vez invito yo.", "en": "Thanks! Next time it's on me." }
+        ]
+      },
+      "vocab": [
+        { "id": "waiter", "latam": "el mesero", "spain": "el camarero", "en": "waiter", "note": "In Argentina: el mozo." },
+        { "id": "small-beer", "latam": "una cerveza", "spain": "una caña", "en": "a (small draught) beer", "note": "A caña is a small glass of draught beer – the classic order in Spanish bars." },
+        { "id": "tapa", "latam": "la botana", "spain": "la tapa", "en": "bar snack / tapa", "note": "Botana is the Mexican word for a bar snack. The free tapa with every drink is a tradition in Alcalá, Granada and León." },
+        { "id": "refresco", "latam": "el refresco", "en": "soft drink" },
+        { "id": "bebida", "latam": "la bebida", "en": "drink" },
+        { "id": "para-mi", "latam": "para mí", "en": "for me" },
+        { "id": "can-i-have", "latam": "¿me trae…?", "spain": "¿me pones…?", "en": "can I have…? (ordering)", "note": "Spanish bar Spanish is very direct – ¿me pones…? is not rude at all." },
+        { "id": "cuanto-es", "latam": "¿cuánto es?", "en": "how much is it?" },
+        { "id": "cuenta", "latam": "la cuenta", "en": "the bill" },
+        { "id": "invitar", "latam": "te invito", "en": "it's on me (lit. I invite you)" },
+        { "id": "proxima-vez", "latam": "la próxima vez", "en": "next time" }
+      ],
+      "grammar": {
+        "title": "Ordering politely (and like a local)",
+        "explanation": "Para mí… (for me…) works everywhere and is the easiest way to order.\n\nIn Spain, bar Spanish is short and direct: ¿Me pones una caña? (lit. “Will you put me a beer?”) or even just “Una caña, por favor.” Nobody finds this rude.\n\nIn Latin America people tend to sound softer and use usted with waiters: ¿Me trae un refresco, por favor? · Quisiera… (I would like…).\n\nQuiero (I want) is fine with a por favor, but quisiera sounds extra polite.",
+        "explanationEs": "Para mí… funciona en todas partes.\n\nEn España: ¿Me pones una caña? Es directo, pero no es maleducado.\n\nEn Latinoamérica: ¿Me trae…, por favor? / Quisiera…",
+        "examples": [
+          { "latam": "Para mí, un refresco, por favor.", "en": "For me, a soft drink, please." },
+          { "latam": "¿Me trae la cuenta, por favor?", "spain": "¿Me cobras?", "en": "Can I have the bill, please? / Can I pay?" },
+          { "latam": "Quisiera una cerveza, por favor.", "spain": "¿Me pones una caña?", "en": "I'd like a beer, please." }
+        ],
+        "compare": {
+          "title": "At the bar",
+          "latam": [
+            { "label": "waiter asks", "text": "¿Qué les traigo?", "en": "What can I bring you?" },
+            { "label": "you order", "text": "¿Me trae una cerveza, por favor?", "en": "Could you bring me a beer, please?" },
+            { "label": "you pay", "text": "La cuenta, por favor.", "en": "The bill, please." }
+          ],
+          "spain": [
+            { "label": "waiter asks", "text": "¿Qué os pongo?", "en": "What can I get you (all)?" },
+            { "label": "you order", "text": "¿Me pones una caña?", "en": "Can I have a small beer?" },
+            { "label": "you pay", "text": "¿Me cobras?", "en": "Can I pay? (lit. will you charge me?)" }
+          ],
+          "note": "Tip in Alcalá: the tapa comes automatically with your drink – you don't order it. Leaving a few coins is normal, but not obligatory."
+        }
+      },
+      "connector": {
+        "word": "entonces",
+        "meaning": "so / then",
+        "explanation": "Entonces shows a consequence (“so…”) or moves the conversation on (“so, then…”). Great for reacting to new information: “¿Gratis? ¡Entonces vuelvo mañana!”",
+        "examples": [
+          { "latam": "La botana es gratis, entonces vuelvo mañana.", "spain": "La tapa es gratis, entonces vuelvo mañana.", "en": "The tapa is free, so I'm coming back tomorrow." },
+          { "latam": "Entonces, ¿qué quieres tomar?", "en": "So, what do you want to drink?" },
+          { "latam": "No tengo dinero. —Entonces te invito yo.", "en": "I don't have money. —Then it's on me." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "Ask the waiter for a soft drink",
+          "options": [
+            { "text": "¿Me trae un refresco, por favor?", "correct": true, "variant": "latam" },
+            { "text": "¿Me pones un refresco?", "correct": true, "variant": "spain" },
+            { "text": "¿Te pongo un refresco?" },
+            { "text": "¿Te invito un refresco?" }
+          ],
+          "explanation": "¿Te pongo…? is what the waiter says to you. ¿Te invito…? offers to pay for someone."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "___ mí, una cerveza, por favor.", "spain": "___ mí, una caña, por favor." },
+          "answers": { "latam": ["para"] },
+          "en": "For me, a beer, please.",
+          "explanation": "Para mí = for me. The easiest way to order anywhere."
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "Son cuatro euros con cincuenta." },
+          "prompt": "How much is it?",
+          "options": [
+            { "text": "€4.50", "correct": true },
+            { "text": "€14.50" },
+            { "text": "€5.40" }
+          ],
+          "explanation": "Cuatro euros con cincuenta = €4.50."
+        },
+        {
+          "type": "match",
+          "prompt": "Match the bar words",
+          "pairs": [
+            { "left": "la cuenta", "right": "the bill" },
+            { "left": "la bebida", "right": "the drink" },
+            { "left": "gratis", "right": "free" },
+            { "left": "¿cuánto es?", "right": "how much is it?" },
+            { "left": "te invito", "right": "it's on me" }
+          ]
+        },
+        {
+          "type": "dialogue",
+          "prompt": "The waiter asks what you'd like.",
+          "context": [{ "speaker": "Camarero", "latam": "¡Buenas tardes! ¿Qué les traigo?", "spain": "¡Buenas! ¿Qué os pongo?" }],
+          "options": [
+            { "text": "Para mí, un refresco, por favor.", "correct": true, "feedback": "Clear and polite." },
+            { "text": "Me llamo Emma.", "feedback": "He asked what you want, not your name!" },
+            { "text": "Te invito yo.", "feedback": "That means “it's on me” – kind, but it's not an order." }
+          ],
+          "explanation": "Answer “What can I get you?” with Para mí… + the drink."
+        },
+        {
+          "type": "build",
+          "en": "The tapa is free, so I'm coming back tomorrow.",
+          "answers": {
+            "latam": ["La botana es gratis, entonces vuelvo mañana."],
+            "spain": ["La tapa es gratis, entonces vuelvo mañana."]
+          },
+          "distractors": ["pero"],
+          "explanation": "Entonces introduces the consequence. Botana 🌎 and tapa 🇪🇸 both work."
+        },
+        {
+          "type": "sort",
+          "prompt": "🌎 or 🇪🇸? Sort the bar phrases",
+          "items": [
+            { "text": "¿Me pones una caña?", "variant": "spain", "en": "Can I have a small beer?" },
+            { "text": "¿Me trae una cerveza?", "variant": "latam", "en": "Could you bring me a beer?" },
+            { "text": "el camarero", "variant": "spain", "en": "waiter" },
+            { "text": "el mesero", "variant": "latam", "en": "waiter" },
+            { "text": "la botana", "variant": "latam", "en": "bar snack" },
+            { "text": "¿Me cobras?", "variant": "spain", "en": "Can I pay?" }
+          ]
+        }
+      ],
+      "recap": [
+        "Order with Para mí… or ¿Me pones…? 🇪🇸 / ¿Me trae…? 🌎",
+        "Ask the price: ¿Cuánto es? – and pay: La cuenta / ¿Me cobras? 🇪🇸",
+        "React with entonces: “¿Gratis? ¡Entonces vuelvo mañana!”"
+      ]
+    },
+    {
+      "id": "u2l2",
+      "title": "I love Colombian food",
+      "titleEs": "Me gusta la comida",
+      "minutes": 13,
+      "setting": "latam",
+      "scenario": "Cooking arepas with Camila from Colombia",
+      "dialogue": {
+        "title": "Arepas en casa de Camila",
+        "setting": "Camila, a Colombian friend from class, invites Emma to cook arepas in her flat.",
+        "lines": [
+          { "speaker": "Camila", "latam": "Emma, ¿te gusta la comida colombiana?", "en": "Emma, do you like Colombian food?" },
+          { "speaker": "Emma", "latam": "No sé, pero me gusta mucho probar cosas nuevas.", "en": "I don't know, but I really like trying new things." },
+          { "speaker": "Camila", "latam": "¡Chévere! Hoy hago arepas con queso. Además, hago jugo de mango.", "spain": "¡Genial! Hoy hago arepas con queso. Además, hago zumo de mango.", "en": "Great! Today I'm making arepas with cheese. And I'm also making mango juice." },
+          { "speaker": "Emma", "latam": "¡Me encantan los mangos! Pero no me gusta mucho el queso fuerte.", "en": "I love mangoes! But I don't really like strong cheese." },
+          { "speaker": "Camila", "latam": "Tranquila, es un queso suave. ¿Te gustan las papas?", "spain": "Tranquila, es un queso suave. ¿Te gustan las patatas?", "en": "Don't worry, it's a mild cheese. Do you like potatoes?" },
+          { "speaker": "Emma", "latam": "Sí, me gustan mucho. Y a ti, ¿qué te gusta de la comida española?", "en": "Yes, a lot. And you, what do you like about Spanish food?" },
+          { "speaker": "Camila", "latam": "Me gusta el jamón y me encanta la tortilla. Pero aquí la cena es muy tarde.", "en": "I like ham and I love tortilla. But here dinner is really late." },
+          { "speaker": "Emma", "latam": "¡Sí! A las diez de la noche… A mí no me gusta cenar tan tarde.", "en": "Yes! At ten at night… I don't like having dinner so late." },
+          { "speaker": "Camila", "latam": "A mí tampoco. Bueno, ¡a cocinar!", "en": "Me neither. Right, let's cook!" }
+        ]
+      },
+      "vocab": [
+        { "id": "me-gusta", "latam": "me gusta", "en": "I like (it)" },
+        { "id": "me-encanta", "latam": "me encanta", "en": "I love (it)" },
+        { "id": "probar", "latam": "probar", "en": "to try / to taste" },
+        { "id": "comida", "latam": "la comida", "en": "food; meal" },
+        { "id": "queso", "latam": "el queso", "en": "cheese" },
+        { "id": "juice", "latam": "el jugo", "spain": "el zumo", "en": "juice" },
+        { "id": "potato", "latam": "la papa", "spain": "la patata", "en": "potato" },
+        { "id": "jamon", "latam": "el jamón", "en": "ham", "note": "Jamón serrano / ibérico – a Spanish obsession." },
+        { "id": "suave", "latam": "suave", "en": "mild, soft" },
+        { "id": "fuerte", "latam": "fuerte", "en": "strong" },
+        { "id": "tarde", "latam": "tarde", "en": "late" },
+        { "id": "rico", "latam": "rico / rica", "en": "tasty, delicious", "note": "¡Qué rico! = Yum! Works everywhere." }
+      ],
+      "grammar": {
+        "title": "Gustar: “it pleases me”",
+        "explanation": "Gustar works backwards compared to English. “Me gusta el queso” literally means “the cheese pleases me”. So the verb agrees with the THING you like:\n\nme gusta + one thing or a verb: Me gusta el queso. Me gusta cocinar.\nme gustan + several things: Me gustan los mangos.\n\nThe person goes in front: me (me), te (you), le (him/her/usted), nos (us), os 🇪🇸 (you all), les (them/ustedes).\n\nEncantar (to love) works the same way: Me encanta la tortilla.\n\nAgreeing: A mí también (me too) · A mí tampoco (me neither) – NOT “yo también” with gustar.",
+        "explanationEs": "Con gustar, el verbo concuerda con la cosa: me gusta el queso / me gustan los mangos.\n\nPara responder: a mí también / a mí tampoco.",
+        "tables": [
+          {
+            "verb": "gustar",
+            "meaning": "to like (to please)",
+            "rows": [
+              { "person": "(a mí)", "form": "me gusta / me gustan" },
+              { "person": "(a ti)", "form": "te gusta / te gustan" },
+              { "person": "(a él / ella / usted)", "form": "le gusta / le gustan" },
+              { "person": "(a nosotros)", "form": "nos gusta / nos gustan" },
+              { "person": "(a vosotros)", "form": "os gusta / os gustan", "spainOnly": true },
+              { "person": "(a ellos / ustedes)", "form": "les gusta / les gustan" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "Me gusta el queso suave.", "en": "I like mild cheese." },
+          { "latam": "¿Te gustan las papas?", "spain": "¿Te gustan las patatas?", "en": "Do you like potatoes?" },
+          { "latam": "Me encanta probar cosas nuevas.", "en": "I love trying new things." },
+          { "latam": "¿Les gusta la comida mexicana?", "spain": "¿Os gusta la comida mexicana?", "en": "Do you (all) like Mexican food?" }
+        ],
+        "tip": "Add mucho for “a lot” and no for the negative: No me gusta mucho el queso fuerte."
+      },
+      "connector": {
+        "word": "además",
+        "meaning": "besides / also / what's more",
+        "explanation": "Además adds one more point – stronger than también. Use it at the start of a sentence to keep talking: “Hago arepas. Además, hago jugo.”",
+        "examples": [
+          { "latam": "Hago arepas. Además, hago jugo de mango.", "spain": "Hago arepas. Además, hago zumo de mango.", "en": "I'm making arepas. Also, I'm making mango juice." },
+          { "latam": "Me gusta Alcalá. Además, la comida es muy rica.", "en": "I like Alcalá. Besides, the food is delicious." },
+          { "latam": "La tortilla es barata y, además, es muy rica.", "en": "Tortilla is cheap and, what's more, it's delicious." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "Me ___ los mangos.",
+          "options": [
+            { "text": "gustan", "correct": true },
+            { "text": "gusta" },
+            { "text": "gusto" }
+          ],
+          "explanation": "Los mangos is plural → me gustan."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "¿Te ___ la comida colombiana?" },
+          "answers": { "latam": ["gusta"] },
+          "en": "Do you like Colombian food?",
+          "explanation": "La comida is singular → te gusta."
+        },
+        {
+          "type": "mc",
+          "prompt": "How do you say “mango juice”?",
+          "options": [
+            { "text": "jugo de mango", "correct": true, "variant": "latam" },
+            { "text": "zumo de mango", "correct": true, "variant": "spain" },
+            { "text": "leche de mango" }
+          ],
+          "explanation": "Jugo in Latin America, zumo in Spain. (In Spain, jugo means the juice of meat!)"
+        },
+        {
+          "type": "listen",
+          "mode": "type",
+          "audio": { "latam": "Me encantan las papas.", "spain": "Me encantan las patatas." },
+          "prompt": "Type what you hear",
+          "explanation": "Me encantan + plural = I love…"
+        },
+        {
+          "type": "dialogue",
+          "prompt": "Camila doesn't like late dinners. Neither do you!",
+          "context": [{ "speaker": "Camila", "latam": "No me gusta cenar tan tarde." }],
+          "options": [
+            { "text": "A mí tampoco.", "correct": true, "feedback": "Perfect – a mí + tampoco after a negative." },
+            { "text": "A mí también.", "feedback": "También agrees with a positive sentence. After “no me gusta”, use tampoco." },
+            { "text": "Yo tampoco.", "feedback": "Close! With gustar we say a mí, not yo." }
+          ],
+          "explanation": "With gustar: a mí también (positive) / a mí tampoco (negative)."
+        },
+        {
+          "type": "build",
+          "en": "I like cheese and, besides, I love mangoes.",
+          "answers": { "latam": ["Me gusta el queso y además me encantan los mangos."] },
+          "distractors": ["gustan", "encanta"],
+          "explanation": "el queso → gusta (singular); los mangos → encantan (plural)."
+        },
+        {
+          "type": "match",
+          "prompt": "Match the food talk",
+          "pairs": [
+            { "left": "me encanta", "right": "I love it" },
+            { "left": "no me gusta", "right": "I don't like it" },
+            { "left": "¡qué rico!", "right": "yum!" },
+            { "left": "probar", "right": "to try / taste" },
+            { "left": "suave", "right": "mild" }
+          ]
+        }
+      ],
+      "recap": [
+        "Me gusta + one thing / verb · me gustan + several things.",
+        "Agree: a mí también / a mí tampoco.",
+        "Add more with además: “Además, hago jugo 🌎 / zumo 🇪🇸.”"
+      ]
+    },
+    {
+      "id": "u2l3",
+      "title": "The menu of the day",
+      "titleEs": "El menú del día",
+      "minutes": 13,
+      "setting": "spain",
+      "scenario": "Lunch with Javi at a restaurant in Alcalá",
+      "dialogue": {
+        "title": "¿Qué hay de primero?",
+        "setting": "2 pm on a weekday. Javi takes Emma for a menú del día – a cheap three-course lunch that most Spanish restaurants offer.",
+        "lines": [
+          { "speaker": "Camarera", "latam": "Hola, buenas tardes. ¿Quieren el menú del día?", "spain": "Hola, ¿qué tal? ¿Queréis el menú del día?", "en": "Hello! Would you like the set menu?" },
+          { "speaker": "Javi", "latam": "Sí, por favor. ¿Qué hay de primero?", "en": "Yes, please. What's there for the first course?" },
+          { "speaker": "Camarera", "latam": "De primero hay sopa, ensalada o lentejas.", "en": "For the first course there's soup, salad or lentils." },
+          { "speaker": "Emma", "latam": "Para mí, la ensalada. ¿Y de segundo?", "en": "For me, the salad. And for the main course?" },
+          { "speaker": "Camarera", "latam": "De segundo hay pollo con papas o pescado.", "spain": "De segundo hay pollo con patatas o pescado.", "en": "For the main course there's chicken with potatoes or fish." },
+          { "speaker": "Javi", "latam": "Yo quiero el pollo. Emma, el menú incluye pan, bebida y postre. O sea, ¡es muy completo!", "en": "I want the chicken. Emma, the menu includes bread, a drink and dessert. I mean, it's really complete!" },
+          { "speaker": "Emma", "latam": "¿Y cuánto cuesta?", "en": "And how much does it cost?" },
+          { "speaker": "Camarera", "latam": "Doce euros.", "en": "Twelve euros." },
+          { "speaker": "Emma", "latam": "¡Qué barato! Entonces, el pescado para mí.", "en": "How cheap! Then the fish for me." },
+          { "speaker": "Camarera", "latam": "Perfecto. ¿Y de postre? Hay flan o fruta.", "en": "Perfect. And for dessert? There's flan or fruit." },
+          { "speaker": "Emma", "latam": "Un flan, por favor.", "en": "A flan, please." }
+        ]
+      },
+      "vocab": [
+        { "id": "menu-del-dia", "latam": "la comida corrida", "spain": "el menú del día", "en": "set lunch menu", "note": "Comida corrida is the Mexican name; in Colombia it's el corrientazo or menú ejecutivo." },
+        { "id": "de-primero", "latam": "de primero", "en": "for the first course" },
+        { "id": "de-segundo", "latam": "de segundo", "en": "for the main course" },
+        { "id": "postre", "latam": "el postre", "en": "dessert" },
+        { "id": "sopa", "latam": "la sopa", "en": "soup" },
+        { "id": "ensalada", "latam": "la ensalada", "en": "salad" },
+        { "id": "pollo", "latam": "el pollo", "en": "chicken" },
+        { "id": "pescado", "latam": "el pescado", "en": "fish (as food)", "note": "A live fish in the water is un pez." },
+        { "id": "pan", "latam": "el pan", "en": "bread" },
+        { "id": "cuanto-cuesta", "latam": "¿cuánto cuesta?", "en": "how much does it cost?" },
+        { "id": "barato", "latam": "barato / barata", "en": "cheap" },
+        { "id": "caro", "latam": "caro / cara", "en": "expensive" }
+      ],
+      "grammar": {
+        "title": "Gender and articles: el, la, los, las",
+        "explanation": "Every Spanish noun is masculine or feminine – even food!\n\nMost words ending in -o are masculine: el pollo, el pescado.\nMost words ending in -a are feminine: la sopa, la ensalada.\nOthers you just learn: el pan, el postre, la leche. Watch out: el menú, el día, el problema.\n\nPlural: add -s (or -es after a consonant): los postres, las ensaladas, los panes.\n\n“A / some”: un pollo, una sopa, unos postres, unas ensaladas.",
+        "explanationEs": "Los nombres son masculinos o femeninos: el pollo, la sopa. Plural: los, las. Indefinido: un, una, unos, unas.",
+        "tables": [
+          {
+            "verb": "the",
+            "meaning": "definite article",
+            "rows": [
+              { "person": "masculine", "form": "el pollo" },
+              { "person": "feminine", "form": "la sopa" },
+              { "person": "masculine plural", "form": "los postres" },
+              { "person": "feminine plural", "form": "las ensaladas" }
+            ]
+          },
+          {
+            "verb": "a / some",
+            "meaning": "indefinite article",
+            "rows": [
+              { "person": "masculine", "form": "un flan" },
+              { "person": "feminine", "form": "una ensalada" },
+              { "person": "masculine plural", "form": "unos panes" },
+              { "person": "feminine plural", "form": "unas lentejas" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "De primero quiero la sopa.", "en": "For the first course I want the soup." },
+          { "latam": "El menú incluye un postre.", "en": "The menu includes a dessert." },
+          { "latam": "Las papas están muy ricas.", "spain": "Las patatas están muy ricas.", "en": "The potatoes are delicious." }
+        ],
+        "compare": {
+          "title": "A cheap lunch menu",
+          "latam": [
+            { "label": "Mexico", "text": "la comida corrida", "en": "set lunch" },
+            { "label": "Colombia", "text": "el menú ejecutivo", "en": "set lunch" }
+          ],
+          "spain": [
+            { "label": "Spain", "text": "el menú del día", "en": "set lunch" },
+            { "label": "timing", "text": "de dos a cuatro", "en": "from 2 to 4 pm" }
+          ],
+          "note": "In Spain, lunch (la comida) is the main meal of the day, eaten around 2–3 pm."
+        }
+      },
+      "connector": {
+        "word": "o sea",
+        "meaning": "I mean / in other words / so",
+        "explanation": "O sea lets you explain or rephrase what you just said. It's everywhere in casual speech, in Spain and in Latin America. Perfect when you're searching for a simpler way to say something!",
+        "examples": [
+          { "latam": "Incluye pan, bebida y postre. O sea, ¡es muy completo!", "en": "It includes bread, a drink and dessert. I mean, it's really complete!" },
+          { "latam": "Son doce euros, o sea, es barato.", "en": "It's twelve euros, so it's cheap." },
+          { "latam": "No como carne, o sea, soy vegetariana.", "en": "I don't eat meat, I mean, I'm vegetarian." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "___ ensalada",
+          "options": [
+            { "text": "la", "correct": true },
+            { "text": "el" },
+            { "text": "los" }
+          ],
+          "explanation": "Ensalada ends in -a → feminine → la ensalada."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "De ___, quiero el flan." },
+          "answers": { "latam": ["postre"] },
+          "en": "For dessert, I want the flan.",
+          "explanation": "De primero, de segundo, de postre – the three courses."
+        },
+        {
+          "type": "match",
+          "prompt": "Match the dishes",
+          "pairs": [
+            { "left": "la sopa", "right": "soup" },
+            { "left": "el pollo", "right": "chicken" },
+            { "left": "el pescado", "right": "fish" },
+            { "left": "el pan", "right": "bread" },
+            { "left": "el postre", "right": "dessert" }
+          ]
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "El menú cuesta doce euros, con pan, bebida y postre." },
+          "prompt": "What's included in the menu?",
+          "options": [
+            { "text": "Bread, a drink and dessert", "correct": true },
+            { "text": "Only bread" },
+            { "text": "A drink, but no dessert" }
+          ],
+          "explanation": "Con pan, bebida y postre = with bread, a drink and dessert."
+        },
+        {
+          "type": "build",
+          "en": "The menu includes dessert, I mean, it's very cheap.",
+          "answers": { "latam": ["El menú incluye postre, o sea, es muy barato."] },
+          "distractors": ["la", "caro"],
+          "explanation": "O sea rephrases: includes dessert → so it's cheap."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "The waitress asks about your main course.",
+          "context": [{ "speaker": "Camarera", "latam": "¿Y qué quieren de segundo?", "spain": "¿Y qué queréis de segundo?" }],
+          "options": [
+            { "text": "Para mí, el pollo, por favor.", "correct": true, "feedback": "¡Muy bien!" },
+            { "text": "De primero, la sopa.", "feedback": "She's asking about the second course (de segundo)." },
+            { "text": "La cuenta, por favor.", "feedback": "Too early – you haven't eaten yet!" }
+          ],
+          "explanation": "De segundo = main course. Answer with Para mí… + the dish."
+        },
+        {
+          "type": "mc",
+          "prompt": "A cheap set lunch menu is called…",
+          "options": [
+            { "text": "el menú del día", "correct": true, "variant": "spain" },
+            { "text": "la comida corrida", "correct": true, "variant": "latam" },
+            { "text": "el desayuno" }
+          ],
+          "explanation": "Menú del día in Spain, comida corrida in Mexico. El desayuno is breakfast."
+        }
+      ],
+      "recap": [
+        "Order courses: de primero…, de segundo…, de postre…",
+        "Nouns have gender: el pollo, la sopa, los postres, las ensaladas.",
+        "Rephrase with o sea: “Son doce euros, o sea, es barato.”"
+      ]
+    },
+    {
+      "id": "u2l4",
+      "title": "Shopping at the market",
+      "titleEs": "En el mercado",
+      "minutes": 13,
+      "setting": "latam",
+      "scenario": "Don Ernesto's Peruvian fruit stall at the market",
+      "dialogue": {
+        "title": "El puesto de don Ernesto",
+        "setting": "Saturday morning at the market. Don Ernesto, who is from Lima, Peru, runs a fruit and vegetable stall.",
+        "lines": [
+          { "speaker": "Don Ernesto", "latam": "¡Buenos días, señorita! ¿Qué le doy?", "spain": "¡Buenos días, guapa! ¿Qué te pongo?", "en": "Good morning! What can I get you?" },
+          { "speaker": "Emma", "latam": "Buenos días. Quiero un kilo de papas, por favor.", "spain": "Buenos días. Quiero un kilo de patatas, por favor.", "en": "Good morning. I'd like a kilo of potatoes, please." },
+          { "speaker": "Don Ernesto", "latam": "¿Estas papas o esas? Estas son de Perú, ¡las mejores!", "spain": "¿Estas patatas o esas? Estas son de Perú, ¡las mejores!", "en": "These potatoes or those? These are from Peru – the best!" },
+          { "speaker": "Emma", "latam": "Pues… estas, por favor. ¿Y cuánto cuestan los duraznos?", "spain": "Pues… estas, por favor. ¿Y cuánto cuestan los melocotones?", "en": "Well… these, please. And how much are the peaches?" },
+          { "speaker": "Don Ernesto", "latam": "Tres euros el kilo. Están muy dulces.", "en": "Three euros a kilo. They're very sweet." },
+          { "speaker": "Emma", "latam": "Pues medio kilo, por favor. Y una docena de huevos.", "en": "Well then, half a kilo, please. And a dozen eggs." },
+          { "speaker": "Don Ernesto", "latam": "Aquí tiene. ¿Algo más?", "spain": "Aquí tienes. ¿Algo más?", "en": "Here you are. Anything else?" },
+          { "speaker": "Emma", "latam": "Sí, ¿tiene aguacates?", "spain": "Sí, ¿tienes aguacates?", "en": "Yes, do you have avocados?" },
+          { "speaker": "Don Ernesto", "latam": "Claro. Estos están perfectos para hoy.", "en": "Of course. These are perfect for today." },
+          { "speaker": "Emma", "latam": "Perfecto. ¿Cuánto es todo?", "en": "Perfect. How much is everything?" },
+          { "speaker": "Don Ernesto", "latam": "Son ocho euros. ¡Gracias, señorita, que le vaya bien!", "spain": "Son ocho euros. ¡Gracias, guapa, hasta luego!", "en": "That's eight euros. Thanks, have a good day!" }
+        ]
+      },
+      "vocab": [
+        { "id": "mercado", "latam": "el mercado", "en": "market" },
+        { "id": "un-kilo", "latam": "un kilo de…", "en": "a kilo of…" },
+        { "id": "medio-kilo", "latam": "medio kilo", "en": "half a kilo" },
+        { "id": "peach", "latam": "el durazno", "spain": "el melocotón", "en": "peach" },
+        { "id": "docena", "latam": "una docena", "en": "a dozen" },
+        { "id": "huevo", "latam": "el huevo", "en": "egg" },
+        { "id": "aguacate", "latam": "el aguacate", "en": "avocado", "note": "In Argentina, Chile and Peru: la palta." },
+        { "id": "dulce", "latam": "dulce", "en": "sweet" },
+        { "id": "algo-mas", "latam": "¿algo más?", "en": "anything else?" },
+        { "id": "aqui-tiene", "latam": "aquí tiene", "spain": "aquí tienes", "en": "here you are", "note": "Tiene = usted (polite), tienes = tú. Spanish market sellers often use tú." },
+        { "id": "todo", "latam": "todo", "en": "everything, all" }
+      ],
+      "grammar": {
+        "title": "This and that: este, ese",
+        "explanation": "Este / esta = this (near me). Ese / esa = that (near you).\nThey change for gender and number, like adjectives:\n\neste durazno · esta papa · estos huevos · estas papas\nese queso · esa sopa · esos mangos · esas fresas\n\nOn their own they mean “this one / that one”: ¿Estas o esas? – These or those?\n\nQuantities are easy: un kilo de…, medio kilo de…, una docena de…",
+        "explanationEs": "Este/esta/estos/estas = cerca de mí. Ese/esa/esos/esas = cerca de ti.\nCantidades: un kilo de, medio kilo de, una docena de.",
+        "tables": [
+          {
+            "verb": "este",
+            "meaning": "this / these",
+            "rows": [
+              { "person": "masculine", "form": "este" },
+              { "person": "feminine", "form": "esta" },
+              { "person": "masculine plural", "form": "estos" },
+              { "person": "feminine plural", "form": "estas" }
+            ]
+          },
+          {
+            "verb": "ese",
+            "meaning": "that / those",
+            "rows": [
+              { "person": "masculine", "form": "ese" },
+              { "person": "feminine", "form": "esa" },
+              { "person": "masculine plural", "form": "esos" },
+              { "person": "feminine plural", "form": "esas" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "Quiero estos aguacates.", "en": "I want these avocados." },
+          { "latam": "¿Cuánto cuesta esa sandía?", "en": "How much is that watermelon?" },
+          { "latam": "Medio kilo de duraznos, por favor.", "spain": "Medio kilo de melocotones, por favor.", "en": "Half a kilo of peaches, please." }
+        ],
+        "compare": {
+          "title": "Talking to the seller",
+          "latam": [
+            { "text": "¿Qué le doy?", "en": "What can I give you? (usted)" },
+            { "text": "Aquí tiene.", "en": "Here you are. (usted)" },
+            { "text": "¡Que le vaya bien!", "en": "Have a good day!" }
+          ],
+          "spain": [
+            { "text": "¿Qué te pongo?", "en": "What can I get you? (tú)" },
+            { "text": "Aquí tienes.", "en": "Here you are. (tú)" },
+            { "text": "¡Hasta luego, guapa!", "en": "See you, love!" }
+          ],
+          "note": "Don't be surprised when a Spanish market seller calls you guapa or cariño – it's friendly, not flirty."
+        }
+      },
+      "connector": {
+        "word": "pues",
+        "meaning": "well / so / then",
+        "explanation": "Pues starts a reaction or decision, often while you think: “Pues… estas.” It also means “then” after new info: “¿Están dulces? Pues medio kilo.” Spaniards use it constantly; it's common in Latin America too.",
+        "examples": [
+          { "latam": "Pues… estas, por favor.", "en": "Well… these, please." },
+          { "latam": "¿Están dulces? Pues medio kilo.", "en": "They're sweet? Then half a kilo." },
+          { "latam": "—¿Te gusta? —Pues sí, ¡mucho!", "en": "—Do you like it? —Well yes, a lot!" }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "Ask: “How much are the peaches?”",
+          "options": [
+            { "text": "¿Cuánto cuestan los duraznos?", "correct": true, "variant": "latam" },
+            { "text": "¿Cuánto cuestan los melocotones?", "correct": true, "variant": "spain" },
+            { "text": "¿Cuánto cuesta los duraznos?" },
+            { "text": "¿Cuántos duraznos?" }
+          ],
+          "explanation": "Plural thing → cuestan. Durazno 🌎 / melocotón 🇪🇸."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "Quiero ___ papas, no esas.", "spain": "Quiero ___ patatas, no esas." },
+          "answers": { "latam": ["estas"] },
+          "en": "I want these potatoes, not those.",
+          "hint": "this/these – feminine plural",
+          "explanation": "Papas/patatas are feminine plural → estas."
+        },
+        {
+          "type": "match",
+          "prompt": "Match the market phrases",
+          "pairs": [
+            { "left": "un kilo de", "right": "a kilo of" },
+            { "left": "medio kilo", "right": "half a kilo" },
+            { "left": "una docena", "right": "a dozen" },
+            { "left": "¿algo más?", "right": "anything else?" },
+            { "left": "aquí tiene", "right": "here you are" }
+          ]
+        },
+        {
+          "type": "sort",
+          "prompt": "🌎 or 🇪🇸? Sort the food words",
+          "items": [
+            { "text": "el durazno", "variant": "latam", "en": "peach" },
+            { "text": "el melocotón", "variant": "spain", "en": "peach" },
+            { "text": "la papa", "variant": "latam", "en": "potato" },
+            { "text": "la patata", "variant": "spain", "en": "potato" },
+            { "text": "el jugo", "variant": "latam", "en": "juice" },
+            { "text": "el zumo", "variant": "spain", "en": "juice" },
+            { "text": "¿Qué te pongo?", "variant": "spain", "en": "What can I get you?" }
+          ]
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "Medio kilo de duraznos y una docena de huevos.", "spain": "Medio kilo de melocotones y una docena de huevos." },
+          "prompt": "What does she buy?",
+          "options": [
+            { "text": "Half a kilo of peaches and a dozen eggs", "correct": true },
+            { "text": "A kilo of peaches and six eggs" },
+            { "text": "Half a kilo of potatoes and a dozen eggs" }
+          ],
+          "explanation": "Medio kilo = half a kilo, una docena = a dozen."
+        },
+        {
+          "type": "build",
+          "en": "Well… I want these avocados, please.",
+          "answers": { "latam": ["Pues quiero estos aguacates, por favor."] },
+          "distractors": ["estas", "este"],
+          "explanation": "Aguacates is masculine plural → estos."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "You have everything you need.",
+          "context": [{ "speaker": "Don Ernesto", "latam": "Aquí tiene. ¿Algo más?", "spain": "Aquí tienes. ¿Algo más?" }],
+          "options": [
+            { "text": "No, gracias. ¿Cuánto es todo?", "correct": true, "feedback": "Polite and complete." },
+            { "text": "Estoy bien, gracias.", "feedback": "That answers “How are you?”." },
+            { "text": "Sí, aquí tiene.", "feedback": "That's what the seller says when handing you something." }
+          ],
+          "explanation": "¿Algo más? = anything else? Finish with ¿Cuánto es todo?"
+        }
+      ],
+      "recap": [
+        "Point at things: este/esta (this), ese/esa (that) + plurals.",
+        "Buy amounts: un kilo de…, medio kilo, una docena de…",
+        "Think out loud with pues: “Pues… medio kilo, por favor.”"
+      ]
+    }
+  ]
+}

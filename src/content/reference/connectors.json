@@ -1,0 +1,17 @@
+{
+  "intro": "Connectors are the glue that turns short answers into real conversation. Learn these 12 and you'll never be stuck at “Sí. / No.” again.",
+  "connectors": [
+    { "word": "también", "meaning": "also, too", "group": "Adding", "lesson": "u1l2", "use": "Agree or add something: yo también = me too (with gustar: a mí también).", "example": { "latam": "Estudio inglés y también trabajo.", "en": "I study English and I also work." } },
+    { "word": "además", "meaning": "besides, what's more", "group": "Adding", "lesson": "u2l2", "use": "Add one more, stronger point – often at the start of a sentence.", "example": { "latam": "Me gusta Alcalá. Además, la comida es muy rica.", "en": "I like Alcalá. Besides, the food is delicious." } },
+    { "word": "pero", "meaning": "but", "group": "Contrast", "lesson": "u1l1", "use": "The everyday contrast word.", "example": { "latam": "Soy de Inglaterra, pero vivo en Alcalá.", "en": "I'm from England, but I live in Alcalá." } },
+    { "word": "sin embargo", "meaning": "however", "group": "Contrast", "lesson": "u3l4", "use": "A stronger, slightly more formal pero; usually starts a sentence.", "example": { "latam": "El tren es caro. Sin embargo, es muy cómodo.", "en": "The train is expensive. However, it's very comfortable." } },
+    { "word": "porque", "meaning": "because", "group": "Cause & effect", "lesson": "u1l3", "use": "Give a reason. Don't mix it up with ¿por qué? (why?).", "example": { "latam": "Estoy cansada porque tengo muchas clases.", "en": "I'm tired because I have lots of classes." } },
+    { "word": "por eso", "meaning": "that's why, so", "group": "Cause & effect", "lesson": "u3l1", "use": "Give the result of something you just said.", "example": { "latam": "Me encanta la historia, por eso vivo en Alcalá.", "en": "I love history, that's why I live in Alcalá." } },
+    { "word": "entonces", "meaning": "so, then", "group": "Cause & effect", "lesson": "u2l1", "use": "Draw a conclusion or move the conversation on.", "example": { "latam": "¿Es gratis? Entonces vuelvo mañana.", "en": "It's free? Then I'm coming back tomorrow." } },
+    { "word": "cuando", "meaning": "when", "group": "Time", "lesson": "u3l2", "use": "Link two actions in time (¿cuándo? with accent is the question).", "example": { "latam": "Cuando llueve, tomo el autobús.", "spain": "Cuando llueve, cojo el autobús.", "en": "When it rains, I take the bus." } },
+    { "word": "mientras", "meaning": "while", "group": "Time", "lesson": "u3l3", "use": "Two things at the same time – essential for telling stories in the past.", "example": { "latam": "Escucho música mientras viajo en tren.", "en": "I listen to music while I travel by train." } },
+    { "word": "bueno", "meaning": "well…, OK", "group": "Fillers & rephrasing", "lesson": "u1l4", "use": "Buy time, soften an answer, or close a chat (“Bueno, me voy”).", "example": { "latam": "Bueno… no sé. ¿Tú qué piensas?", "en": "Well… I don't know. What do you think?" } },
+    { "word": "pues", "meaning": "well, so, then", "group": "Fillers & rephrasing", "lesson": "u2l4", "use": "React or decide while thinking. Hugely common in Spain.", "example": { "latam": "—¿Te gusta? —Pues sí, ¡mucho!", "en": "—Do you like it? —Well yes, a lot!" } },
+    { "word": "o sea", "meaning": "I mean, in other words", "group": "Fillers & rephrasing", "lesson": "u2l3", "use": "Explain or rephrase what you just said – a lifesaver when you lack a word.", "example": { "latam": "Son doce euros, o sea, es barato.", "en": "It's twelve euros, so it's cheap." } }
+  ]
+}

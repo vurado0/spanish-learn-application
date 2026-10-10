@@ -1,0 +1,61 @@
+{
+  "intro": "You already know some greetings – let's not waste your time! Answer 10 quick questions and we'll skip what you already know. No pressure: tap “I don't know” whenever you're unsure.",
+  "questions": [
+    {
+      "id": "p1", "lessonId": "u1l1",
+      "prompt": "What does this mean?", "say": { "latam": "¿Cómo te llamas?" },
+      "options": [{ "text": "What's your name?", "correct": true }, { "text": "How are you?" }, { "text": "Where are you from?" }]
+    },
+    {
+      "id": "p2", "lessonId": "u1l1",
+      "prompt": "“I'm from England.”",
+      "options": [{ "text": "Soy de Inglaterra.", "correct": true }, { "text": "Estoy de Inglaterra." }, { "text": "Es de Inglaterra." }]
+    },
+    {
+      "id": "p3", "lessonId": "u1l2",
+      "prompt": "Nosotros ___ español.",
+      "options": [{ "text": "hablamos", "correct": true }, { "text": "hablan" }, { "text": "hablo" }]
+    },
+    {
+      "id": "p4", "lessonId": "u1l3",
+      "prompt": "What does this mean?", "say": { "latam": "Estoy cansada." },
+      "options": [{ "text": "I'm tired.", "correct": true }, { "text": "I'm bored." }, { "text": "I'm married." }]
+    },
+    {
+      "id": "p5", "lessonId": "u1l3",
+      "prompt": "Madrid ___ en España.",
+      "options": [{ "text": "está", "correct": true }, { "text": "es" }, { "text": "hay" }]
+    },
+    {
+      "id": "p6", "lessonId": "u1l4",
+      "prompt": "Yo ___ dos hermanos.",
+      "options": [{ "text": "tengo", "correct": true }, { "text": "tiene" }, { "text": "soy" }]
+    },
+    {
+      "id": "p7", "lessonId": "u2l2",
+      "prompt": "“I like tapas.”",
+      "options": [{ "text": "Me gustan las tapas.", "correct": true }, { "text": "Me gusta las tapas." }, { "text": "Yo gusto las tapas." }]
+    },
+    {
+      "id": "p8", "lessonId": "u2l3",
+      "prompt": "Choose the article: ___ sopa",
+      "options": [{ "text": "la", "correct": true }, { "text": "el" }, { "text": "los" }]
+    },
+    {
+      "id": "p9", "lessonId": "u3l1",
+      "prompt": "“There is a pharmacy near here.”",
+      "options": [{ "text": "Hay una farmacia cerca.", "correct": true }, { "text": "Está una farmacia cerca." }, { "text": "Es una farmacia cerca." }]
+    },
+    {
+      "id": "p10", "lessonId": "u3l3",
+      "prompt": "What time is it?", "say": { "latam": "Son las tres y media." },
+      "options": [{ "text": "3:30", "correct": true }, { "text": "3:15" }, { "text": "2:30" }]
+    }
+  ],
+  "bands": [
+    { "minScore": 0, "startLessonId": "u1l1", "message": "Great – we'll build your conversations from the ground up, starting with introductions." },
+    { "minScore": 4, "startLessonId": "u1l3", "message": "You know the very basics! We'll skip introductions and start with ser vs estar." },
+    { "minScore": 7, "startLessonId": "u2l1", "message": "Nice! You can already chat a little. Let's go straight to food and bars." },
+    { "minScore": 9, "startLessonId": "u3l1", "message": "¡Impresionante! You know the A1 basics – we'll start with getting around." }
+  ]
+}

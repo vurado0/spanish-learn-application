@@ -1,0 +1,103 @@
+{
+  "intro": "Your tense roadmap from A1 to early B1. Each card shows when to use the tense and examples in 🌎 Latin American and 🇪🇸 Spain Spanish.",
+  "tenses": [
+    {
+      "id": "presente", "name": "Present (regular)", "nameEs": "Presente", "unit": "Unit 1",
+      "when": ["Facts and routines", "What's happening now", "Near future plans (“Ceno con Javi esta noche”)"],
+      "formation": "habl-ar → -o, -as, -a, -amos, -áis 🇪🇸, -an · com-er → -o, -es, -e, -emos, -éis 🇪🇸, -en · viv-ir → -o, -es, -e, -imos, -ís 🇪🇸, -en",
+      "examples": [
+        { "latam": "Estudio Historia en Alcalá.", "en": "I study history in Alcalá." },
+        { "latam": "¿Ustedes cenan tarde?", "spain": "¿Vosotros cenáis tarde?", "en": "Do you (all) eat dinner late?" }
+      ]
+    },
+    {
+      "id": "presente-irregular", "name": "Present (irregular & stem-changing)", "nameEs": "Presente irregular", "unit": "Units 1 & 3",
+      "when": ["The most common verbs – ser, estar, tener, ir, hacer, querer, poder…"],
+      "formation": "tengo, voy, hago, soy, estoy · e → ie (empiezo) · o → ue (vuelvo) – nosotros/vosotros don't change",
+      "examples": [
+        { "latam": "Tengo dos hermanos y voy a la universidad a pie.", "en": "I have two siblings and I walk to university." },
+        { "latam": "Mis clases empiezan a las diez.", "en": "My classes start at ten." }
+      ]
+    },
+    {
+      "id": "ser-estar", "name": "Ser vs estar", "nameEs": "Ser y estar", "unit": "Unit 1",
+      "when": ["Ser: identity, origin, job, personality, time", "Estar: feelings, temporary states, location"],
+      "formation": "ser: soy, eres, es, somos, sois 🇪🇸, son · estar: estoy, estás, está, estamos, estáis 🇪🇸, están",
+      "examples": [
+        { "latam": "Diego es de México y es muy simpático.", "en": "Diego is from Mexico and he's very nice." },
+        { "latam": "Hoy está cansado y está en casa.", "en": "Today he's tired and he's at home." }
+      ]
+    },
+    {
+      "id": "gustar", "name": "Gustar-type verbs", "nameEs": "Gustar", "unit": "Units 2 & 6",
+      "when": ["Likes and dislikes, things you love (encantar), things that interest you (interesar)"],
+      "formation": "me / te / le / nos / os 🇪🇸 / les + gusta (one thing, verb) or gustan (several things)",
+      "examples": [
+        { "latam": "Me gusta la salsa, pero me encantan los boleros.", "en": "I like salsa, but I love boleros." },
+        { "latam": "¿Les gusta el flamenco?", "spain": "¿Os gusta el flamenco?", "en": "Do you (all) like flamenco?" }
+      ]
+    },
+    {
+      "id": "preterito", "name": "Simple past", "nameEs": "Pretérito (indefinido)", "unit": "Unit 4",
+      "when": ["Finished actions at a specific time in the past", "In Latin America: also for things that happened today", "The main events of a story"],
+      "formation": "-ar: -é, -aste, -ó, -amos, -asteis 🇪🇸, -aron · -er/-ir: -í, -iste, -ió, -imos, -isteis 🇪🇸, -ieron",
+      "examples": [
+        { "latam": "El verano pasado viajé a Colombia.", "en": "Last summer I travelled to Colombia." },
+        { "latam": "Hoy comí paella.", "spain": "Hoy he comido paella.", "en": "Today I ate / have eaten paella." }
+      ],
+      "spainNote": "Spain uses the pretérito for clearly finished time periods (ayer, el año pasado, en 2019), but switches to the pretérito perfecto for today, this week, this year and life experiences."
+    },
+    {
+      "id": "perfecto", "name": "Present perfect", "nameEs": "Pretérito perfecto", "unit": "Unit 4",
+      "when": ["🇪🇸 Spain: anything that happened today, this week, this year", "Both: life experiences (“¿Has estado en México?”)", "Both: ya / todavía no (already / not yet)"],
+      "formation": "haber (he, has, ha, hemos, habéis 🇪🇸, han) + participle (-ado / -ido): he comido, has viajado",
+      "examples": [
+        { "latam": "¿Alguna vez has estado en México?", "en": "Have you ever been to Mexico?" },
+        { "latam": "Esta mañana fui al mercado.", "spain": "Esta mañana he ido al mercado.", "en": "This morning I went to the market." }
+      ],
+      "spainNote": "Around Alcalá and Madrid you'll hear this constantly: “¿Qué has hecho hoy?” – “He ido a clase y he comido con Lucía.”"
+    },
+    {
+      "id": "imperfecto", "name": "Imperfect", "nameEs": "Imperfecto", "unit": "Unit 5",
+      "when": ["Describing the past: how things were, background", "Habits: what you used to do", "Age, time and weather in the past"],
+      "formation": "-ar: -aba, -abas, -aba, -ábamos, -abais 🇪🇸, -aban · -er/-ir: -ía, -ías, -ía, -íamos, -íais 🇪🇸, -ían · irregular: era, iba, veía",
+      "examples": [
+        { "latam": "Cervantes nació en Alcalá cuando la universidad era muy importante.", "en": "Cervantes was born in Alcalá when the university was very important." },
+        { "latam": "De niña, iba a la playa todos los veranos.", "en": "As a girl, I used to go to the beach every summer." }
+      ]
+    },
+    {
+      "id": "pret-vs-imp", "name": "Pretérito vs imperfecto", "nameEs": "Pretérito o imperfecto", "unit": "Unit 5",
+      "when": ["Imperfecto = the scene, the background, what WAS happening", "Pretérito = the event, what HAPPENED", "Often together with mientras / cuando"],
+      "formation": "Mientras + imperfecto, … pretérito: “Mientras esperaba el tren, vi a Javi.”",
+      "examples": [
+        { "latam": "Mientras caminaba por la calle Mayor, vi una cigüeña enorme.", "en": "While I was walking down the Calle Mayor, I saw a huge stork." },
+        { "latam": "Llovía cuando llegamos a Madrid.", "en": "It was raining when we arrived in Madrid." }
+      ]
+    },
+    {
+      "id": "ir-a", "name": "Near future", "nameEs": "Ir a + infinitivo", "unit": "Unit 7",
+      "when": ["Plans and intentions", "Things that are about to happen", "The most common way to talk about the future in conversation"],
+      "formation": "ir (voy, vas, va, vamos, vais 🇪🇸, van) + a + infinitive",
+      "examples": [
+        { "latam": "En febrero voy a tener conversaciones reales en español.", "en": "In February I'm going to have real conversations in Spanish." },
+        { "latam": "¿Qué van a hacer el fin de semana?", "spain": "¿Qué vais a hacer el fin de semana?", "en": "What are you (all) going to do at the weekend?" }
+      ]
+    }
+  ],
+  "pastCompare": {
+    "title": "Talking about today: Hoy comí 🌎 vs Hoy he comido 🇪🇸",
+    "latam": [
+      { "label": "today", "text": "Hoy comí con Diego.", "en": "Today I ate with Diego." },
+      { "label": "this morning", "text": "Esta mañana fui al mercado.", "en": "This morning I went to the market." },
+      { "label": "already?", "text": "¿Ya comiste?", "en": "Have you eaten yet?" }
+    ],
+    "spain": [
+      { "label": "today", "text": "Hoy he comido con Lucía.", "en": "Today I've eaten with Lucía." },
+      { "label": "this morning", "text": "Esta mañana he ido al mercado.", "en": "This morning I went to the market." },
+      { "label": "already?", "text": "¿Ya has comido?", "en": "Have you eaten yet?" }
+    ],
+    "note": "Both are correct and understood everywhere. Use the 🌎 form with Latin American friends and expect to hear the 🇪🇸 form all day in Alcalá. For yesterday and earlier, both regions use the pretérito: “Ayer comí paella.”"
+  },
+  "timeline": "Quick decision guide:\n• Happening now / routine → presente\n• Finished event (yesterday, last year) → pretérito\n• Today / this week in Spain, or life experience → pretérito perfecto\n• Background, description, “used to” → imperfecto\n• Plans → ir a + infinitivo"
+}

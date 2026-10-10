@@ -1,0 +1,704 @@
+{
+  "id": "u1",
+  "order": 1,
+  "level": "A1",
+  "title": "Meeting people & small talk",
+  "titleEs": "Conocer gente",
+  "emoji": "👋",
+  "description": "Introduce yourself, meet your flatmates and chat at the Universidad de Alcalá.",
+  "badge": { "id": "badge-u1", "name": "Rompehielos", "emoji": "🧊" },
+  "lessons": [
+    {
+      "id": "u1l1",
+      "title": "Hi! What's your name?",
+      "titleEs": "¡Hola! ¿Cómo te llamas?",
+      "minutes": 12,
+      "setting": "latam",
+      "scenario": "Meeting Valeria from Mexico at the university",
+      "dialogue": {
+        "title": "Nueva compañera de clase",
+        "setting": "First day of class at the Universidad de Alcalá. Emma (from England) sits next to Valeria, an exchange student from Guadalajara, Mexico.",
+        "lines": [
+          { "speaker": "Valeria", "latam": "¡Hola! ¿Cómo te llamas?", "en": "Hi! What's your name?" },
+          { "speaker": "Emma", "latam": "Hola, me llamo Emma. ¿Y tú?", "en": "Hi, my name is Emma. And you?" },
+          { "speaker": "Valeria", "latam": "Yo soy Valeria. Mucho gusto.", "en": "I'm Valeria. Nice to meet you." },
+          { "speaker": "Emma", "latam": "Encantada. ¿De dónde eres?", "en": "Pleased to meet you. Where are you from?" },
+          { "speaker": "Valeria", "latam": "Soy de México, de Guadalajara. ¿Y tú?", "en": "I'm from Mexico, from Guadalajara. And you?" },
+          { "speaker": "Emma", "latam": "Soy de Inglaterra, pero vivo aquí en Alcalá.", "en": "I'm from England, but I live here in Alcalá." },
+          { "speaker": "Valeria", "latam": "¡Qué padre! ¿Eres estudiante?", "spain": "¡Qué guay! ¿Eres estudiante?", "en": "How cool! Are you a student?" },
+          { "speaker": "Emma", "latam": "Sí, soy estudiante de Historia. ¿Y tú?", "en": "Yes, I'm a history student. And you?" },
+          { "speaker": "Valeria", "latam": "Yo también. ¡Y la profesora es de México!", "en": "Me too. And the teacher is from Mexico!" },
+          { "speaker": "Emma", "latam": "¡Genial! Bueno, ¡nos vemos en clase! ¡Chao!", "spain": "¡Genial! Bueno, ¡nos vemos en clase! ¡Hasta luego!", "en": "Great! Well, see you in class! Bye!" }
+        ]
+      },
+      "vocab": [
+        { "id": "me-llamo", "latam": "me llamo…", "en": "my name is…", "note": "Literally “I call myself”. Ask: ¿Cómo te llamas?" },
+        { "id": "mucho-gusto", "latam": "mucho gusto", "en": "nice to meet you" },
+        { "id": "encantado", "latam": "encantado / encantada", "en": "pleased to meet you (m / f)", "note": "Very common in Spain; in Latin America mucho gusto is more frequent." },
+        { "id": "de-donde-eres", "latam": "¿de dónde eres?", "en": "where are you from?" },
+        { "id": "soy-de", "latam": "soy de…", "en": "I'm from…" },
+        { "id": "estudiante", "latam": "el / la estudiante", "en": "student" },
+        { "id": "vivo-aqui", "latam": "vivo aquí", "en": "I live here" },
+        { "id": "que-cool", "latam": "¡qué padre!", "spain": "¡qué guay!", "en": "how cool!", "note": "¡Qué padre! is Mexican; other countries say ¡qué chévere! or ¡qué bacán!" },
+        { "id": "profesor", "latam": "el profesor / la profesora", "en": "teacher (m / f)" },
+        { "id": "nos-vemos", "latam": "nos vemos", "en": "see you" },
+        { "id": "bye", "latam": "chao", "spain": "hasta luego", "en": "bye", "note": "Spaniards say hasta luego even when they won't see you later today." }
+      ],
+      "grammar": {
+        "title": "Ser: who you are and where you're from",
+        "explanation": "Ser means “to be” for identity: your name, where you're from, your job or studies.\n\nSoy de Inglaterra. – I'm from England.\nSoy estudiante. – I'm a student.\n\nSpanish usually drops the pronoun because the verb already shows who it is: “Soy Emma” instead of “Yo soy Emma”. Use yo/tú only for emphasis or contrast (“Yo soy de Inglaterra, ¿y tú?”).\n\nYou have two ways to say “you”: tú (friendly) and usted (polite). For a group, Latin America always uses ustedes. Spain uses vosotros with friends and ustedes only in formal situations.",
+        "explanationEs": "Usamos ser para la identidad: el nombre, el origen, la profesión.\n\nSoy de Inglaterra. Soy estudiante.\n\nNormalmente no decimos “yo”: el verbo ya dice quién es.\n\nTú es informal, usted es formal. Para un grupo: en Latinoamérica siempre ustedes; en España vosotros (informal) y ustedes (formal).",
+        "tables": [
+          {
+            "verb": "ser",
+            "meaning": "to be (identity, origin)",
+            "rows": [
+              { "person": "yo", "form": "soy" },
+              { "person": "tú", "form": "eres" },
+              { "person": "él / ella / usted", "form": "es" },
+              { "person": "nosotros / nosotras", "form": "somos" },
+              { "person": "vosotros / vosotras", "form": "sois", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "son" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "Soy de Inglaterra.", "en": "I'm from England." },
+          { "latam": "¿Eres estudiante?", "en": "Are you a student?" },
+          { "latam": "La profesora es de México.", "en": "The teacher is from Mexico." },
+          { "latam": "¿Ustedes son de aquí?", "spain": "¿Vosotros sois de aquí?", "en": "Are you (all) from here?" }
+        ],
+        "compare": {
+          "title": "Tú, usted, ustedes, vosotros",
+          "latam": [
+            { "label": "a friend", "text": "¿Tú eres de aquí?", "en": "Are you from here?" },
+            { "label": "stranger / older person", "text": "¿Usted es de aquí?", "en": "Are you from here? (polite)" },
+            { "label": "any group", "text": "¿Ustedes son de aquí?", "en": "Are you all from here?" }
+          ],
+          "spain": [
+            { "label": "almost anyone", "text": "¿Tú eres de aquí?", "en": "Are you from here?" },
+            { "label": "group of friends", "text": "¿Vosotros sois de aquí?", "en": "Are you all from here?" },
+            { "label": "formal group", "text": "¿Ustedes son de aquí?", "en": "Are you all from here? (formal)" }
+          ],
+          "note": "Spain uses tú a lot – even with shop staff and strangers your age. In Mexico and Colombia, usted is more common with strangers, older people and at work. When in doubt, start with usted and switch when the other person uses tú."
+        },
+        "tip": "Can't remember a form? “Soy, eres, es” covers 90% of small talk."
+      },
+      "connector": {
+        "word": "pero",
+        "meaning": "but",
+        "explanation": "Pero joins two ideas that contrast. It's the easiest way to make a sentence longer and sound more natural – instead of two short sentences, say one: “Soy de Inglaterra, pero vivo en Alcalá.”",
+        "examples": [
+          { "latam": "Soy de Inglaterra, pero vivo en Alcalá.", "en": "I'm from England, but I live in Alcalá." },
+          { "latam": "Hablo inglés, pero no hablo mucho español.", "en": "I speak English, but I don't speak much Spanish." },
+          { "latam": "Es difícil, pero ¡qué padre!", "spain": "Es difícil, pero ¡qué guay!", "en": "It's hard, but how cool!" }
+        ]
+      },
+      "pronunciation": {
+        "title": "Seseo 🌎 vs distinción 🇪🇸",
+        "explanation": "In Latin America (and the Canary Islands), “c” before e/i and “z” sound like “s” – that's seseo. In central and northern Spain, including Alcalá and Madrid, they sound like the English “th” in “think” – that's distinción. Both are 100% correct. You'll hear the “th” around you every day!",
+        "words": [
+          { "text": "gracias", "latamNote": "GRA-syas (s sound)", "spainNote": "GRA-thyas (th sound)" },
+          { "text": "Cervantes", "latamNote": "ser-VAN-tes", "spainNote": "ther-VAN-tes" },
+          { "text": "cinco", "latamNote": "SEEN-ko", "spainNote": "THEEN-ko" },
+          { "text": "plaza", "latamNote": "PLA-sa", "spainNote": "PLA-tha" }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "How do you ask a new friend “Where are you from?”",
+          "options": [
+            { "text": "¿De dónde eres?", "correct": true },
+            { "text": "¿Cómo te llamas?" },
+            { "text": "¿Dónde vives?" },
+            { "text": "¿Qué tal?" }
+          ],
+          "explanation": "¿De dónde eres? = literally “From where are you?”. ¿Dónde vives? means “Where do you live?”."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "Yo ___ de Inglaterra." },
+          "answers": { "latam": ["soy"] },
+          "en": "I am from England.",
+          "hint": "ser, yo-form",
+          "explanation": "Origin uses ser: yo soy, tú eres, él/ella es."
+        },
+        {
+          "type": "match",
+          "prompt": "Match each person with the right form of ser",
+          "pairs": [
+            { "left": "yo", "right": "soy" },
+            { "left": "tú", "right": "eres" },
+            { "left": "ella", "right": "es" },
+            { "left": "nosotros", "right": "somos" },
+            { "left": "ellos", "right": "son" }
+          ]
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "Mucho gusto, me llamo Valeria y soy de México." },
+          "prompt": "Where is she from?",
+          "options": [
+            { "text": "Mexico", "correct": true },
+            { "text": "Spain" },
+            { "text": "England" }
+          ],
+          "explanation": "“Soy de México” = I'm from Mexico."
+        },
+        {
+          "type": "build",
+          "en": "I'm from England, but I live in Alcalá.",
+          "answers": { "latam": ["Soy de Inglaterra, pero vivo en Alcalá."] },
+          "distractors": ["eres", "vives"],
+          "explanation": "Soy de… (origin) + pero (but) + vivo en… (I live in…)."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "Valeria introduces herself. Pick the best reply.",
+          "context": [{ "speaker": "Valeria", "latam": "¡Hola! Me llamo Valeria. ¿Y tú?" }],
+          "options": [
+            { "text": "Me llamo Emma. Mucho gusto.", "correct": true, "feedback": "Perfect – name + mucho gusto." },
+            { "text": "Soy de México.", "feedback": "She asked your name, not where you're from." },
+            { "text": "Muy bien, gracias.", "feedback": "That answers “How are you?”, not “And you?” after a name." }
+          ],
+          "explanation": "After someone says their name, answer with yours: Me llamo… / Soy…"
+        },
+        {
+          "type": "mc",
+          "prompt": "Your friend shows you photos of Guadalajara. Which phrases mean “How cool!”?",
+          "options": [
+            { "text": "¡Qué padre!", "correct": true, "variant": "latam" },
+            { "text": "¡Qué guay!", "correct": true, "variant": "spain" },
+            { "text": "¡Qué pena!" },
+            { "text": "¡Hasta luego!" }
+          ],
+          "explanation": "Both are right! ¡Qué padre! is Mexican, ¡qué guay! is what your flatmates in Alcalá say. ¡Qué pena! = What a shame."
+        }
+      ],
+      "recap": [
+        "Introduce yourself: Me llamo… · Soy de… · Vivo en Alcalá.",
+        "Ser for identity: soy, eres, es, somos, sois 🇪🇸, son.",
+        "Join two ideas with pero: “Soy de Inglaterra, pero vivo aquí.”"
+      ]
+    },
+    {
+      "id": "u1l2",
+      "title": "My flatmates",
+      "titleEs": "Mis compañeros de piso",
+      "minutes": 12,
+      "setting": "spain",
+      "scenario": "Moving into a shared flat in Alcalá",
+      "dialogue": {
+        "title": "Bienvenida al piso",
+        "setting": "Emma moves into a shared flat near the Calle Mayor in Alcalá and meets Javi (from Madrid) and Lucía (from Alcalá).",
+        "lines": [
+          { "speaker": "Javi", "latam": "¡Hola, Emma! Bienvenida al departamento.", "spain": "¡Hola, Emma! Bienvenida al piso.", "en": "Hi Emma! Welcome to the flat." },
+          { "speaker": "Emma", "latam": "¡Gracias! ¿Ustedes son estudiantes?", "spain": "¡Gracias! ¿Vosotros sois estudiantes?", "en": "Thanks! Are you (both) students?" },
+          { "speaker": "Javi", "latam": "Yo sí. Estudio Derecho. Lucía trabaja en un bar en la calle Mayor.", "en": "I am. I study law. Lucía works in a bar on the Calle Mayor." },
+          { "speaker": "Lucía", "latam": "Sí, y también estudio inglés por la noche.", "en": "Yes, and I also study English in the evening." },
+          { "speaker": "Emma", "latam": "¡Yo también estudio! Estudio Historia.", "en": "I study too! I study history." },
+          { "speaker": "Lucía", "latam": "¡Qué padre! ¿Y trabajas también?", "spain": "¡Qué guay! ¿Y trabajas también?", "en": "Cool! And do you work too?" },
+          { "speaker": "Emma", "latam": "No, no trabajo. Pero hablo inglés. ¿Practicamos juntas?", "en": "No, I don't work. But I speak English. Shall we practise together?" },
+          { "speaker": "Lucía", "latam": "¡Está bien! Y yo te ayudo con el español.", "spain": "¡Vale! Y yo te ayudo con el español.", "en": "OK! And I'll help you with Spanish." },
+          { "speaker": "Javi", "latam": "Y yo cocino esta noche. ¿Cenamos juntos?", "en": "And I'm cooking tonight. Shall we have dinner together?" },
+          { "speaker": "Emma", "latam": "¡Sí, muchas gracias!", "en": "Yes, thank you very much!" }
+        ]
+      },
+      "vocab": [
+        { "id": "flat", "latam": "el departamento", "spain": "el piso", "en": "flat / apartment", "note": "Also el apartamento in many countries." },
+        { "id": "flatmate", "latam": "el compañero de departamento", "spain": "el compañero de piso", "en": "flatmate" },
+        { "id": "bienvenido", "latam": "bienvenido / bienvenida", "en": "welcome (m / f)" },
+        { "id": "hablar", "latam": "hablar", "en": "to speak" },
+        { "id": "estudiar", "latam": "estudiar", "en": "to study" },
+        { "id": "trabajar", "latam": "trabajar", "en": "to work" },
+        { "id": "cocinar", "latam": "cocinar", "en": "to cook" },
+        { "id": "cenar", "latam": "cenar", "en": "to have dinner", "note": "In Spain dinner is late – 9 or 10 pm is normal!" },
+        { "id": "ok", "latam": "está bien", "spain": "vale", "en": "OK", "note": "You'll hear ¡vale! constantly in Spain. In Mexico also ¡sale! or ¡órale!" },
+        { "id": "juntos", "latam": "juntos / juntas", "en": "together" },
+        { "id": "por-la-noche", "latam": "en la noche", "spain": "por la noche", "en": "in the evening / at night", "note": "Many Latin American countries say en la noche; Spain says por la noche. Both are understood everywhere." }
+      ],
+      "grammar": {
+        "title": "Present tense: regular -ar verbs",
+        "explanation": "Most Spanish verbs end in -ar, and they all follow the same pattern. Remove -ar and add the ending for the person:\n\nhablar → hablo, hablas, habla, hablamos, habláis 🇪🇸, hablan\n\nThe present tense covers “I speak”, “I'm speaking” and even near plans: “Cocino esta noche” = I'm cooking tonight.\n\nTo make a sentence negative, just put no before the verb: No trabajo. – I don't work.",
+        "explanationEs": "Casi todos los verbos en -ar son regulares: quita -ar y añade -o, -as, -a, -amos, -áis (🇪🇸), -an.\n\nPara negar, pon no antes del verbo: No trabajo.",
+        "tables": [
+          {
+            "verb": "hablar",
+            "meaning": "to speak",
+            "rows": [
+              { "person": "yo", "form": "hablo" },
+              { "person": "tú", "form": "hablas" },
+              { "person": "él / ella / usted", "form": "habla" },
+              { "person": "nosotros / nosotras", "form": "hablamos" },
+              { "person": "vosotros / vosotras", "form": "habláis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "hablan" }
+            ]
+          },
+          {
+            "verb": "estudiar",
+            "meaning": "to study",
+            "rows": [
+              { "person": "yo", "form": "estudio" },
+              { "person": "tú", "form": "estudias" },
+              { "person": "él / ella / usted", "form": "estudia" },
+              { "person": "nosotros / nosotras", "form": "estudiamos" },
+              { "person": "vosotros / vosotras", "form": "estudiáis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "estudian" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "Estudio Historia en la universidad.", "en": "I study history at the university." },
+          { "latam": "Lucía trabaja en un bar.", "en": "Lucía works in a bar." },
+          { "latam": "No hablo mucho español.", "en": "I don't speak much Spanish." },
+          { "latam": "¿Ustedes cocinan en casa?", "spain": "¿Vosotros cocináis en casa?", "en": "Do you (all) cook at home?" }
+        ],
+        "tip": "Spot the pattern: the -o ending almost always means “I”. Hablo, estudio, trabajo, cocino."
+      },
+      "connector": {
+        "word": "también",
+        "meaning": "also / too",
+        "explanation": "También lets you agree and connect: “Yo también” = me too. Put it before the verb or at the end of the sentence. The opposite, after a negative sentence, is tampoco (“me neither”).",
+        "examples": [
+          { "latam": "Estudio inglés y también trabajo.", "en": "I study English and I also work." },
+          { "latam": "—Estudio Historia. —¡Yo también!", "en": "—I study history. —Me too!" },
+          { "latam": "—No trabajo. —Yo tampoco.", "en": "—I don't work. —Me neither." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "gap",
+          "sentence": { "latam": "Yo ___ inglés y un poco de español." },
+          "answers": { "latam": ["hablo"] },
+          "en": "I speak English and a bit of Spanish.",
+          "hint": "hablar",
+          "explanation": "-ar verb, yo-form: drop -ar, add -o → hablo."
+        },
+        {
+          "type": "mc",
+          "prompt": "Ask your two flatmates: “Do you (all) study in Alcalá?”",
+          "options": [
+            { "text": "¿Ustedes estudian en Alcalá?", "correct": true, "variant": "latam" },
+            { "text": "¿Vosotros estudiáis en Alcalá?", "correct": true, "variant": "spain" },
+            { "text": "¿Vosotros estudian en Alcalá?" },
+            { "text": "¿Tú estudias en Alcalá?" }
+          ],
+          "explanation": "Ustedes + -an (both regions). Vosotros + -áis (Spain only). Don't mix vosotros with -an."
+        },
+        {
+          "type": "match",
+          "prompt": "Match the verbs",
+          "pairs": [
+            { "left": "hablar", "right": "to speak" },
+            { "left": "estudiar", "right": "to study" },
+            { "left": "trabajar", "right": "to work" },
+            { "left": "cocinar", "right": "to cook" },
+            { "left": "cenar", "right": "to have dinner" }
+          ]
+        },
+        {
+          "type": "sort",
+          "prompt": "🌎 or 🇪🇸? Where would you hear this first?",
+          "items": [
+            { "text": "el piso", "variant": "spain", "en": "flat" },
+            { "text": "el departamento", "variant": "latam", "en": "flat" },
+            { "text": "¡vale!", "variant": "spain", "en": "OK!" },
+            { "text": "¡está bien!", "variant": "latam", "en": "OK!" },
+            { "text": "¡qué guay!", "variant": "spain", "en": "how cool!" },
+            { "text": "¡qué padre!", "variant": "latam", "en": "how cool!" },
+            { "text": "vosotros", "variant": "spain", "en": "you all (informal)" }
+          ],
+          "explanation": "Everyone understands both – but now you know which one your flatmates use."
+        },
+        {
+          "type": "build",
+          "en": "I don't work, but I study history.",
+          "answers": { "latam": ["No trabajo, pero estudio Historia."] },
+          "distractors": ["trabaja", "estudias"],
+          "explanation": "No goes before the verb; pero connects the contrast."
+        },
+        {
+          "type": "listen",
+          "mode": "type",
+          "audio": { "latam": "Yo cocino esta noche." },
+          "prompt": "Type what Javi says",
+          "explanation": "Yo cocino esta noche = I'm cooking tonight. The present tense works for plans, too."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "Lucía says she studies English. Tell her you do too.",
+          "context": [{ "speaker": "Lucía", "latam": "Estudio inglés por la noche." }],
+          "options": [
+            { "text": "¡Yo también!", "correct": true, "feedback": "Exactly – yo también = me too." },
+            { "text": "Yo tampoco.", "feedback": "Tampoco is “me neither” – only after a negative sentence." },
+            { "text": "¿Y tú?", "feedback": "She already told you – now react!" }
+          ],
+          "explanation": "Agree with a positive sentence using también; with a negative sentence use tampoco."
+        }
+      ],
+      "recap": [
+        "Regular -ar verbs: hablo, hablas, habla, hablamos, habláis 🇪🇸, hablan.",
+        "Negative = no + verb: No trabajo.",
+        "Agree with también: —Estudio Historia. —¡Yo también!"
+      ]
+    },
+    {
+      "id": "u1l3",
+      "title": "How are you? Where are you?",
+      "titleEs": "Una videollamada",
+      "minutes": 13,
+      "setting": "latam",
+      "scenario": "Video call with Diego in Mexico City",
+      "dialogue": {
+        "title": "Videollamada con Diego",
+        "setting": "Emma video-calls her friend Diego in Mexico City from the university library.",
+        "lines": [
+          { "speaker": "Diego", "latam": "¡Hola, Emma! ¿Cómo estás?", "en": "Hi Emma! How are you?" },
+          { "speaker": "Emma", "latam": "Hola, Diego. Estoy un poco cansada porque tengo muchas clases.", "en": "Hi Diego. I'm a bit tired because I have lots of classes." },
+          { "speaker": "Diego", "latam": "¡Ánimo! ¿Y dónde estás ahora?", "en": "Hang in there! And where are you now?" },
+          { "speaker": "Emma", "latam": "Estoy en la biblioteca de la universidad. Es muy antigua y muy bonita.", "en": "I'm in the university library. It's very old and very pretty." },
+          { "speaker": "Diego", "latam": "¡Qué padre! Yo estoy en casa con mi hermana. Ella es profesora.", "spain": "¡Qué guay! Yo estoy en casa con mi hermana. Ella es profesora.", "en": "Cool! I'm at home with my sister. She's a teacher." },
+          { "speaker": "Emma", "latam": "¿Y cómo es tu hermana?", "en": "And what's your sister like?" },
+          { "speaker": "Diego", "latam": "Es muy simpática y un poco seria. Hoy está contenta porque es su cumpleaños.", "en": "She's very nice and a bit serious. Today she's happy because it's her birthday." },
+          { "speaker": "Emma", "latam": "¡Feliz cumpleaños! Oye, ¿y tu computadora nueva?", "spain": "¡Feliz cumpleaños! Oye, ¿y tu ordenador nuevo?", "en": "Happy birthday! Hey, and your new computer?" },
+          { "speaker": "Diego", "latam": "Aquí está. Es muy rápida y muy buena.", "spain": "Aquí está. Es muy rápido y muy bueno.", "en": "Here it is. It's really fast and really good." },
+          { "speaker": "Emma", "latam": "Bueno, ¡tengo clase! Nos vemos, Diego.", "en": "Well, I have class! See you, Diego." }
+        ]
+      },
+      "vocab": [
+        { "id": "cansado", "latam": "cansado / cansada", "en": "tired" },
+        { "id": "contento", "latam": "contento / contenta", "en": "happy, pleased" },
+        { "id": "biblioteca", "latam": "la biblioteca", "en": "library", "note": "Careful: a librería is a bookshop!" },
+        { "id": "en-casa", "latam": "en casa", "en": "at home" },
+        { "id": "antiguo", "latam": "antiguo / antigua", "en": "old, historic" },
+        { "id": "bonito", "latam": "bonito / bonita", "en": "pretty, nice", "note": "In Latin America you'll also hear lindo / linda a lot." },
+        { "id": "simpatico", "latam": "simpático / simpática", "en": "nice, friendly" },
+        { "id": "serio", "latam": "serio / seria", "en": "serious" },
+        { "id": "hermano", "latam": "el hermano / la hermana", "en": "brother / sister" },
+        { "id": "cumpleanos", "latam": "el cumpleaños", "en": "birthday" },
+        { "id": "computer", "latam": "la computadora", "spain": "el ordenador", "en": "computer", "note": "Different gender too: la computadora nueva / el ordenador nuevo." },
+        { "id": "ahora", "latam": "ahora", "en": "now" }
+      ],
+      "grammar": {
+        "title": "Ser vs estar",
+        "explanation": "Spanish has two verbs for “to be”.\n\nSER – what something IS: identity, origin, job, personality, what it's like.\nEs profesora. Es de México. Es simpática.\n\nESTAR – HOW or WHERE something is: feelings, temporary states, location.\nEstoy cansada. Está contenta. Estoy en la biblioteca.\n\nMemory trick: “How you feel and where you are – that's when you use estar.”",
+        "explanationEs": "SER: identidad, origen, profesión, carácter. Es profesora. Es simpática.\n\nESTAR: estados, emociones y lugar. Estoy cansada. Estoy en la biblioteca.",
+        "tables": [
+          {
+            "verb": "estar",
+            "meaning": "to be (feelings, location)",
+            "rows": [
+              { "person": "yo", "form": "estoy" },
+              { "person": "tú", "form": "estás" },
+              { "person": "él / ella / usted", "form": "está" },
+              { "person": "nosotros / nosotras", "form": "estamos" },
+              { "person": "vosotros / vosotras", "form": "estáis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "están" }
+            ]
+          },
+          {
+            "verb": "ser",
+            "meaning": "to be (identity, description)",
+            "rows": [
+              { "person": "yo", "form": "soy" },
+              { "person": "tú", "form": "eres" },
+              { "person": "él / ella / usted", "form": "es" },
+              { "person": "nosotros / nosotras", "form": "somos" },
+              { "person": "vosotros / vosotras", "form": "sois", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "son" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "Mi hermana es profesora.", "en": "My sister is a teacher. (job → ser)" },
+          { "latam": "Hoy está contenta.", "en": "Today she's happy. (feeling → estar)" },
+          { "latam": "La biblioteca es muy antigua.", "en": "The library is very old. (description → ser)" },
+          { "latam": "Estoy en la biblioteca.", "en": "I'm in the library. (location → estar)" }
+        ],
+        "tip": "¿Cómo estás? = How are you (feeling)? · ¿Cómo eres? = What are you like (as a person)?"
+      },
+      "connector": {
+        "word": "porque",
+        "meaning": "because",
+        "explanation": "Porque gives a reason and instantly makes your answers longer. Don't confuse it with ¿por qué? (two words, accent) which means “why?”. Question: ¿Por qué? – Answer: Porque…",
+        "examples": [
+          { "latam": "Estoy cansada porque tengo muchas clases.", "en": "I'm tired because I have lots of classes." },
+          { "latam": "—¿Por qué estás contenta? —Porque es mi cumpleaños.", "en": "—Why are you happy? —Because it's my birthday." },
+          { "latam": "Estudio español porque vivo en Alcalá.", "en": "I study Spanish because I live in Alcalá." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "Diego ___ de México.",
+          "options": [
+            { "text": "es", "correct": true },
+            { "text": "está" },
+            { "text": "estoy" }
+          ],
+          "explanation": "Origin is identity → ser: Diego es de México."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "Yo ___ en la biblioteca." },
+          "answers": { "latam": ["estoy"] },
+          "en": "I'm in the library.",
+          "hint": "location",
+          "explanation": "Location → estar: yo estoy."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "Mi hermana ___ muy simpática." },
+          "answers": { "latam": ["es"] },
+          "en": "My sister is very nice.",
+          "hint": "personality",
+          "explanation": "Personality → ser: es simpática."
+        },
+        {
+          "type": "mc",
+          "prompt": "How do you say “my new computer”?",
+          "options": [
+            { "text": "mi computadora nueva", "correct": true, "variant": "latam" },
+            { "text": "mi ordenador nuevo", "correct": true, "variant": "spain" },
+            { "text": "mi ordenador nueva" },
+            { "text": "mi computadora nuevo" }
+          ],
+          "explanation": "Computadora is feminine (nueva), ordenador is masculine (nuevo). The adjective follows the noun's gender."
+        },
+        {
+          "type": "build",
+          "en": "I'm tired because I have lots of classes.",
+          "answers": { "latam": ["Estoy cansada porque tengo muchas clases.", "Estoy cansado porque tengo muchas clases."] },
+          "distractors": ["soy", "por qué"],
+          "explanation": "Feeling → estoy; reason → porque (one word, no accent)."
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "Hoy estoy muy contenta porque es mi cumpleaños." },
+          "prompt": "Why is she happy?",
+          "options": [
+            { "text": "It's her birthday", "correct": true },
+            { "text": "She has no classes" },
+            { "text": "She's at home" }
+          ],
+          "explanation": "“Porque es mi cumpleaños” = because it's my birthday."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "Diego asks how you are. Pick the right answer.",
+          "context": [{ "speaker": "Diego", "latam": "¡Hola! ¿Cómo estás?" }],
+          "options": [
+            { "text": "Estoy bien, gracias. ¿Y tú?", "correct": true, "feedback": "Perfect – and you bounced the question back!" },
+            { "text": "Soy bien, gracias.", "feedback": "How you feel uses estar: estoy bien." },
+            { "text": "Soy de Inglaterra.", "feedback": "That's where you're from, not how you are." }
+          ],
+          "explanation": "¿Cómo estás? asks about your state → answer with estoy."
+        }
+      ],
+      "recap": [
+        "Ser = what/who: Es profesora. Es simpática. Soy de Inglaterra.",
+        "Estar = how/where: Estoy cansada. Estoy en la biblioteca.",
+        "Give reasons with porque: Estoy contenta porque es mi cumpleaños."
+      ]
+    },
+    {
+      "id": "u1l4",
+      "title": "What are you doing this weekend?",
+      "titleEs": "¿Qué haces el fin de semana?",
+      "minutes": 14,
+      "setting": "spain",
+      "scenario": "Weekend plans with your flatmate Javi",
+      "dialogue": {
+        "title": "Planes de fin de semana",
+        "setting": "Friday evening in the flat kitchen in Alcalá. Javi asks Emma about the weekend.",
+        "lines": [
+          { "speaker": "Javi", "latam": "Oye, Emma, ¿qué haces este fin de semana?", "en": "Hey Emma, what are you doing this weekend?" },
+          { "speaker": "Emma", "latam": "Bueno… no sé. ¿Tú tienes planes?", "en": "Well… I don't know. Do you have plans?" },
+          { "speaker": "Javi", "latam": "Sí, el sábado voy a Madrid con unos amigos. Vamos a un concierto.", "en": "Yes, on Saturday I'm going to Madrid with some friends. We're going to a concert." },
+          { "speaker": "Emma", "latam": "¡Qué padre! ¿Y cómo van?", "spain": "¡Qué guay! ¿Y cómo vais?", "en": "Cool! And how are you (all) getting there?" },
+          { "speaker": "Javi", "latam": "Tomamos el tren en la mañana.", "spain": "Cogemos el tren por la mañana.", "en": "We're taking the train in the morning." },
+          { "speaker": "Emma", "latam": "Quiero ir, pero no tengo mucho dinero.", "en": "I want to go, but I don't have much money." },
+          { "speaker": "Javi", "latam": "Bueno, el concierto es gratis. ¿Vienes con nosotros?", "en": "Well, the concert is free. Are you coming with us?" },
+          { "speaker": "Emma", "latam": "¡Está bien, voy! ¿Y el domingo qué hacen?", "spain": "¡Vale, voy! ¿Y el domingo qué hacéis?", "en": "OK, I'm in! And what are you (all) doing on Sunday?" },
+          { "speaker": "Javi", "latam": "El domingo comemos en casa de mi abuela. ¡Siempre hace paella!", "en": "On Sunday we eat at my grandma's. She always makes paella!" },
+          { "speaker": "Emma", "latam": "¡Qué rico!", "en": "Yum!" }
+        ]
+      },
+      "vocab": [
+        { "id": "fin-de-semana", "latam": "el fin de semana", "en": "weekend" },
+        { "id": "sabado", "latam": "el sábado", "en": "Saturday" },
+        { "id": "domingo", "latam": "el domingo", "en": "Sunday" },
+        { "id": "tener", "latam": "tener", "en": "to have" },
+        { "id": "ir", "latam": "ir", "en": "to go" },
+        { "id": "hacer", "latam": "hacer", "en": "to do / to make" },
+        { "id": "querer", "latam": "querer", "en": "to want" },
+        { "id": "comer", "latam": "comer", "en": "to eat", "note": "In Spain comer also means “to have lunch” – the big meal around 2–3 pm." },
+        { "id": "tren", "latam": "el tren", "en": "train" },
+        { "id": "dinero", "latam": "el dinero", "en": "money", "note": "Informal: la lana (Mexico), la pasta (Spain)." },
+        { "id": "gratis", "latam": "gratis", "en": "free (no cost)" },
+        { "id": "siempre", "latam": "siempre", "en": "always" }
+      ],
+      "grammar": {
+        "title": "Everyday irregular verbs + -er / -ir verbs",
+        "explanation": "The verbs you use most are irregular – learn them as chunks: tengo, voy, hago, quiero.\n\nRegular -er and -ir verbs work like -ar verbs, with different endings:\ncomer → como, comes, come, comemos, coméis 🇪🇸, comen\nvivir → vivo, vives, vive, vivimos, vivís 🇪🇸, viven\n\nTalking to a group of friends: Spain says ¿Qué hacéis? (vosotros); Latin America says ¿Qué hacen? (ustedes).",
+        "explanationEs": "Los verbos más frecuentes son irregulares: tengo, voy, hago, quiero.\n\nLos verbos en -er/-ir: como, comes, come… / vivo, vives, vive…",
+        "tables": [
+          {
+            "verb": "tener",
+            "meaning": "to have",
+            "rows": [
+              { "person": "yo", "form": "tengo" },
+              { "person": "tú", "form": "tienes" },
+              { "person": "él / ella / usted", "form": "tiene" },
+              { "person": "nosotros / nosotras", "form": "tenemos" },
+              { "person": "vosotros / vosotras", "form": "tenéis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "tienen" }
+            ]
+          },
+          {
+            "verb": "ir",
+            "meaning": "to go",
+            "rows": [
+              { "person": "yo", "form": "voy" },
+              { "person": "tú", "form": "vas" },
+              { "person": "él / ella / usted", "form": "va" },
+              { "person": "nosotros / nosotras", "form": "vamos" },
+              { "person": "vosotros / vosotras", "form": "vais", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "van" }
+            ]
+          },
+          {
+            "verb": "hacer",
+            "meaning": "to do / make",
+            "rows": [
+              { "person": "yo", "form": "hago" },
+              { "person": "tú", "form": "haces" },
+              { "person": "él / ella / usted", "form": "hace" },
+              { "person": "nosotros / nosotras", "form": "hacemos" },
+              { "person": "vosotros / vosotras", "form": "hacéis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "hacen" }
+            ]
+          },
+          {
+            "verb": "querer",
+            "meaning": "to want",
+            "rows": [
+              { "person": "yo", "form": "quiero" },
+              { "person": "tú", "form": "quieres" },
+              { "person": "él / ella / usted", "form": "quiere" },
+              { "person": "nosotros / nosotras", "form": "queremos" },
+              { "person": "vosotros / vosotras", "form": "queréis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "quieren" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "¿Qué haces este fin de semana?", "en": "What are you doing this weekend?" },
+          { "latam": "El sábado voy a Madrid.", "en": "On Saturday I'm going to Madrid." },
+          { "latam": "No tengo mucho dinero.", "en": "I don't have much money." },
+          { "latam": "¿Qué hacen el domingo?", "spain": "¿Qué hacéis el domingo?", "en": "What are you (all) doing on Sunday?" }
+        ],
+        "compare": {
+          "title": "Talking about plans with friends",
+          "latam": [
+            { "text": "¿Cómo van?", "en": "How are you (all) going?" },
+            { "text": "Tomamos el tren en la mañana.", "en": "We take the train in the morning." }
+          ],
+          "spain": [
+            { "text": "¿Cómo vais?", "en": "How are you (all) going?" },
+            { "text": "Cogemos el tren por la mañana.", "en": "We take the train in the morning." }
+          ],
+          "note": "Tomar vs coger: in Spain coger (to take/catch) is completely normal. In much of Latin America it's a vulgar word – say tomar there!"
+        }
+      },
+      "connector": {
+        "word": "bueno",
+        "meaning": "well… / OK",
+        "explanation": "Bueno at the start of a sentence buys you thinking time (“Well…”), softens an answer, or wraps up a conversation (“Bueno, me voy” = OK, I'm off). Native speakers use it constantly – it makes you sound fluent even when you're still thinking!",
+        "examples": [
+          { "latam": "Bueno… no sé.", "en": "Well… I don't know." },
+          { "latam": "Bueno, el concierto es gratis.", "en": "Well, the concert is free." },
+          { "latam": "Bueno, ¡nos vemos mañana!", "en": "OK, see you tomorrow!" }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "match",
+          "prompt": "Match each verb with its yo-form",
+          "pairs": [
+            { "left": "tener", "right": "tengo" },
+            { "left": "ir", "right": "voy" },
+            { "left": "hacer", "right": "hago" },
+            { "left": "querer", "right": "quiero" },
+            { "left": "comer", "right": "como" }
+          ]
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "¿Qué ___ este fin de semana?" },
+          "answers": { "latam": ["haces"] },
+          "en": "What are you doing this weekend?",
+          "hint": "hacer, tú-form",
+          "explanation": "hacer → tú haces."
+        },
+        {
+          "type": "mc",
+          "prompt": "Ask two friends: “How are you (all) getting there?”",
+          "options": [
+            { "text": "¿Cómo van?", "correct": true, "variant": "latam" },
+            { "text": "¿Cómo vais?", "correct": true, "variant": "spain" },
+            { "text": "¿Cómo vas?" },
+            { "text": "¿Cómo voy?" }
+          ],
+          "explanation": "Ustedes van (everywhere) · vosotros vais (Spain). ¿Cómo vas? is for one person."
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "Tomamos el tren en la mañana.", "spain": "Cogemos el tren por la mañana." },
+          "prompt": "When are they taking the train?",
+          "options": [
+            { "text": "In the morning", "correct": true },
+            { "text": "In the evening" },
+            { "text": "On Sunday" }
+          ],
+          "explanation": "En la mañana 🌎 / por la mañana 🇪🇸 = in the morning."
+        },
+        {
+          "type": "build",
+          "en": "I want to go, but I don't have much money.",
+          "answers": { "latam": ["Quiero ir, pero no tengo mucho dinero."] },
+          "distractors": ["quieres", "tienes"],
+          "explanation": "quiero + infinitive (ir) · pero · no tengo."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "El sábado ___ a Madrid con unos amigos." },
+          "answers": { "latam": ["voy"] },
+          "en": "On Saturday I'm going to Madrid with some friends.",
+          "hint": "ir, yo-form",
+          "explanation": "ir is very irregular: voy, vas, va, vamos, vais 🇪🇸, van."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "Javi invites you to the free concert. Accept!",
+          "context": [{ "speaker": "Javi", "latam": "El concierto es gratis. ¿Vienes con nosotros?" }],
+          "options": [
+            { "text": "Bueno… ¡está bien, voy!", "correct": true, "variant": "latam", "feedback": "Bueno to think, está bien to agree." },
+            { "text": "Bueno… ¡vale, voy!", "correct": true, "variant": "spain", "feedback": "Very Spanish – Javi will love it." },
+            { "text": "No tengo planes el sábado.", "feedback": "That's true, but it doesn't answer “Are you coming?”." }
+          ],
+          "explanation": "Voy = I'm going / I'm in. Bueno at the start sounds natural."
+        }
+      ],
+      "recap": [
+        "Must-know irregulars: tengo, voy, hago, quiero.",
+        "-er/-ir verbs: como, comes, come… · vivo, vives, vive…",
+        "Start answers with bueno… to sound natural while you think."
+      ]
+    }
+  ]
+}

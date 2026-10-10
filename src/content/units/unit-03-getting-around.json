@@ -1,0 +1,627 @@
+{
+  "id": "u3",
+  "order": 3,
+  "level": "A1",
+  "title": "Getting around",
+  "titleEs": "Moverse por la ciudad",
+  "emoji": "🚆",
+  "description": "Find your way around Calle Mayor and the Plaza de Cervantes, ask for directions and take the Cercanías train to Madrid.",
+  "badge": { "id": "badge-u3", "name": "Exploradora", "emoji": "🧭" },
+  "lessons": [
+    {
+      "id": "u3l1",
+      "title": "Where is the Plaza de Cervantes?",
+      "titleEs": "¿Dónde está la Plaza de Cervantes?",
+      "minutes": 12,
+      "setting": "spain",
+      "scenario": "Asking a local on the Calle Mayor",
+      "dialogue": {
+        "title": "En la calle Mayor",
+        "setting": "Emma is walking along the Calle Mayor in Alcalá – the long arcaded street in the old town – and asks a friendly local for help.",
+        "lines": [
+          { "speaker": "Emma", "latam": "Disculpe, ¿dónde está la Plaza de Cervantes?", "spain": "Perdone, ¿dónde está la Plaza de Cervantes?", "en": "Excuse me, where is the Plaza de Cervantes?" },
+          { "speaker": "Señora", "latam": "Está muy cerca, al final de la calle Mayor.", "en": "It's very close, at the end of the Calle Mayor." },
+          { "speaker": "Emma", "latam": "¿Y hay una farmacia cerca?", "en": "And is there a pharmacy nearby?" },
+          { "speaker": "Señora", "latam": "Sí, hay una en la plaza, al lado del banco.", "en": "Yes, there's one in the square, next to the bank." },
+          { "speaker": "Emma", "latam": "¿Y la casa de Cervantes? ¿Está lejos?", "en": "And Cervantes' house? Is it far?" },
+          { "speaker": "Señora", "latam": "No, está aquí mismo, en la calle Mayor. Es un museo y la entrada es gratis.", "en": "No, it's right here on the Calle Mayor. It's a museum and entry is free." },
+          { "speaker": "Emma", "latam": "¡Qué bien! Me encanta la historia, por eso vivo en Alcalá.", "en": "Great! I love history, that's why I live in Alcalá." },
+          { "speaker": "Señora", "latam": "¡Pues estás en el lugar perfecto! Mira, ¿ves las cigüeñas en el techo?", "spain": "¡Pues estás en el sitio perfecto! Mira, ¿ves las cigüeñas en el tejado?", "en": "Well, you're in the perfect place! Look, do you see the storks on the roof?" },
+          { "speaker": "Emma", "latam": "¡Sí! Son enormes. ¡Muchas gracias, señora!", "en": "Yes! They're huge. Thank you very much!" },
+          { "speaker": "Señora", "latam": "De nada, mija. ¡Que disfrutes!", "spain": "De nada, guapa. ¡Que disfrutes!", "en": "You're welcome, dear. Enjoy!" }
+        ]
+      },
+      "vocab": [
+        { "id": "excuse-me", "latam": "disculpe", "spain": "perdone", "en": "excuse me (polite)", "note": "Both are used everywhere; with friends: disculpa / perdona." },
+        { "id": "donde-esta", "latam": "¿dónde está…?", "en": "where is…?" },
+        { "id": "cerca", "latam": "cerca (de)", "en": "near, close (to)" },
+        { "id": "lejos", "latam": "lejos (de)", "en": "far (from)" },
+        { "id": "al-lado-de", "latam": "al lado de", "en": "next to" },
+        { "id": "enfrente-de", "latam": "enfrente de", "en": "opposite, across from" },
+        { "id": "al-final-de", "latam": "al final de", "en": "at the end of" },
+        { "id": "hay", "latam": "hay", "en": "there is / there are" },
+        { "id": "farmacia", "latam": "la farmacia", "en": "pharmacy" },
+        { "id": "banco", "latam": "el banco", "en": "bank (also: bench)" },
+        { "id": "calle", "latam": "la calle", "en": "street" },
+        { "id": "museo", "latam": "el museo", "en": "museum" }
+      ],
+      "grammar": {
+        "title": "Hay vs está + where things are",
+        "explanation": "HAY = there is / there are. Use it when something exists or when you don't know if it's there: ¿Hay una farmacia cerca? · Hay dos museos.\n\nESTÁ / ESTÁN = is / are (located). Use it for a specific, known thing: ¿Dónde está la farmacia? · La plaza está al final de la calle.\n\nUseful place words: cerca de, lejos de, al lado de, enfrente de, al final de, entre… y…\n\nContractions: de + el = del (al lado del banco) · a + el = al.",
+        "explanationEs": "HAY: existencia (¿Hay una farmacia?). ESTÁ: ubicación de algo concreto (¿Dónde está la farmacia?). de + el = del, a + el = al.",
+        "examples": [
+          { "latam": "¿Hay un banco cerca?", "en": "Is there a bank nearby?" },
+          { "latam": "El banco está al lado de la farmacia.", "en": "The bank is next to the pharmacy." },
+          { "latam": "La casa de Cervantes está en la calle Mayor.", "en": "Cervantes' house is on the Calle Mayor." },
+          { "latam": "Hay cigüeñas en el techo de la iglesia.", "spain": "Hay cigüeñas en el tejado de la iglesia.", "en": "There are storks on the church roof." }
+        ],
+        "tip": "Never say “hay la farmacia” – hay goes with un/una/numbers or nothing: hay una farmacia, hay dos, hay farmacias."
+      },
+      "connector": {
+        "word": "por eso",
+        "meaning": "that's why / so",
+        "explanation": "Por eso connects a fact to its result: “I love history, that's why I live in Alcalá.” It's like porque, but the other way round: porque gives the reason, por eso gives the result.",
+        "examples": [
+          { "latam": "Me encanta la historia, por eso vivo en Alcalá.", "en": "I love history, that's why I live in Alcalá." },
+          { "latam": "La entrada es gratis, por eso hay mucha gente.", "en": "Entry is free, that's why there are lots of people." },
+          { "latam": "Está cerca, por eso voy a pie.", "en": "It's close, so I'm walking." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "___ una farmacia en la plaza.",
+          "options": [
+            { "text": "Hay", "correct": true },
+            { "text": "Está" },
+            { "text": "Es" }
+          ],
+          "explanation": "Una farmacia (not a specific one) → hay."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "La plaza ___ al final de la calle Mayor." },
+          "answers": { "latam": ["está"] },
+          "en": "The square is at the end of the Calle Mayor.",
+          "explanation": "A specific place's location → está."
+        },
+        {
+          "type": "match",
+          "prompt": "Match the place words",
+          "pairs": [
+            { "left": "cerca de", "right": "near" },
+            { "left": "lejos de", "right": "far from" },
+            { "left": "al lado de", "right": "next to" },
+            { "left": "enfrente de", "right": "opposite" },
+            { "left": "al final de", "right": "at the end of" }
+          ]
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "La farmacia está al lado del banco." },
+          "prompt": "Where is the pharmacy?",
+          "options": [
+            { "text": "Next to the bank", "correct": true },
+            { "text": "Opposite the bank" },
+            { "text": "Far from the bank" }
+          ],
+          "explanation": "Al lado del (de + el) banco = next to the bank."
+        },
+        {
+          "type": "build",
+          "en": "I love history, that's why I live in Alcalá.",
+          "answers": { "latam": ["Me encanta la historia, por eso vivo en Alcalá."] },
+          "distractors": ["porque", "gusta"],
+          "explanation": "Fact (me encanta la historia) + por eso + result (vivo en Alcalá)."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "A local sees you looking at your map.",
+          "context": [{ "speaker": "Señora", "latam": "¿Necesitas ayuda?" }],
+          "options": [
+            { "text": "Sí, perdone, ¿dónde está el museo?", "correct": true, "feedback": "Polite and correct." },
+            { "text": "Sí, ¿dónde hay el museo?", "feedback": "For a specific place use está: ¿Dónde está el museo?" },
+            { "text": "No, gracias, me llamo Emma.", "feedback": "Your name doesn't answer “Do you need help?”." }
+          ],
+          "explanation": "Specific place → ¿Dónde está…? Unknown thing → ¿Hay un…?"
+        },
+        {
+          "type": "mc",
+          "prompt": "Politely get a stranger's attention",
+          "options": [
+            { "text": "Disculpe…", "correct": true, "variant": "latam" },
+            { "text": "Perdone…", "correct": true, "variant": "spain" },
+            { "text": "¡Oye, tío!" }
+          ],
+          "explanation": "Both disculpe and perdone are polite (usted). ¡Oye, tío! is what you'd shout at a friend in Spain."
+        }
+      ],
+      "recap": [
+        "Ask: ¿Dónde está…? (specific) · ¿Hay un/una… cerca? (anything)",
+        "Place words: cerca de, lejos de, al lado de, enfrente de, al final de.",
+        "Give the result with por eso: “Me encanta la historia, por eso vivo aquí.”"
+      ]
+    },
+    {
+      "id": "u3l2",
+      "title": "Asking for directions",
+      "titleEs": "¿Cómo llego a la universidad?",
+      "minutes": 13,
+      "setting": "spain",
+      "scenario": "Finding the historic Colegio de San Ildefonso",
+      "dialogue": {
+        "title": "Perdida en Alcalá",
+        "setting": "Emma has an event at the historic university building (Colegio Mayor de San Ildefonso) and asks Pablo, a student, for directions.",
+        "lines": [
+          { "speaker": "Emma", "latam": "Oye, disculpa, ¿sabes cómo llego a la universidad?", "spain": "Oye, perdona, ¿sabes cómo llego a la universidad?", "en": "Hey, sorry – do you know how I get to the university?" },
+          { "speaker": "Pablo", "latam": "¿Al edificio histórico, San Ildefonso?", "en": "To the historic building, San Ildefonso?" },
+          { "speaker": "Emma", "latam": "Sí, tengo que estar allí a las diez.", "en": "Yes, I have to be there at ten." },
+          { "speaker": "Pablo", "latam": "Ok, es fácil. Sigue derecho por esta calle.", "spain": "Vale, es fácil. Sigue todo recto por esta calle.", "en": "OK, it's easy. Go straight down this street." },
+          { "speaker": "Pablo", "latam": "Cuando llegas a la Plaza de Cervantes, gira a la derecha.", "en": "When you get to the Plaza de Cervantes, turn right." },
+          { "speaker": "Emma", "latam": "¿A la derecha? ¿Y después?", "en": "Right? And then?" },
+          { "speaker": "Pablo", "latam": "Después tienes que cruzar la plaza. La universidad está a la izquierda.", "en": "Then you have to cross the square. The university is on the left." },
+          { "speaker": "Emma", "latam": "¿Está lejos? ¿Tengo que tomar el autobús?", "spain": "¿Está lejos? ¿Tengo que coger el autobús?", "en": "Is it far? Do I have to take the bus?" },
+          { "speaker": "Pablo", "latam": "No, no hace falta. Son cinco minutos caminando.", "spain": "No, no hace falta. Son cinco minutos andando.", "en": "No, no need. It's five minutes on foot." },
+          { "speaker": "Emma", "latam": "¡Genial! Gracias, amigo.", "spain": "¡Genial! Gracias, tío.", "en": "Great! Thanks, mate." },
+          { "speaker": "Pablo", "latam": "¡De nada! ¡Suerte!", "en": "You're welcome! Good luck!" }
+        ]
+      },
+      "vocab": [
+        { "id": "straight-on", "latam": "sigue derecho", "spain": "sigue todo recto", "en": "go straight on" },
+        { "id": "girar", "latam": "girar", "en": "to turn", "note": "Also: doblar (Latin America)." },
+        { "id": "a-la-derecha", "latam": "a la derecha", "en": "to the right / on the right" },
+        { "id": "a-la-izquierda", "latam": "a la izquierda", "en": "to the left / on the left" },
+        { "id": "cruzar", "latam": "cruzar", "en": "to cross" },
+        { "id": "despues", "latam": "después", "en": "afterwards, then" },
+        { "id": "tener-que", "latam": "tener que…", "en": "to have to…" },
+        { "id": "on-foot", "latam": "caminando", "spain": "andando", "en": "walking, on foot", "note": "Both understood everywhere; a pie also works." },
+        { "id": "take-the-bus", "latam": "tomar el autobús", "spain": "coger el autobús", "en": "to take the bus", "note": "In Mexico the bus is el camión. Avoid coger in Latin America – it's vulgar there!" },
+        { "id": "mate", "latam": "amigo", "spain": "tío", "en": "mate, dude", "note": "Tío literally means uncle! In Mexico you'll also hear güey (very informal)." },
+        { "id": "no-hace-falta", "latam": "no hace falta", "en": "there's no need" },
+        { "id": "llegar", "latam": "llegar (a)", "en": "to arrive, to get to" }
+      ],
+      "grammar": {
+        "title": "Tener que + infinitive & giving directions",
+        "explanation": "TENER QUE + infinitive = to have to do something:\nTengo que estar allí a las diez. – I have to be there at ten.\nTienes que cruzar la plaza. – You have to cross the square.\n\nHAY QUE + infinitive = “one has to” (general rule, no person):\nHay que comprar el billete antes. – You need to buy the ticket first.\n\nDirections use short command forms (tú). Learn them as chunks:\nsigue (go on), gira (turn), cruza (cross), toma 🌎 / coge 🇪🇸 (take).",
+        "explanationEs": "Tener que + infinitivo = obligación personal. Hay que + infinitivo = obligación general.\nDirecciones: sigue, gira, cruza, toma/coge.",
+        "tables": [
+          {
+            "verb": "tener que",
+            "meaning": "to have to",
+            "rows": [
+              { "person": "yo", "form": "tengo que" },
+              { "person": "tú", "form": "tienes que" },
+              { "person": "él / ella / usted", "form": "tiene que" },
+              { "person": "nosotros / nosotras", "form": "tenemos que" },
+              { "person": "vosotros / vosotras", "form": "tenéis que", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "tienen que" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "Tengo que estar en la universidad a las diez.", "en": "I have to be at the university at ten." },
+          { "latam": "Sigue derecho y gira a la izquierda.", "spain": "Sigue todo recto y gira a la izquierda.", "en": "Go straight on and turn left." },
+          { "latam": "Tienes que tomar el autobús.", "spain": "Tienes que coger el autobús.", "en": "You have to take the bus." }
+        ],
+        "compare": {
+          "title": "Directions",
+          "latam": [
+            { "text": "Sigue derecho dos cuadras.", "en": "Go straight on for two blocks." },
+            { "text": "Dobla a la derecha.", "en": "Turn right." },
+            { "text": "Son diez minutos caminando.", "en": "It's ten minutes on foot." }
+          ],
+          "spain": [
+            { "text": "Sigue todo recto dos manzanas.", "en": "Go straight on for two blocks." },
+            { "text": "Gira a la derecha.", "en": "Turn right." },
+            { "text": "Son diez minutos andando.", "en": "It's ten minutes on foot." }
+          ],
+          "note": "Cuadra 🌎 / manzana 🇪🇸 = city block. Manzana is also an apple!"
+        }
+      },
+      "connector": {
+        "word": "cuando",
+        "meaning": "when",
+        "explanation": "Cuando (no accent) connects two actions in time: “When you get to the square, turn right.” With an accent, ¿cuándo? is the question “when?”.",
+        "examples": [
+          { "latam": "Cuando llegas a la plaza, gira a la derecha.", "en": "When you get to the square, turn right." },
+          { "latam": "Cuando llueve, tomo el autobús.", "spain": "Cuando llueve, cojo el autobús.", "en": "When it rains, I take the bus." },
+          { "latam": "—¿Cuándo es la clase? —Cuando quieras.", "en": "—When is the class? —Whenever you like." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "“Turn right”",
+          "options": [
+            { "text": "Gira a la derecha.", "correct": true },
+            { "text": "Gira a la izquierda." },
+            { "text": "Sigue todo recto." },
+            { "text": "Cruza la plaza." }
+          ],
+          "explanation": "Derecha = right, izquierda = left."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "___ que cruzar la plaza." },
+          "answers": { "latam": ["tienes"] },
+          "en": "You have to cross the square.",
+          "hint": "tener, tú-form",
+          "explanation": "Tener que + infinitive: tienes que cruzar."
+        },
+        {
+          "type": "sort",
+          "prompt": "🌎 or 🇪🇸? Sort the direction words",
+          "items": [
+            { "text": "sigue derecho", "variant": "latam", "en": "go straight on" },
+            { "text": "sigue todo recto", "variant": "spain", "en": "go straight on" },
+            { "text": "caminando", "variant": "latam", "en": "on foot" },
+            { "text": "andando", "variant": "spain", "en": "on foot" },
+            { "text": "coger el autobús", "variant": "spain", "en": "take the bus" },
+            { "text": "la cuadra", "variant": "latam", "en": "block" },
+            { "text": "¡Gracias, tío!", "variant": "spain", "en": "Thanks, mate!" }
+          ]
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "Cuando llegas a la plaza, gira a la izquierda." },
+          "prompt": "What should you do at the square?",
+          "options": [
+            { "text": "Turn left", "correct": true },
+            { "text": "Turn right" },
+            { "text": "Go straight on" }
+          ],
+          "explanation": "Gira a la izquierda = turn left."
+        },
+        {
+          "type": "build",
+          "en": "When you get to the square, turn right.",
+          "answers": { "latam": ["Cuando llegas a la plaza, gira a la derecha."] },
+          "distractors": ["izquierda", "cuándo"],
+          "explanation": "Cuando (no accent) connects the two actions."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "No hace falta el autobús. Son cinco minutos ___." },
+          "answers": { "latam": ["caminando", "a pie"], "spain": ["andando", "a pie"] },
+          "en": "No need for the bus. It's five minutes on foot.",
+          "explanation": "Caminando 🌎 / andando 🇪🇸 / a pie (everywhere)."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "Pablo asks if you'll take the bus. It's close – you'll walk.",
+          "context": [{ "speaker": "Pablo", "latam": "¿Tienes que tomar el autobús?", "spain": "¿Tienes que coger el autobús?" }],
+          "options": [
+            { "text": "No, no hace falta. Voy caminando.", "correct": true, "variant": "latam", "feedback": "¡Perfecto!" },
+            { "text": "No, no hace falta. Voy andando.", "correct": true, "variant": "spain", "feedback": "¡Perfecto! Very Spanish." },
+            { "text": "Sí, gira a la derecha.", "feedback": "That's a direction, not an answer to his question." }
+          ],
+          "explanation": "No hace falta = there's no need."
+        }
+      ],
+      "recap": [
+        "Obligation: tengo que… / tienes que… · General: hay que…",
+        "Directions: sigue derecho 🌎 / todo recto 🇪🇸, gira a la derecha/izquierda, cruza.",
+        "Link actions with cuando: “Cuando llegas a la plaza, gira…”"
+      ]
+    },
+    {
+      "id": "u3l3",
+      "title": "Taking the Cercanías to Madrid",
+      "titleEs": "En el Cercanías",
+      "minutes": 13,
+      "setting": "spain",
+      "scenario": "Buying a ticket at Alcalá station",
+      "dialogue": {
+        "title": "Un billete a Madrid",
+        "setting": "Alcalá de Henares train station. Emma and Lucía are going to Madrid on the Cercanías (the local commuter train).",
+        "lines": [
+          { "speaker": "Emma", "latam": "Buenos días. Un boleto de ida y vuelta a Madrid, por favor.", "spain": "Buenos días. Un billete de ida y vuelta a Madrid, por favor.", "en": "Good morning. A return ticket to Madrid, please." },
+          { "speaker": "Taquillera", "latam": "¿A Atocha o a Chamartín?", "en": "To Atocha or Chamartín?" },
+          { "speaker": "Emma", "latam": "A Atocha. ¿A qué hora sale el próximo tren?", "en": "To Atocha. What time does the next train leave?" },
+          { "speaker": "Taquillera", "latam": "Sale a las diez y cuarto, del andén dos.", "en": "It leaves at quarter past ten, from platform two." },
+          { "speaker": "Emma", "latam": "¿Y cuánto tarda?", "en": "And how long does it take?" },
+          { "speaker": "Taquillera", "latam": "Unos cuarenta minutos.", "en": "About forty minutes." },
+          { "speaker": "Emma", "latam": "Perfecto. ¿Y a qué hora sale el último tren de vuelta?", "en": "Perfect. And what time does the last train back leave?" },
+          { "speaker": "Taquillera", "latam": "A las once y media de la noche.", "en": "At half past eleven at night." },
+          { "speaker": "Emma", "latam": "Muchas gracias.", "en": "Thank you very much." },
+          { "speaker": "Lucía", "latam": "Tenemos veinte minutos. Mientras esperamos, ¿tomamos un café?", "en": "We have twenty minutes. While we wait, shall we have a coffee?" },
+          { "speaker": "Emma", "latam": "¡Está bien! Invito yo.", "spain": "¡Vale! Invito yo.", "en": "OK! My treat." }
+        ]
+      },
+      "vocab": [
+        { "id": "ticket", "latam": "el boleto", "spain": "el billete", "en": "ticket", "note": "In Spain, boleto is a lottery ticket; for trains it's billete." },
+        { "id": "ida-y-vuelta", "latam": "ida y vuelta", "en": "return (round trip)", "note": "Solo ida = one way." },
+        { "id": "estacion", "latam": "la estación", "en": "station" },
+        { "id": "anden", "latam": "el andén", "en": "platform" },
+        { "id": "a-que-hora", "latam": "¿a qué hora…?", "en": "at what time…?" },
+        { "id": "salir", "latam": "salir (sale)", "en": "to leave (it leaves)" },
+        { "id": "tardar", "latam": "tardar", "en": "to take (time)", "note": "¿Cuánto tarda? = How long does it take?" },
+        { "id": "proximo", "latam": "el próximo", "en": "the next" },
+        { "id": "ultimo", "latam": "el último", "en": "the last" },
+        { "id": "esperar", "latam": "esperar", "en": "to wait (also: to hope)" },
+        { "id": "y-cuarto", "latam": "y cuarto", "en": "quarter past" },
+        { "id": "y-media", "latam": "y media", "en": "half past" }
+      ],
+      "grammar": {
+        "title": "Telling the time",
+        "explanation": "¿Qué hora es? – What time is it?\nEs la una (1:00) – only one o'clock uses es la.\nSon las dos, son las tres… (2:00, 3:00…)\n\nAdd minutes: y cuarto (:15), y media (:30), menos cuarto (:45 – “quarter to”), or just the number: las diez y diez (10:10).\n\nFor schedules: ¿A qué hora sale el tren? – Sale a las diez y cuarto.\n\nAdd de la mañana / de la tarde / de la noche to be clear. Train stations in Spain also use the 24-hour clock: a las veintitrés treinta (23:30).",
+        "explanationEs": "Es la una. Son las dos. Y cuarto, y media, menos cuarto. ¿A qué hora sale? Sale a las…",
+        "examples": [
+          { "latam": "Son las diez y cuarto.", "en": "It's quarter past ten." },
+          { "latam": "El tren sale a las once y media.", "en": "The train leaves at half past eleven." },
+          { "latam": "Es un cuarto para las nueve.", "spain": "Son las nueve menos cuarto.", "en": "It's quarter to nine." },
+          { "latam": "¿Qué horas son?", "spain": "¿Qué hora es?", "en": "What time is it? (Mexico often uses the plural)" }
+        ],
+        "compare": {
+          "title": "Quarter to…",
+          "latam": [
+            { "text": "Es un cuarto para las nueve.", "en": "It's a quarter to nine." },
+            { "text": "Son veinte para las diez.", "en": "It's twenty to ten." }
+          ],
+          "spain": [
+            { "text": "Son las nueve menos cuarto.", "en": "It's a quarter to nine." },
+            { "text": "Son las diez menos veinte.", "en": "It's twenty to ten." }
+          ],
+          "note": "Both systems are understood everywhere, but in Alcalá you'll mostly hear menos."
+        }
+      },
+      "connector": {
+        "word": "mientras",
+        "meaning": "while",
+        "explanation": "Mientras connects two things happening at the same time: “While we wait, shall we have a coffee?” It's perfect for describing scenes – you'll use it a lot when you learn past tenses.",
+        "examples": [
+          { "latam": "Mientras esperamos, ¿tomamos un café?", "en": "While we wait, shall we have a coffee?" },
+          { "latam": "Escucho música mientras viajo en tren.", "en": "I listen to music while I travel by train." },
+          { "latam": "Mientras Lucía compra los boletos, yo busco el andén.", "spain": "Mientras Lucía compra los billetes, yo busco el andén.", "en": "While Lucía buys the tickets, I look for the platform." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "mc",
+          "prompt": "It's 10:15. How do you say it?",
+          "options": [
+            { "text": "Son las diez y cuarto.", "correct": true },
+            { "text": "Son las diez y media." },
+            { "text": "Son las diez menos cuarto." },
+            { "text": "Es la diez y cuarto." }
+          ],
+          "explanation": "Y cuarto = :15. Use son las for every hour except one (es la una)."
+        },
+        {
+          "type": "listen",
+          "mode": "choose",
+          "audio": { "latam": "El último tren sale a las once y media." },
+          "prompt": "When does the last train leave?",
+          "options": [
+            { "text": "11:30", "correct": true },
+            { "text": "11:15" },
+            { "text": "10:30" }
+          ],
+          "explanation": "Once y media = 11:30."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "¿A qué hora ___ el próximo tren?" },
+          "answers": { "latam": ["sale"] },
+          "en": "What time does the next train leave?",
+          "hint": "salir",
+          "explanation": "Salir → el tren sale (it leaves)."
+        },
+        {
+          "type": "mc",
+          "prompt": "Buy a return ticket to Madrid",
+          "options": [
+            { "text": "Un boleto de ida y vuelta a Madrid, por favor.", "correct": true, "variant": "latam" },
+            { "text": "Un billete de ida y vuelta a Madrid, por favor.", "correct": true, "variant": "spain" },
+            { "text": "Un billete de ida a Madrid, por favor." }
+          ],
+          "explanation": "De ida = one way; de ida y vuelta = return. Boleto 🌎 / billete 🇪🇸."
+        },
+        {
+          "type": "match",
+          "prompt": "Match the station words",
+          "pairs": [
+            { "left": "el andén", "right": "platform" },
+            { "left": "el billete", "right": "ticket" },
+            { "left": "ida y vuelta", "right": "return trip" },
+            { "left": "tardar", "right": "to take (time)" },
+            { "left": "el último", "right": "the last" }
+          ]
+        },
+        {
+          "type": "build",
+          "en": "While we wait, shall we have a coffee?",
+          "answers": { "latam": ["Mientras esperamos, ¿tomamos un café?"] },
+          "distractors": ["cuando", "espero"],
+          "explanation": "Mientras + action at the same time. Tomar un café = have a coffee (everywhere)."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "The ticket seller asks what kind of ticket.",
+          "context": [{ "speaker": "Taquillera", "latam": "¿Solo ida o ida y vuelta?" }],
+          "options": [
+            { "text": "Ida y vuelta, por favor.", "correct": true, "feedback": "Return – you're coming back tonight." },
+            { "text": "A las diez y cuarto.", "feedback": "That's a time, not the type of ticket." },
+            { "text": "Del andén dos.", "feedback": "That's the platform." }
+          ],
+          "explanation": "Solo ida = one way · ida y vuelta = return."
+        }
+      ],
+      "recap": [
+        "Tell time: es la una, son las dos y cuarto / y media / menos cuarto.",
+        "Ask schedules: ¿A qué hora sale…? · ¿Cuánto tarda?",
+        "Describe two actions at once with mientras."
+      ]
+    },
+    {
+      "id": "u3l4",
+      "title": "How do you get to class?",
+      "titleEs": "¿Cómo vas a clase?",
+      "minutes": 14,
+      "setting": "latam",
+      "scenario": "Comparing commutes with Diego in Mexico City",
+      "dialogue": {
+        "title": "Metro vs. Cercanías",
+        "setting": "Emma and Diego compare their daily routines on a voice call – Mexico City vs. Alcalá.",
+        "lines": [
+          { "speaker": "Diego", "latam": "Oye, Emma, ¿cómo vas a la universidad?", "en": "Hey Emma, how do you get to the university?" },
+          { "speaker": "Emma", "latam": "Normalmente voy a pie. Pero cuando llueve, prefiero tomar el autobús.", "spain": "Normalmente voy a pie. Pero cuando llueve, prefiero coger el autobús.", "en": "Usually I walk. But when it rains, I prefer to take the bus." },
+          { "speaker": "Diego", "latam": "Yo tomo el metro todos los días. Es rápido; sin embargo, siempre hay mucha gente.", "spain": "Yo cojo el metro todos los días. Es rápido; sin embargo, siempre hay mucha gente.", "en": "I take the metro every day. It's fast; however, there are always lots of people." },
+          { "speaker": "Emma", "latam": "¿Cuánto cuesta el metro en la Ciudad de México?", "en": "How much is the metro in Mexico City?" },
+          { "speaker": "Diego", "latam": "Cuesta cinco pesos. ¡Es muy barato!", "en": "It costs five pesos. It's really cheap!" },
+          { "speaker": "Emma", "latam": "¡Qué barato! ¿Y a qué hora empiezan tus clases?", "en": "So cheap! And what time do your classes start?" },
+          { "speaker": "Diego", "latam": "Empiezo a las ocho y vuelvo a casa a las cuatro. ¿Y tú?", "en": "I start at eight and get back home at four. And you?" },
+          { "speaker": "Emma", "latam": "Mis clases empiezan a las diez. Sin embargo, no duermo mucho.", "en": "My classes start at ten. However, I don't sleep much." },
+          { "speaker": "Diego", "latam": "¿Por qué?", "en": "Why?" },
+          { "speaker": "Emma", "latam": "¡Porque Lucía y Javi vuelven a casa a las tres de la mañana!", "en": "Because Lucía and Javi come home at three in the morning!" },
+          { "speaker": "Diego", "latam": "¡Ja, ja! ¡Así es España!", "en": "Ha ha! That's Spain for you!" }
+        ]
+      },
+      "vocab": [
+        { "id": "a-pie", "latam": "a pie", "en": "on foot" },
+        { "id": "llueve", "latam": "llueve", "en": "it rains / it's raining" },
+        { "id": "preferir", "latam": "preferir", "en": "to prefer" },
+        { "id": "metro", "latam": "el metro", "en": "underground, subway" },
+        { "id": "mucha-gente", "latam": "mucha gente", "en": "lots of people", "note": "Gente is singular in Spanish: la gente es simpática." },
+        { "id": "empezar", "latam": "empezar", "en": "to start, begin" },
+        { "id": "volver", "latam": "volver", "en": "to return, come back" },
+        { "id": "dormir", "latam": "dormir", "en": "to sleep" },
+        { "id": "poder", "latam": "poder", "en": "can, to be able to" },
+        { "id": "costar", "latam": "costar", "en": "to cost" },
+        { "id": "todos-los-dias", "latam": "todos los días", "en": "every day" },
+        { "id": "normalmente", "latam": "normalmente", "en": "usually, normally" }
+      ],
+      "grammar": {
+        "title": "Stem-changing verbs: e → ie, o → ue",
+        "explanation": "Some verbs change their vowel when it's stressed: e becomes ie, o becomes ue.\n\nempezar → empiezo, empiezas, empieza, empezamos, empezáis 🇪🇸, empiezan\nvolver → vuelvo, vuelves, vuelve, volvemos, volvéis 🇪🇸, vuelven\n\nThe nosotros and vosotros forms DON'T change – draw a line around the other forms and it looks like a boot. That's why they're called “boot verbs”.\n\nMore e → ie: preferir (prefiero), querer (quiero).\nMore o → ue: dormir (duermo), poder (puedo), costar (cuesta).",
+        "explanationEs": "Algunos verbos cambian la vocal: e → ie (empiezo), o → ue (vuelvo). Nosotros y vosotros no cambian.",
+        "tables": [
+          {
+            "verb": "empezar",
+            "meaning": "to start (e → ie)",
+            "rows": [
+              { "person": "yo", "form": "empiezo" },
+              { "person": "tú", "form": "empiezas" },
+              { "person": "él / ella / usted", "form": "empieza" },
+              { "person": "nosotros / nosotras", "form": "empezamos" },
+              { "person": "vosotros / vosotras", "form": "empezáis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "empiezan" }
+            ]
+          },
+          {
+            "verb": "volver",
+            "meaning": "to come back (o → ue)",
+            "rows": [
+              { "person": "yo", "form": "vuelvo" },
+              { "person": "tú", "form": "vuelves" },
+              { "person": "él / ella / usted", "form": "vuelve" },
+              { "person": "nosotros / nosotras", "form": "volvemos" },
+              { "person": "vosotros / vosotras", "form": "volvéis", "spainOnly": true },
+              { "person": "ellos / ellas / ustedes", "form": "vuelven" }
+            ]
+          }
+        ],
+        "examples": [
+          { "latam": "Mis clases empiezan a las diez.", "en": "My classes start at ten." },
+          { "latam": "Vuelvo a casa a las cuatro.", "en": "I come home at four." },
+          { "latam": "¿Podemos ir a pie?", "en": "Can we walk?" },
+          { "latam": "Prefiero tomar el autobús.", "spain": "Prefiero coger el autobús.", "en": "I prefer to take the bus." }
+        ],
+        "compare": {
+          "title": "The bus has many names",
+          "latam": [
+            { "label": "Mexico", "text": "el camión", "en": "bus" },
+            { "label": "Caribbean", "text": "la guagua", "en": "bus" },
+            { "label": "Argentina", "text": "el colectivo", "en": "bus" }
+          ],
+          "spain": [
+            { "label": "Spain", "text": "el autobús", "en": "bus" },
+            { "label": "informal", "text": "el bus", "en": "bus" }
+          ],
+          "note": "El autobús is understood everywhere – a safe choice when you travel."
+        }
+      },
+      "connector": {
+        "word": "sin embargo",
+        "meaning": "however",
+        "explanation": "Sin embargo is a stronger, slightly more formal pero. It usually starts a new sentence or follows a semicolon: “It's fast; however, it's always full.” Great for sounding more advanced in conversations and writing.",
+        "examples": [
+          { "latam": "Es rápido; sin embargo, siempre hay mucha gente.", "en": "It's fast; however, there are always lots of people." },
+          { "latam": "Mis clases empiezan a las diez. Sin embargo, no duermo mucho.", "en": "My classes start at ten. However, I don't sleep much." },
+          { "latam": "El tren es caro. Sin embargo, es muy cómodo.", "en": "The train is expensive. However, it's very comfortable." }
+        ]
+      },
+      "exercises": [
+        {
+          "type": "gap",
+          "sentence": { "latam": "Mis clases ___ a las diez." },
+          "answers": { "latam": ["empiezan"] },
+          "en": "My classes start at ten.",
+          "hint": "empezar, ellas-form",
+          "explanation": "e → ie: empiezan."
+        },
+        {
+          "type": "gap",
+          "sentence": { "latam": "Yo ___ a casa a las cuatro." },
+          "answers": { "latam": ["vuelvo"] },
+          "en": "I come home at four.",
+          "hint": "volver",
+          "explanation": "o → ue: vuelvo."
+        },
+        {
+          "type": "mc",
+          "prompt": "“We can walk.” Which is correct?",
+          "options": [
+            { "text": "Podemos ir a pie.", "correct": true },
+            { "text": "Puedemos ir a pie." },
+            { "text": "Pueden ir a pie." }
+          ],
+          "explanation": "Nosotros forms don't change: podemos (not puedemos)."
+        },
+        {
+          "type": "match",
+          "prompt": "Match each verb with its yo-form",
+          "pairs": [
+            { "left": "empezar", "right": "empiezo" },
+            { "left": "preferir", "right": "prefiero" },
+            { "left": "volver", "right": "vuelvo" },
+            { "left": "dormir", "right": "duermo" },
+            { "left": "poder", "right": "puedo" }
+          ]
+        },
+        {
+          "type": "listen",
+          "mode": "type",
+          "audio": { "latam": "Prefiero tomar el autobús.", "spain": "Prefiero coger el autobús." },
+          "prompt": "Type what you hear",
+          "explanation": "Prefiero (e → ie) + infinitive."
+        },
+        {
+          "type": "build",
+          "en": "The metro is fast; however, there are always lots of people.",
+          "answers": { "latam": ["El metro es rápido; sin embargo, siempre hay mucha gente."] },
+          "distractors": ["muchas", "poco"],
+          "explanation": "Sin embargo contrasts the two ideas; gente is singular → mucha gente."
+        },
+        {
+          "type": "dialogue",
+          "prompt": "Diego asks how you get to university.",
+          "context": [{ "speaker": "Diego", "latam": "¿Cómo vas a la universidad?" }],
+          "options": [
+            { "text": "Normalmente voy a pie.", "correct": true, "feedback": "Clear answer – how you go." },
+            { "text": "Voy a las ocho.", "feedback": "That says when, not how." },
+            { "text": "Normalmente duermo mucho.", "feedback": "Nice for you, but he asked how you get there!" }
+          ],
+          "explanation": "¿Cómo vas? = how do you go? Answer: voy a pie / en autobús / en tren."
+        }
+      ],
+      "recap": [
+        "Boot verbs: empiezo, prefiero (e → ie) · vuelvo, duermo, puedo (o → ue).",
+        "Nosotros/vosotros don't change: empezamos, volvemos.",
+        "Contrast like a pro with sin embargo."
+      ]
+    }
+  ]
+}
