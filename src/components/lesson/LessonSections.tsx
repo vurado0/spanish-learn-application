@@ -119,7 +119,7 @@ export function VocabSection({ vocab, variant }: { vocab: string[]; variant: Var
     <div>
       <SectionTitle kicker="2 · New words" title={`${list.length} words for this conversation`} right={<EnglishToggle />} />
       <div className="grid gap-3 sm:grid-cols-2">
-        {list.map((w) => <WordCard key={w.id} word={w} variant={variant} />)}
+        {list.map((w) => <WordCard key={w.id} word={w} variant={variant} row />)}
       </div>
     </div>
   )

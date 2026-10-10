@@ -24,13 +24,20 @@ interface Props {
   onNext: () => void
 }
 
-/** 3 distractors: same topic first, never the same picture or the same Spanish word */
+const keyWords = (en: string) => new Set(en.toLowerCase().split(/[^a-z]+/).filter((x) => x.length > 3))
+/** "beer" vs "small draught beer" – too close to be a fair distractor */
+const overlaps = (a: string, b: string) => {
+  const kb = keyWords(b)
+  return a === b || [...keyWords(a)].some((x) => kb.has(x))
+}
+
+/** 3 distractors: same topic first, never the same picture, Spanish word or a similar meaning */
 export function distractors(word: VocabWord, variant: Variant, n = 3): VocabWord[] {
   const ok = (w: VocabWord) =>
     w.id !== word.id &&
     (w.visual === '' || w.visual !== word.visual) &&
     wordText(w, variant) !== wordText(word, variant) &&
-    w.english !== word.english
+    !overlaps(w.english, word.english)
   const same = shuffle(allWords.filter((w) => w.topic === word.topic && ok(w)))
   const rest = shuffle(allWords.filter((w) => w.topic !== word.topic && w.level === word.level && ok(w)))
   return [...same, ...rest].slice(0, n)
@@ -99,14 +106,20 @@ function Choose({ word, mode, variant, onResult, onNext }: Props) {
       </div>
       <div className="grid grid-cols-2 gap-3">
         {options.map((w) => {
-          const state = !picked ? '' : w.id === word.id ? 'border-emerald-500 bg-emerald-50' : w.id === picked ? 'animate-shake border-red-400 bg-red-50' : 'opacity-50'
+          const state = !picked
+            ? 'border-stone-200 bg-white hover:border-orange-300'
+            : w.id === word.id
+              ? 'border-emerald-500 bg-emerald-50'
+              : w.id === picked
+                ? 'animate-shake border-red-400 bg-red-50'
+                : 'border-stone-200 bg-white opacity-50'
           return (
             <button
               key={w.id}
               type="button"
               disabled={!!picked}
               onClick={() => choose(w)}
-              className={`flex min-h-20 items-center justify-center rounded-2xl border-2 border-stone-200 bg-white p-3 font-bold text-stone-800 shadow-sm transition hover:border-orange-300 active:scale-95 ${state}`}
+              className={`flex min-h-20 items-center justify-center rounded-2xl border-2 p-3 font-bold text-stone-800 shadow-sm transition active:scale-95 ${state}`}
             >
               {pictures ? <WordVisual word={w} size="md" /> : <GenderWord word={w} variant={variant} className="text-lg" />}
             </button>
@@ -258,14 +271,10 @@ export function MemoryGame({ words, variant, onDone }: { words: VocabWord[]; var
         setMatched((m) => new Set(m).add(a.id))
         setOpen([])
       } else {
-        // only a real mistake if the partner card had already been revealed (the learner could have known)
-        const partner = (c: typeof a) => `${c.kind === 'pic' ? 'w' : 'p'}-${c.id}`
-        setMissed((s) => {
-          const n = new Set(s)
-          if (seen.has(partner(a))) n.add(a.id)
-          if (seen.has(partner(b))) n.add(b.id)
-          return n
-        })
+        // a real mistake only if the first card's partner had already been revealed – the learner
+        // could have known where it was. The second card of a move is a blind guess.
+        const partner = `${a.kind === 'pic' ? 'w' : 'p'}-${a.id}`
+        if (seen.has(partner)) setMissed((s) => new Set(s).add(a.id))
         setTimeout(() => setOpen([]), 900)
       }
     }

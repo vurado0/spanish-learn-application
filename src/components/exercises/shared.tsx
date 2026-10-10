@@ -57,7 +57,7 @@ export function Feedback({
           {state.correct ? correctLabel(state.variant, current) : '✘ Not quite'}
         </p>
         {state.accentWarning && state.expected && (
-          <p className="text-sm text-emerald-900">Watch the accents: <b>{state.expected}</b></p>
+          <p className="text-sm text-emerald-900">Watch the accent: <b>{state.expected}</b></p>
         )}
         {!state.correct && state.expected && (
           <p className="text-sm text-red-900">Correct answer: <b>{state.expected}</b></p>

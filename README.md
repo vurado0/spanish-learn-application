@@ -12,7 +12,8 @@ A Spanish learning web app for one learner: short lessons built around **real co
 | | |
 |---|---|
 | **Course** | Placement check (10 questions) → Units A1 → A2 → B1. Every lesson: dialogue with audio → 8–12 words → mini grammar → connector → 5–8 exercises → 3-line recap |
-| **Both variants** | Vocabulary cards show both words with both voices · conjugation tables mark *vosotros* as 🇪🇸 only · dialogues have a 🇪🇸 toggle (Alcalá/Madrid scenes start in 🇪🇸) · answers are accepted in both variants, and the feedback names the one you used |
+| **Vocabulary** | 548 words (A1 325 · A2 166 · B1 57) in 10 topics with pictures, gender-coloured articles, audio and examples · *Learn new words* in batches of 5 · daily spaced-repetition review (max. 15 min) · 6 practice modes (picture→word, word→picture, listen→picture, type it, flashcard, memory game) · A2/B1 unlock at 70 % “familiar” · browse with filters and search |
+| **Variants** | One **Spanish variant** setting (🌎 by default / 🇪🇸) drives words, examples, dialogues and voices · optional “show other variant too” line · conjugation tables mark *vosotros* as 🇪🇸 only · answers in the other variant are accepted with “✔ correct – that's the 🇪🇸 Spain version” |
 | **Exercises** | Multiple choice, fill the gap, matching pairs, sentence builder (tap or drag), listening (choose/type), dialogue choice, “🌎 or 🇪🇸?” sorting game. Instant feedback with an explanation |
 | **Motivation** | Streak, % course completed, weekly minutes vs the 6-hour target, countdown to February 2027, “Continue where you left off”, a badge per unit, daily spaced-repetition review (Leitner boxes), optional browser reminder |
 | **Reference** | Latin America vs Spain, tense overview, connectors cheat sheet |
@@ -24,7 +25,7 @@ Progress auto-saves after every exercise and every lesson. Phone and laptop stay
 
 ## 1. Local setup
 
-Requirements: Node.js 20+ and npm.
+Requirements: Node.js 22.18+ (the vocabulary validator is a `.ts` file run directly by Node) and npm.
 
 ```bash
 git clone <your-repo-url> charla && cd charla
@@ -90,11 +91,11 @@ The emulators also enforce `firestore.rules`. Register any account. During devel
 
 ```
 users/{uid}                      displayName, email, createdAt,
-                                 settings { showEnglish, defaultVariant, audioSpeed },
+                                 settings { showEnglish, variant, showOtherVariant, audioSpeed },   (older accounts: defaultVariant, still read)
                                  placementResult { score, total, startLessonId, takenAt }
 users/{uid}/progress/{lessonId}  completed, bestScore, attempts, lastPlayedAt,
                                  inProgress { step, exerciseIndex, correct }   ← exact resume point
-users/{uid}/vocab/{wordId}       box, intervalDays, dueDate, timesCorrect, timesWrong
+users/{uid}/vocab/{wordId}       box (Leitner 1–6), intervalDays, dueDate, timesCorrect, timesWrong   ← wordId = id in src/data/vocab
 users/{uid}/stats/summary        currentUnit, currentLesson, streak, lastActiveDate,
                                  weeklyMinutes { week, minutes }, badges[]
 ```
@@ -160,6 +161,26 @@ Exercise types (see `Exercise` in [`src/types.ts`](src/types.ts)):
 
 Every exercise has an `explanation`, which is shown on mistakes. Answers are checked without case or punctuation. Missing accents still count as correct, with a gentle reminder.
 
+## Vocabulary database
+
+All words live in [`src/data/vocab/`](src/data/vocab), one JSON file per topic (`basics`, `people`, `food`, `city`, `home`, `travel`, `culture`, `work`, `verbs`, `phrases`), one word per line. Lessons only reference word ids (`"vocab": ["flat", "flatmate", …]`).
+
+```jsonc
+{ "id": "phone",                      // stable – never rename (saved progress uses it)
+  "spanishLatam": "celular", "spanishSpain": "móvil",   // spanishSpain only if different
+  "english": "mobile phone", "article": "el", "gender": "m",   // nouns; articleSpain/genderSpain if they differ
+  "feminine": "…",                    // optional: cansado → cansada, profesor → profesora
+  "type": "noun", "topic": "home", "level": "A1",
+  "exampleLatam": "Mi celular no tiene batería.", "exampleSpain": "Mi móvil no tiene batería.",
+  "exampleEnglish": "My phone has no battery.",
+  "visual": "📱",                     // emoji, "/vocab/<file>.svg", or "" for abstract words (topic icon + text card)
+  "note": "optional tip" }
+```
+
+To add words, append them to a topic file and run `npm run validate:vocab`. It checks unique ids, duplicates within a topic, required fields, valid level/topic/type values, articles/genders on nouns, that every lesson word id exists, that an example never uses the *other* variant's word (e.g. “móvil” in the 🌎 example), and the phase targets / 500-word minimum. The build fails on any error.
+
+**Images:** words use the device's own emoji font, so no emoji image files are shipped. The one custom picture, [`public/vocab/stork.svg`](public/vocab/stork.svg) (there is no stork emoji), is an original drawing released under CC0. If you add images, use only your own or openly licensed ones (e.g. [OpenMoji](https://openmoji.org), CC BY-SA 4.0, or [Twemoji](https://github.com/jdecked/twemoji), CC BY 4.0) in `/public/vocab/`, credit them here, and never hotlink external images.
+
 ## Project structure
 
 ```
@@ -174,8 +195,11 @@ src/
   context/            AuthContext (Firebase Auth), DataContext (Firestore sync, streaks, SRS)
   lib/                firebase, speech (voice picking), answers (variant-aware checking),
                       srs (Leitner), dates, reminder, content loader
-  pages/              Dashboard, CourseMap, LessonPage, Review, Placement, Settings, reference pages, AuthPage
-scripts/validate-content.mjs
+  pages/              Dashboard, CourseMap, LessonPage, Placement, Settings, reference pages, AuthPage
+  pages/vocab/        VocabHome, VocabBrowse, VocabSession (learn / review)
+  components/vocab/   WordCard, WordVisual, GenderWord, MasteryDots, Practice (6 modes), VariantSwitch
+  data/vocab/         <topic>.json word database + _meta.json (topics, levels, phase targets)
+scripts/validate-content.mjs  scripts/validate-vocab.ts
 firestore.rules  vercel.json  firebase.json
 ```
 
@@ -191,8 +215,9 @@ firestore.rules  vercel.json  firebase.json
 | | |
 |---|---|
 | `npm run dev` | dev server |
-| `npm run build` | validate content → typecheck → production build |
+| `npm run build` | validate content → validate vocabulary → typecheck → production build |
 | `npm run validate-content` | check all lesson JSON |
+| `npm run validate:vocab` | check the word database (`-- --phase=A1` while building a phase) |
 | `npm run emulators` | local Firebase Auth + Firestore emulators |
 | `npm run preview` | serve the production build |
 

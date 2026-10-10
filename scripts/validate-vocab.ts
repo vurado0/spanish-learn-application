@@ -104,7 +104,9 @@ for (const file of files) {
     if (w.genderSpain && !GENDERS.includes(w.genderSpain)) errors.push(`${where}: invalid genderSpain "${w.genderSpain}"`)
     if (w.article && w.gender) {
       const expect = w.article === 'el/la' ? 'mf' : ['el', 'los'].includes(w.article) ? 'm' : 'f'
-      if (w.gender !== expect) errors.push(`${where}: article "${w.article}" doesn't match gender "${w.gender}"`)
+      // feminine nouns starting with a stressed a- take el in the singular: el agua, el hambre
+      const stressedA = w.article === 'el' && w.gender === 'f' && /^h?[aá]/i.test(w.spanishLatam)
+      if (w.gender !== expect && !stressedA) errors.push(`${where}: article "${w.article}" doesn't match gender "${w.gender}"`)
     }
     if (w.spanishSpain && w.exampleSpain === undefined && w.exampleLatam.toLowerCase().includes(w.spanishLatam.toLowerCase()))
       warnings.push(`${where}: Spain word differs but there is no exampleSpain`)
