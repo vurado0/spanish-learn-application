@@ -8,7 +8,8 @@
     "build": "npm run validate-content && tsc -b && vite build",
     "preview": "vite preview",
     "validate-content": "node scripts/validate-content.mjs",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "emulators": "firebase emulators:start --project demo-charla"
   },
   "dependencies": {
     "firebase": "^13.0.0",

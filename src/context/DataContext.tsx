@@ -58,7 +58,14 @@ export function DataProvider({ children }: { children: ReactNode }) {
   vocabRef.current = vocab
 
   useEffect(() => {
-    if (!uid || !user) return
+    if (!uid || !user) {
+      // signed out: forget the previous account's data
+      setProfile(null)
+      setStats(DEFAULT_STATS)
+      setProgress({})
+      setVocab({})
+      return
+    }
     setLoaded({ profile: false, stats: false, progress: false, vocab: false })
     const userRef = doc(db, 'users', uid)
 

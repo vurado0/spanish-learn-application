@@ -45,7 +45,9 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
   const stepIndex = STEPS.indexOf(step)
   const overall = ((stepIndex + (step === 'exercises' ? exerciseIndex / total : 0)) / (STEPS.length - 1)) * 100
 
-  useEffect(() => window.scrollTo({ top: 0 }), [step, exerciseIndex])
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [step, exerciseIndex])
 
   const goTo = (next: LessonStep) => {
     setStep(next)

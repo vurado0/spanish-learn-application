@@ -49,7 +49,7 @@ export default function Placement() {
             <p className="mt-2 text-stone-600">{placement.intro}</p>
             <div className="mt-6 flex flex-col gap-2">
               <button type="button" className="btn-primary" onClick={() => setStarted(true)}>Start · 10 questions</button>
-              <button type="button" className="btn-secondary" onClick={() => finish(allLessons[0].id, true)}>
+              <button type="button" className="btn-secondary" onClick={() => (retake ? navigate(-1) : finish(allLessons[0].id, true))}>
                 {retake ? 'Cancel' : "Skip – I'm a total beginner"}
               </button>
             </div>
