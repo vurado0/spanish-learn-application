@@ -5,6 +5,8 @@ import { acceptedAnswers, displayWord, speakText, wordExample, wordText, words a
 import { checkAnswer, shuffle } from '../../lib/answers'
 import { speak } from '../../lib/speech'
 import type { Rating } from '../../lib/srs'
+import { registerAnswer } from '../../lib/combo'
+import { sfx } from '../../lib/sfx'
 import AudioButton from '../AudioButton'
 import { AccentBar } from '../exercises/FillGap'
 import { CheckButton, Feedback, type FeedbackState } from '../exercises/shared'
@@ -109,7 +111,7 @@ function Choose({ word, mode, variant, onResult, onNext }: Props) {
           const state = !picked
             ? 'border-stone-200 bg-white hover:border-orange-300'
             : w.id === word.id
-              ? 'border-emerald-500 bg-emerald-50'
+              ? 'animate-correct border-emerald-500 bg-emerald-50'
               : w.id === picked
                 ? 'animate-shake border-red-400 bg-red-50'
                 : 'border-stone-200 bg-white opacity-50'
@@ -188,10 +190,12 @@ function Flashcard({ word, variant, onResult, onNext }: Omit<Props, 'mode'>) {
   const [flipped, setFlipped] = useState(false)
 
   const flip = () => {
+    sfx.flip()
     setFlipped(true)
     speak(speakText(word, variant), variant, settings.audioSpeed)
   }
   const rate = (r: Rating) => {
+    registerAnswer(r !== 'again')
     onResult(r !== 'again', r)
     onNext()
   }
@@ -262,12 +266,14 @@ export function MemoryGame({ words, variant, onDone }: { words: VocabWord[]; var
     const card = cards.find((c) => c.key === key)!
     if (matched.has(card.id)) return
     if (card.kind === 'word') speak(speakText(byId.get(card.id)!, variant), variant, settings.audioSpeed)
+    else sfx.flip()
     const next = [...open, key]
     setOpen(next)
     if (next.length === 2) {
       setMoves((m) => m + 1)
       const [a, b] = next.map((k) => cards.find((c) => c.key === k)!)
       if (a.id === b.id) {
+        sfx.match()
         setMatched((m) => new Set(m).add(a.id))
         setOpen([])
       } else {
@@ -296,7 +302,7 @@ export function MemoryGame({ words, variant, onDone }: { words: VocabWord[]; var
               onClick={() => flip(c.key)}
               className={`flex aspect-square items-center justify-center rounded-2xl border-2 p-1 text-center font-bold transition active:scale-95 ${
                 matched.has(c.id)
-                  ? 'border-emerald-300 bg-emerald-50'
+                  ? 'animate-correct border-emerald-300 bg-emerald-50'
                   : isOpen
                     ? 'border-orange-400 bg-white'
                     : 'border-orange-200 bg-gradient-to-br from-orange-400 to-rose-500 text-2xl text-white'

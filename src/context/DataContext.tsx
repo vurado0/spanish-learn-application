@@ -6,8 +6,9 @@ import type { LessonProgress, PlacementResult, Settings, Stats, UserDoc, VocabPr
 import { addDays, todayKey, weekKey } from '../lib/dates'
 import { findLesson, nextLessonId, units, allLessons } from '../lib/content'
 import { learn, newVocab, rate, review, type Rating } from '../lib/srs'
+import { setSfxEnabled } from '../lib/sfx'
 
-export const DEFAULT_SETTINGS: Settings = { showEnglish: true, variant: 'latam', showOtherVariant: false, audioSpeed: 'normal' }
+export const DEFAULT_SETTINGS: Settings = { showEnglish: true, variant: 'latam', showOtherVariant: false, audioSpeed: 'normal', soundEffects: true }
 
 /** older accounts stored the variant as settings.defaultVariant */
 function normalizeSettings(s: Partial<Settings> | undefined): Settings {
@@ -121,6 +122,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   }, [uid, user])
 
   const settings = profile?.settings ?? DEFAULT_SETTINGS
+  useEffect(() => setSfxEnabled(settings.soundEffects), [settings.soundEffects])
 
   /** streak + weekly minutes bookkeeping, merged into a stats patch */
   const activityPatch = useCallback((minutes: number): Partial<Stats> => {

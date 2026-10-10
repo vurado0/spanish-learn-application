@@ -21,7 +21,7 @@ export function OptionGrid({
     <div className="grid gap-2 sm:grid-cols-2">
       {options.map((o, i) => {
         const done = picked !== null
-        const state = !done ? '' : o.correct ? 'border-emerald-500 bg-emerald-50' : i === picked ? 'animate-shake border-red-400 bg-red-50' : 'opacity-60'
+        const state = !done ? '' : o.correct ? 'animate-correct border-emerald-500 bg-emerald-50' : i === picked ? 'animate-shake border-red-400 bg-red-50' : 'opacity-60'
         return (
           <button key={i} type="button" disabled={done} onClick={() => onPick(i)} className={`chip ${state}`}>
             {o.text}

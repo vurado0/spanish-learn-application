@@ -11,6 +11,11 @@ import WordCard from '../../components/vocab/WordCard'
 import WordVisual from '../../components/vocab/WordVisual'
 import GenderWord from '../../components/vocab/GenderWord'
 import Practice, { MemoryGame, PRACTICE_MODES, type PracticeMode } from '../../components/vocab/Practice'
+import Celebration from '../../components/fx/Celebration'
+import { ComboChip, ComboToast } from '../../components/fx/Combo'
+import { getCombo, resetCombo } from '../../lib/combo'
+import { todayKey } from '../../lib/dates'
+import { displayStreak } from '../../context/DataContext'
 
 const BATCH = 5
 const MAX_REVIEW_WORDS = 25
@@ -70,12 +75,14 @@ export default function VocabSession({ mode }: { mode: 'learn' | 'review' }) {
 }
 
 function Session({ mode, topic, onAgain }: { mode: 'learn' | 'review'; topic?: string; onAgain: () => void }) {
-  const { vocab, settings, learnWord, reviewWord, rateWord } = useData()
+  const { vocab, settings, stats, learnWord, reviewWord, rateWord } = useData()
   const navigate = useNavigate()
   const variant = settings.variant
 
   // freeze the plan and the "before" snapshot when the session starts
   const [before] = useState<Record<string, VocabProgress>>(() => vocab)
+  const [activeBefore] = useState(() => stats.lastActiveDate === todayKey())
+  useEffect(() => resetCombo(), [])
   const steps = useMemo<Step[]>(() => {
     if (mode === 'learn') {
       const batch = nextNewWords(before, BATCH, topic)
@@ -146,7 +153,18 @@ function Session({ mode, topic, onAgain }: { mode: 'learn' | 'review'; topic?: s
     )
   }
 
-  if (finished) return <Summary mode={mode} before={before} practised={practised} answers={answers} timeUp={timeUp} onAgain={onAgain} />
+  if (finished)
+    return (
+      <Summary
+        mode={mode}
+        before={before}
+        practised={practised}
+        answers={answers}
+        timeUp={timeUp}
+        onAgain={onAgain}
+        streak={!activeBefore && answers.total > 0 ? displayStreak(stats) : undefined}
+      />
+    )
 
   return (
     <Shell title={mode === 'learn' ? 'Learn new words' : 'Daily review'} progress={(index / steps.length) * 100} onClose={() => navigate('/vocab')}>
@@ -185,8 +203,10 @@ function Shell({ title, progress, onClose, children }: { title: string; progress
             <div className="mb-1 text-xs font-semibold text-stone-500">{title}</div>
             <ProgressBar value={progress} />
           </div>
+          <ComboChip />
         </div>
       </header>
+      <ComboToast />
       <main className="mx-auto max-w-xl px-4 pt-5 pb-48 sm:pb-12">{children}</main>
     </div>
   )
@@ -199,6 +219,7 @@ function Summary({
   answers,
   timeUp,
   onAgain,
+  streak,
 }: {
   mode: 'learn' | 'review'
   before: Record<string, VocabProgress>
@@ -206,8 +227,10 @@ function Summary({
   answers: { total: number; correct: number }
   timeUp: boolean
   onAgain: () => void
+  streak?: number
 }) {
   const { vocab, settings } = useData()
+  const [bestCombo] = useState(() => getCombo().best)
   const accuracy = answers.total ? Math.round((answers.correct / answers.total) * 100) : 0
   const levelledUp = [...practised]
     .map((id) => wordIndex.get(id)!)
@@ -215,42 +238,37 @@ function Summary({
 
   return (
     <Shell title="Session summary" progress={100}>
-      <div className="animate-pop text-center">
-        <div className="text-5xl">{accuracy >= 80 ? '🎉' : accuracy >= 50 ? '💪' : '🌱'}</div>
-        <h1 className="mt-2 text-2xl font-extrabold text-stone-900">{mode === 'learn' ? '¡Palabras nuevas!' : '¡Repaso terminado!'}</h1>
-        {timeUp && <p className="text-sm text-stone-500">15 minutes are up – great work, the rest can wait for tomorrow.</p>}
-      </div>
-      <div className="mt-5 grid grid-cols-3 gap-2 text-center">
-        <div className="rounded-2xl bg-orange-50 p-3">
-          <div className="text-2xl font-extrabold text-orange-700">{practised.size}</div>
-          <div className="text-xs font-semibold text-orange-800">words practised</div>
-        </div>
-        <div className="rounded-2xl bg-emerald-50 p-3">
-          <div className="text-2xl font-extrabold text-emerald-700">{accuracy}%</div>
-          <div className="text-xs font-semibold text-emerald-800">accuracy</div>
-        </div>
-        <div className="rounded-2xl bg-violet-50 p-3">
-          <div className="text-2xl font-extrabold text-violet-700">{levelledUp.length}</div>
-          <div className="text-xs font-semibold text-violet-800">levelled up</div>
-        </div>
-      </div>
-      {levelledUp.length > 0 && (
-        <div className="mt-4 rounded-2xl border border-stone-200 bg-white p-4">
-          <div className="mb-2 text-sm font-bold text-stone-500">⬆️ Levelled up</div>
-          <div className="flex flex-wrap gap-2">
-            {levelledUp.map((w) => (
-              <span key={w.id} className="flex items-center gap-1 rounded-full bg-stone-100 py-1 pr-3 pl-1 text-sm">
-                <WordVisual word={w} size="sm" label={false} />
-                <GenderWord word={w} variant={settings.variant} className="font-semibold" />
-              </span>
-            ))}
+      <Celebration
+        hero={accuracy === 100 ? '🏆' : accuracy >= 80 ? '🎉' : accuracy >= 50 ? '💪' : '🌱'}
+        title={mode === 'learn' ? '¡Palabras nuevas!' : '¡Repaso terminado!'}
+        subtitle={timeUp ? '15 minutes are up – great work, the rest can wait for tomorrow.' : undefined}
+        stats={[
+          { label: 'Practised', value: practised.size, icon: '📚', tone: 'border-orange-200 bg-orange-50 text-orange-800' },
+          { label: 'Accuracy', value: accuracy, suffix: '%', icon: '🎯', tone: 'border-emerald-200 bg-emerald-50 text-emerald-800' },
+          mode === 'learn'
+            ? { label: 'Best combo', value: bestCombo, icon: '🔥', tone: 'border-rose-200 bg-rose-50 text-rose-800' }
+            : { label: 'Levelled up', value: levelledUp.length, icon: '⬆️', tone: 'border-violet-200 bg-violet-50 text-violet-800' },
+        ]}
+        streak={streak}
+      >
+        {levelledUp.length > 0 && (
+          <div className="mt-4 rounded-2xl border border-stone-200 bg-white p-4">
+            <div className="mb-2 text-sm font-bold text-stone-500">⬆️ Levelled up</div>
+            <div className="flex flex-wrap gap-2">
+              {levelledUp.map((w, i) => (
+                <span key={w.id} className="animate-bounce-in flex items-center gap-1 rounded-full bg-stone-100 py-1 pr-3 pl-1 text-sm" style={{ animationDelay: `${1200 + i * 90}ms` }}>
+                  <WordVisual word={w} size="sm" label={false} />
+                  <GenderWord word={w} variant={settings.variant} className="font-semibold" />
+                </span>
+              ))}
+            </div>
           </div>
+        )}
+        <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+          {mode === 'learn' && <button type="button" onClick={onAgain} className="btn-primary flex-1">Learn 5 more</button>}
+          <Link to="/vocab" className="btn-secondary flex-1">Back to vocabulary</Link>
         </div>
-      )}
-      <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-        {mode === 'learn' && <button type="button" onClick={onAgain} className="btn-primary flex-1">Learn 5 more</button>}
-        <Link to="/vocab" className="btn-secondary flex-1">Back to vocabulary</Link>
-      </div>
+      </Celebration>
     </Shell>
   )
 }
