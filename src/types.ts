@@ -231,6 +231,8 @@ export interface Settings {
   /** also show the other variant as a small secondary line */
   showOtherVariant: boolean
   audioSpeed: 'normal' | 'slow'
+  /** short synthesised sounds for right/wrong answers, combos and celebrations */
+  soundEffects: boolean
   /** legacy name of `variant` (accounts created before the vocabulary section) */
   defaultVariant?: Variant
 }

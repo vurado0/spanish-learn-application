@@ -5,7 +5,12 @@ import { useData } from '../context/DataContext'
 import type { LessonStep, Variant } from '../types'
 import ProgressBar from '../components/ProgressBar'
 import ExerciseRenderer from '../components/exercises/ExerciseRenderer'
-import { ConnectorSection, DialogueSection, GrammarSection, SectionTitle, VocabSection } from '../components/lesson/LessonSections'
+import { ConnectorSection, DialogueSection, GrammarSection, VocabSection } from '../components/lesson/LessonSections'
+import Celebration from '../components/fx/Celebration'
+import { ComboChip, ComboToast } from '../components/fx/Combo'
+import { getCombo, resetCombo } from '../lib/combo'
+import { todayKey } from '../lib/dates'
+import { displayStreak } from '../context/DataContext'
 
 const STEPS: LessonStep[] = ['dialogue', 'vocab', 'grammar', 'connector', 'exercises', 'recap']
 const MAX_GAP_MS = 5 * 60_000 // idle time beyond this doesn't count as study time
@@ -21,7 +26,7 @@ export default function LessonPage() {
 
 function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolean }) {
   const { unit, lesson, index } = findLesson(lessonId)!
-  const { settings, progress, saveExerciseProgress, completeLesson } = useData()
+  const { settings, progress, stats, saveExerciseProgress, completeLesson } = useData()
   const navigate = useNavigate()
 
   // resume exactly where the learner left off (unless restarting)
@@ -30,7 +35,10 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
   const [exerciseIndex, setExerciseIndex] = useState(saved?.exerciseIndex ?? 0)
   const [correct, setCorrect] = useState(saved?.correct ?? 0)
   const [variant, setVariant] = useState<Variant>(settings.variant)
-  const [result, setResult] = useState<{ score: number; newBadge?: string } | null>(null)
+  const [result, setResult] = useState<{ score: number; newBadge?: string; bestCombo: number } | null>(null)
+  // was today's streak already counted before this lesson? (if not, finishing it extends the streak)
+  const [activeBefore] = useState(() => stats.lastActiveDate === todayKey())
+  useEffect(() => resetCombo(), [])
 
   // study-time tracking
   const lastTick = useRef(Date.now())
@@ -65,7 +73,7 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
     } else {
       const score = Math.round((nextCorrect / total) * 100)
       const { newBadge } = completeLesson(lessonId, score, takeMinutes())
-      setResult({ score, newBadge })
+      setResult({ score, newBadge, bestCombo: getCombo().best })
       setStep('recap')
     }
   }
@@ -86,9 +94,11 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
             </div>
             <ProgressBar value={overall} />
           </div>
+          <ComboChip />
         </div>
       </header>
 
+      <ComboToast />
       <main className="mx-auto max-w-2xl px-4 pt-5 pb-48 sm:pb-12">
         {step === 'dialogue' && <DialogueSection dialogue={lesson.dialogue} variant={variant} onVariant={setVariant} setting={lesson.setting} />}
         {step === 'vocab' && <VocabSection vocab={lesson.vocab} variant={variant} />}
@@ -106,26 +116,19 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
         )}
 
         {step === 'recap' && (
-          <div className="animate-pop">
-            <SectionTitle kicker="6 · Recap" title="¡Muy bien! Lesson complete" />
-            <div className="mb-4 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-emerald-50 p-4 text-center">
-                <div className="text-3xl font-extrabold text-emerald-700">{recapScore}%</div>
-                <div className="text-xs font-semibold text-emerald-800">score</div>
-              </div>
-              <div className="rounded-2xl bg-orange-50 p-4 text-center">
-                <div className="text-3xl font-extrabold text-orange-700">+{lesson.vocab.length}</div>
-                <div className="text-xs font-semibold text-orange-800">words in your review deck</div>
-              </div>
-            </div>
-            {badgeUnit && (
-              <div className="animate-pop mb-4 rounded-2xl border-2 border-amber-300 bg-amber-50 p-4 text-center">
-                <div className="text-5xl">{badgeUnit.badge.emoji}</div>
-                <div className="mt-1 font-extrabold text-amber-900">New badge: {badgeUnit.badge.name}</div>
-                <div className="text-sm text-amber-800">You finished Unit {badgeUnit.order}!</div>
-              </div>
-            )}
-            <div className="rounded-2xl border border-stone-200 bg-white p-4">
+          <Celebration
+            hero={recapScore === 100 ? '🏆' : recapScore >= 70 ? '🎉' : '💪'}
+            title={recapScore === 100 ? '¡Perfecto!' : recapScore >= 70 ? '¡Muy bien!' : '¡Buen trabajo!'}
+            subtitle={`Lesson complete: ${lesson.title}`}
+            stats={[
+              { label: 'Score', value: recapScore, suffix: '%', icon: '🎯', tone: 'border-emerald-200 bg-emerald-50 text-emerald-800' },
+              { label: 'New words', value: lesson.vocab.length, icon: '📚', tone: 'border-orange-200 bg-orange-50 text-orange-800' },
+              { label: 'Best combo', value: result?.bestCombo ?? 0, icon: '🔥', tone: 'border-rose-200 bg-rose-50 text-rose-800' },
+            ]}
+            streak={result && !activeBefore ? displayStreak(stats) : undefined}
+            badge={badgeUnit ? { emoji: badgeUnit.badge.emoji, name: badgeUnit.badge.name, text: `You finished Unit ${badgeUnit.order}!` } : undefined}
+          >
+            <div className="mt-5 rounded-2xl border border-stone-200 bg-white p-4">
               <div className="mb-2 text-sm font-bold text-stone-500">What you can do now</div>
               <ol className="space-y-2">
                 {lesson.recap.map((r, i) => (
@@ -140,7 +143,7 @@ function LessonPlayer({ lessonId, restart }: { lessonId: string; restart: boolea
               {next && <button type="button" onClick={() => navigate(`/lesson/${next}`)} className="btn-primary flex-1">Next lesson →</button>}
               <Link to="/" className="btn-secondary flex-1">Back to dashboard</Link>
             </div>
-          </div>
+          </Celebration>
         )}
 
         {stepIndex < 4 && (

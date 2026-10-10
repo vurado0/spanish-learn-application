@@ -5,6 +5,7 @@ import { auth } from '../lib/firebase'
 import { useData } from '../context/DataContext'
 import { getReminder, notificationsSupported, setReminder, type ReminderSettings } from '../lib/reminder'
 import { hasExactVoice, speak } from '../lib/speech'
+import { sfx, setSfxEnabled } from '../lib/sfx'
 import Card from '../components/Card'
 
 function Row({ title, desc, children }: { title: string; desc?: string; children: ReactNode }) {
@@ -66,6 +67,20 @@ export default function Settings() {
           <div className="flex items-center gap-2">
             <Segmented value={settings.audioSpeed} options={[{ value: 'normal', label: 'Normal' }, { value: 'slow', label: '🐢 Slow' }]} onChange={(v) => updateSettings({ audioSpeed: v })} />
             <button type="button" className="rounded-full bg-stone-100 px-3 py-1.5 text-sm" onClick={() => speak('Hola, ¿qué tal? Muchas gracias.', settings.variant, settings.audioSpeed)}>🔊 Test</button>
+          </div>
+        </Row>
+        <Row title="Sound effects" desc="Little sounds for right and wrong answers, combos and finished lessons.">
+          <div className="flex items-center gap-2">
+            <Segmented
+              value={settings.soundEffects ? 'on' : 'off'}
+              options={[{ value: 'on', label: '🔔 On' }, { value: 'off', label: '🔕 Off' }]}
+              onChange={(v) => {
+                updateSettings({ soundEffects: v === 'on' })
+                setSfxEnabled(v === 'on')
+                if (v === 'on') sfx.correct()
+              }}
+            />
+            <button type="button" className="rounded-full bg-stone-100 px-3 py-1.5 text-sm" onClick={() => sfx.complete()}>🎺 Test</button>
           </div>
         </Row>
         <Row

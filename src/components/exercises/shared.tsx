@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
+import { registerAnswer } from '../../lib/combo'
 import type { Variant } from '../../types'
 
 export interface ExerciseProps<T> {
@@ -44,17 +45,28 @@ export function Feedback({
   /** variant currently shown – used to name the other variant when the learner used it */
   current?: Variant
 }) {
+  // every feedback = one answered question → sound + answers-in-a-row combo (once, even in StrictMode)
+  const counted = useRef(false)
+  useEffect(() => {
+    if (counted.current) return
+    counted.current = true
+    registerAnswer(state.correct)
+  }, [state.correct])
+
   const otherVariant = state.correct && !!current && !!state.variant && state.variant !== 'both' && state.variant !== current
   return (
     <div
-      className={`animate-pop fixed inset-x-0 bottom-0 z-30 border-t-2 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:static sm:mt-6 sm:rounded-2xl sm:border-2 ${
+      className={`animate-slide-up fixed inset-x-0 bottom-0 z-30 border-t-2 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:static sm:mt-6 sm:rounded-2xl sm:border-2 ${
         state.correct ? 'border-emerald-300 bg-emerald-50' : 'border-red-300 bg-red-50'
       }`}
       role="status"
     >
       <div className="mx-auto max-w-2xl">
-        <p className={`text-lg font-extrabold ${state.correct ? 'text-emerald-800' : 'text-red-800'}`}>
-          {state.correct ? correctLabel(state.variant, current) : '✘ Not quite'}
+        <p className={`flex items-center gap-2 text-lg font-extrabold ${state.correct ? 'text-emerald-800' : 'text-red-800'}`}>
+          <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-white ${state.correct ? 'animate-bounce-in bg-emerald-500' : 'animate-shake bg-red-500'}`} aria-hidden>
+            {state.correct ? '✓' : '✕'}
+          </span>
+          {state.correct ? correctLabel(state.variant, current).replace(/^✔ /, '') : 'Not quite'}
         </p>
         {state.accentWarning && state.expected && (
           <p className="text-sm text-emerald-900">Watch the accent: <b>{state.expected}</b></p>

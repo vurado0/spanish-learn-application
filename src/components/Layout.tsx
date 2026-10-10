@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom'
 import { useData, displayStreak } from '../context/DataContext'
 import { useReminder } from '../lib/reminder'
+import { todayKey } from '../lib/dates'
 
 const NAV = [
   { to: '/', label: 'Home', icon: '🏠', end: true },
@@ -37,7 +38,7 @@ export default function Layout() {
             ))}
           </nav>
           <div className="flex items-center gap-1 rounded-full bg-orange-50 px-3 py-1 text-sm font-bold text-orange-700" title="Day streak">
-            🔥 {streak}
+            <span className={stats.lastActiveDate === todayKey() ? 'animate-flame inline-block' : 'inline-block grayscale'}>🔥</span> {streak}
           </div>
         </div>
       </header>
