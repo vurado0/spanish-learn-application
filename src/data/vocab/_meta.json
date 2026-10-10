@@ -1,0 +1,19 @@
+{
+  "topics": [
+    { "id": "basics", "name": "Basics & greetings", "nameEs": "Lo básico", "icon": "👋", "target": 60 },
+    { "id": "people", "name": "People & feelings", "nameEs": "Personas", "icon": "🧑‍🤝‍🧑", "target": 50 },
+    { "id": "food", "name": "Food & drinks", "nameEs": "Comida y bebida", "icon": "🍽️", "target": 70 },
+    { "id": "city", "name": "City & getting around", "nameEs": "La ciudad", "icon": "🏙️", "target": 50 },
+    { "id": "home", "name": "Home & daily routine", "nameEs": "Casa y rutina", "icon": "🏠", "target": 45 },
+    { "id": "travel", "name": "Travel & holidays", "nameEs": "Viajes", "icon": "✈️", "target": 50 },
+    { "id": "culture", "name": "Culture & leisure", "nameEs": "Cultura y ocio", "icon": "🎭", "target": 45 },
+    { "id": "work", "name": "Work & study", "nameEs": "Trabajo y estudios", "icon": "💼", "target": 45 },
+    { "id": "verbs", "name": "Common verbs", "nameEs": "Verbos", "icon": "⚡", "target": 60 },
+    { "id": "phrases", "name": "Connectors & phrases", "nameEs": "Conectores y frases", "icon": "🔗", "target": 25 }
+  ],
+  "levels": ["A1", "A2", "B1"],
+  "types": ["noun", "verb", "adjective", "adverb", "connector", "phrase", "preposition", "pronoun", "number", "interjection"],
+  "phaseTargets": { "A1": 300, "A2": 150, "B1": 50 },
+  "minTotal": 500,
+  "unlockThreshold": 0.7
+}

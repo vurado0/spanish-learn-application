@@ -5,9 +5,15 @@ import { useAuth } from './AuthContext'
 import type { LessonProgress, PlacementResult, Settings, Stats, UserDoc, VocabProgress } from '../types'
 import { addDays, todayKey, weekKey } from '../lib/dates'
 import { findLesson, nextLessonId, units, allLessons } from '../lib/content'
-import { newVocab, review } from '../lib/srs'
+import { learn, newVocab, rate, review, type Rating } from '../lib/srs'
 
-export const DEFAULT_SETTINGS: Settings = { showEnglish: true, defaultVariant: 'latam', audioSpeed: 'normal' }
+export const DEFAULT_SETTINGS: Settings = { showEnglish: true, variant: 'latam', showOtherVariant: false, audioSpeed: 'normal' }
+
+/** older accounts stored the variant as settings.defaultVariant */
+function normalizeSettings(s: Partial<Settings> | undefined): Settings {
+  const { defaultVariant, ...rest } = s ?? {}
+  return { ...DEFAULT_SETTINGS, ...rest, variant: rest.variant ?? defaultVariant ?? DEFAULT_SETTINGS.variant }
+}
 
 const firstLesson = allLessons[0]?.id ?? ''
 
@@ -31,7 +37,12 @@ interface DataState {
   savePlacement: (r: PlacementResult) => void
   saveExerciseProgress: (lessonId: string, inProgress: NonNullable<LessonProgress['inProgress']>, minutes: number) => void
   completeLesson: (lessonId: string, scorePercent: number, minutes: number) => { newBadge?: string }
+  /** spaced-repetition answer: correct → up one box, wrong → down one box */
   reviewWord: (wordId: string, correct: boolean, minutes: number) => void
+  /** flashcard self-rating */
+  rateWord: (wordId: string, rating: Rating, minutes: number) => void
+  /** first practice of a new word ("Learn new words") */
+  learnWord: (wordId: string, correct: boolean, minutes: number) => void
 }
 
 const DataContext = createContext<DataState | null>(null)
@@ -85,7 +96,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
           setProfile(fresh)
         } else {
           const data = snap.data() as UserDoc
-          setProfile({ ...data, settings: { ...DEFAULT_SETTINGS, ...data.settings } })
+          setProfile({ ...data, settings: normalizeSettings(data.settings) })
         }
         setLoaded((l) => ({ ...l, profile: true }))
       }),
@@ -191,11 +202,11 @@ export function DataProvider({ children }: { children: ReactNode }) {
 
       // add the lesson's words to the spaced-repetition deck (due tomorrow)
       const found = findLesson(lessonId)
-      found?.lesson.vocab.forEach((w) => {
-        if (vocabRef.current[w.id]) return
+      found?.lesson.vocab.forEach((wordId) => {
+        if (vocabRef.current[wordId]) return
         const v = { ...newVocab(), dueDate: addDays(todayKey(), 1) }
-        vocabRef.current = { ...vocabRef.current, [w.id]: v }
-        fire(setDoc(doc(db, 'users', uid, 'vocab', w.id), v))
+        vocabRef.current = { ...vocabRef.current, [wordId]: v }
+        fire(setDoc(doc(db, 'users', uid, 'vocab', wordId), v))
       })
       setVocab(vocabRef.current)
 
@@ -222,16 +233,30 @@ export function DataProvider({ children }: { children: ReactNode }) {
     [uid, writeProgress, writeStats, activityPatch],
   )
 
-  const reviewWord = useCallback<DataState['reviewWord']>(
-    (wordId, correct, minutes) => {
+  /** auto-save one word after every answer (+ streak / weekly minutes) */
+  const writeWord = useCallback(
+    (wordId: string, next: (prev: VocabProgress | undefined) => VocabProgress, minutes: number) => {
       if (!uid) return
-      const v = review(vocabRef.current[wordId] ?? newVocab(), correct)
+      const v = next(vocabRef.current[wordId])
       vocabRef.current = { ...vocabRef.current, [wordId]: v }
       setVocab(vocabRef.current)
       fire(setDoc(doc(db, 'users', uid, 'vocab', wordId), v))
       writeStats(activityPatch(minutes))
     },
     [uid, writeStats, activityPatch],
+  )
+
+  const reviewWord = useCallback<DataState['reviewWord']>(
+    (wordId, correct, minutes) => writeWord(wordId, (p) => review(p ?? newVocab(), correct), minutes),
+    [writeWord],
+  )
+  const rateWord = useCallback<DataState['rateWord']>(
+    (wordId, rating, minutes) => writeWord(wordId, (p) => rate(p ?? newVocab(), rating), minutes),
+    [writeWord],
+  )
+  const learnWord = useCallback<DataState['learnWord']>(
+    (wordId, correct, minutes) => writeWord(wordId, (p) => learn(p, correct), minutes),
+    [writeWord],
   )
 
   const value = useMemo<DataState>(
@@ -247,8 +272,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
       saveExerciseProgress,
       completeLesson,
       reviewWord,
+      rateWord,
+      learnWord,
     }),
-    [loaded, profile, settings, stats, progress, vocab, updateSettings, savePlacement, saveExerciseProgress, completeLesson, reviewWord],
+    [loaded, profile, settings, stats, progress, vocab, updateSettings, savePlacement, saveExerciseProgress, completeLesson, reviewWord, rateWord, learnWord],
   )
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>

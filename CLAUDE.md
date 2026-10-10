@@ -6,7 +6,7 @@ Conversation-first Spanish learning web app for **one learner**. Repo: https://g
 
 - **No AI features and no paid APIs.** Everything runs on free tiers (Firebase Spark, Vercel Hobby).
 - Audio is the browser **Web Speech API** only (`src/lib/speech.ts`): `es-MX`/`es-US` voice for 🌎, `es-ES` for 🇪🇸, falling back to any Spanish voice.
-- **Both variants, always:** Latin American Spanish 🌎 is primary and shown first. Spain (mainland) Spanish 🇪🇸 is shown right next to it wherever usage differs.
+- **Variant setting:** `settings.variant` (🌎 default) decides which variant is shown, in words, examples, dialogues and voices. `settings.showOtherVariant` (default off) adds the other variant as a small secondary line. Comparison boxes, the sorting game and the reference page still show both on purpose.
 - **No copyrighted song lyrics** or copied texts. All dialogues and texts are original.
 - All learning pages are behind login. Each account has its own progress.
 - New units = **new JSON files only**. Never hardcode lesson content in components.
@@ -38,6 +38,7 @@ React + Vite + TypeScript, Tailwind CSS v4 (`@tailwindcss/vite`), react-router v
 npm run dev               # dev server :5173
 npm run emulators         # Firebase Auth :9099 + Firestore :8080 emulators (needs .env.local with VITE_USE_EMULATORS=true)
 npm run validate-content  # validate all lesson JSON (also runs in build)
+npm run validate:vocab    # validate the word database (also runs in build); -- --phase=A1 while building a phase
 npm run typecheck         # tsc -b
 npm run build             # validate → typecheck → vite build
 ```
@@ -48,11 +49,13 @@ CI (`.github/workflows/ci.yml`) runs validate-content, typecheck and build on ev
 
 ```
 users/{uid}                      displayName, email, createdAt,
-                                 settings { showEnglish, defaultVariant: 'latam'|'spain', audioSpeed: 'normal'|'slow' },
+                                 settings { showEnglish, variant: 'latam'|'spain', showOtherVariant, audioSpeed: 'normal'|'slow' }
+                                   (legacy accounts may still have defaultVariant – normalizeSettings() maps it to variant),
                                  placementResult { score, total, startLessonId, takenAt, skipped? } | null
 users/{uid}/progress/{lessonId}  completed, bestScore, attempts, lastPlayedAt,
                                  inProgress { step, exerciseIndex, correct } | null   ← exact resume point
-users/{uid}/vocab/{wordId}       box, intervalDays, dueDate (YYYY-MM-DD), timesCorrect, timesWrong
+users/{uid}/vocab/{wordId}       box (Leitner 1–6), intervalDays, dueDate (YYYY-MM-DD), timesCorrect, timesWrong
+                                 wordId = id from src/data/vocab – NEVER rename word ids
 users/{uid}/stats/summary        currentUnit, currentLesson, streak, lastActiveDate, weeklyMinutes { week, minutes }, badges[]
 ```
 
@@ -103,7 +106,7 @@ When adding a unit, also check `src/content/roadmap.json` and close its GitHub i
 - **Past tense:** Latin America uses pretérito ("Hoy comí"), Spain uses pretérito perfecto ("Hoy he comido"). Teach both with a comparison box.
 - **Tú/usted:** a brief note on how usage differs.
 - **Pronunciation:** seseo 🌎 vs distinción 🇪🇸 ("gracias"), demonstrated with both voices.
-- **Dialogues:** Latin American by default (or the user's `defaultVariant`) with a "🇪🇸 Spain version" toggle that swaps wording and voice. **Alcalá/Madrid scenario lessons (`"setting": "spain"`) show the Spain version first.**
+- **Dialogues:** the user's `variant`, with a toggle that swaps wording and voice. Alcalá/Madrid scenario lessons (`"setting": "spain"`) show a one-tap “🇪🇸 hear it as people say it here” switch (decided with the user: the setting wins over Spain-first).
 - **Answers:** accepted in both variants. Feedback names the variant used ("✔ Correct – Spain version 🇪🇸"). Matching ignores case and punctuation, and missing accents count as correct with a warning.
 - **Reference page:** "Latin America vs Spain" covers vocabulary, grammar and pronunciation (`src/content/reference/latam-vs-spain.json`).
 - **Tense overview page:** when to use each tense, with examples in both variants (`reference/tenses.json`).
@@ -111,7 +114,8 @@ When adding a unit, also check `src/content/roadmap.json` and close its GitHub i
 ## Motivation & settings
 
 - **Dashboard:** streak, % course completed, weekly minutes vs **6-hour target**, countdown to **1 Feb 2027**, "Continue where you left off".
-- **Daily vocab review:** spaced repetition with Leitner boxes (`src/lib/srs.ts`). A lesson's words join the deck on completion.
+- **Vocabulary section** (`/vocab`): 548 words in `src/data/vocab/` (A1 325 / A2 166 / B1 57). Learn in batches of 5, daily review max 15 min, 6 practice modes (picture→word, word→picture, listen→picture, type, flashcard, memory). Mastery: new → learning (box 1–2) → familiar (3) → strong (4–5) → mastered (6). Correct = up one box, wrong = down one box; flashcard again/hard/good/easy. A2 unlocks at 70 % of A1 ≥ familiar, B1 at 70 % of A2. A lesson's words join the deck on completion.
+- **Memory game mistakes:** a mismatch only counts when the first card's partner had already been revealed (blind second picks are not mistakes).
 - **Badges:** one per completed unit.
 - **Reminder:** optional browser notification. Stored per device in localStorage, and it only fires while a tab is open (no push server on the free tier).
 - **Settings:** show/hide English, default dialogue variant (🌎/🇪🇸), audio speed (normal/slow).
@@ -119,6 +123,8 @@ When adding a unit, also check `src/content/roadmap.json` and close its GitHub i
 ## Content JSON conventions
 
 - Text objects are `{ "latam": "...", "spain": "..." }`. Omit `spain` when it's identical.
+- Lesson `vocab` is a list of word ids from `src/data/vocab`. New words go into the database, not into lessons.
+- Vocabulary words: correct accents, articles and genders (feminine nouns with stressed a- take *el*: el agua, gender f). Examples must not use the other variant's words – the validator enforces it. Abstract words get `"visual": ""`, never a misleading emoji.
 - Lesson ids are `u{unit}l{n}`. Vocab `id`s must be **unique across the whole course** (the validator enforces this).
 - `mc`/`dialogue` options may have several correct answers tagged with `"variant"`.
 - `build` tiles are generated from the answers of both variants plus `distractors`. Don't add a distractor that also forms a valid sentence.
@@ -129,11 +135,12 @@ When adding a unit, also check `src/content/roadmap.json` and close its GitHub i
 
 ```
 src/content/        units/*.json, placement.json, roadmap.json, reference/*.json
+src/data/vocab/     <topic>.json word database + _meta.json
 src/components/     exercises/* (one per type + ExerciseRenderer), lesson/LessonSections.tsx, shared UI
 src/context/        AuthContext, DataContext (all Firestore reads/writes, streak, minutes, badges, SRS)
 src/lib/            firebase, speech, answers (variant-aware checking), srs, dates, reminder, content loader
 src/pages/          Dashboard, CourseMap, LessonPage, Review, Placement, Settings, Reference pages, AuthPage
-scripts/validate-content.mjs
+scripts/validate-content.mjs, scripts/validate-vocab.ts
 ```
 
 ## Conventions

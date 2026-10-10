@@ -32,19 +32,7 @@
           { "speaker": "Emma", "latam": "¡Gracias! La próxima vez invito yo.", "en": "Thanks! Next time it's on me." }
         ]
       },
-      "vocab": [
-        { "id": "waiter", "latam": "el mesero", "spain": "el camarero", "en": "waiter", "note": "In Argentina: el mozo." },
-        { "id": "small-beer", "latam": "una cerveza", "spain": "una caña", "en": "a (small draught) beer", "note": "A caña is a small glass of draught beer – the classic order in Spanish bars." },
-        { "id": "tapa", "latam": "la botana", "spain": "la tapa", "en": "bar snack / tapa", "note": "Botana is the Mexican word for a bar snack. The free tapa with every drink is a tradition in Alcalá, Granada and León." },
-        { "id": "refresco", "latam": "el refresco", "en": "soft drink" },
-        { "id": "bebida", "latam": "la bebida", "en": "drink" },
-        { "id": "para-mi", "latam": "para mí", "en": "for me" },
-        { "id": "can-i-have", "latam": "¿me trae…?", "spain": "¿me pones…?", "en": "can I have…? (ordering)", "note": "Spanish bar Spanish is very direct – ¿me pones…? is not rude at all." },
-        { "id": "cuanto-es", "latam": "¿cuánto es?", "en": "how much is it?" },
-        { "id": "cuenta", "latam": "la cuenta", "en": "the bill" },
-        { "id": "invitar", "latam": "te invito", "en": "it's on me (lit. I invite you)" },
-        { "id": "proxima-vez", "latam": "la próxima vez", "en": "next time" }
-      ],
+      "vocab": ["waiter", "small-beer", "tapa", "refresco", "bebida", "para-mi", "can-i-have", "cuanto-es", "cuenta", "invitar", "proxima-vez"],
       "grammar": {
         "title": "Ordering politely (and like a local)",
         "explanation": "Para mí… (for me…) works everywhere and is the easiest way to order.\n\nIn Spain, bar Spanish is short and direct: ¿Me pones una caña? (lit. “Will you put me a beer?”) or even just “Una caña, por favor.” Nobody finds this rude.\n\nIn Latin America people tend to sound softer and use usted with waiters: ¿Me trae un refresco, por favor? · Quisiera… (I would like…).\n\nQuiero (I want) is fine with a por favor, but quisiera sounds extra polite.",
@@ -183,20 +171,7 @@
           { "speaker": "Camila", "latam": "A mí tampoco. Bueno, ¡a cocinar!", "en": "Me neither. Right, let's cook!" }
         ]
       },
-      "vocab": [
-        { "id": "me-gusta", "latam": "me gusta", "en": "I like (it)" },
-        { "id": "me-encanta", "latam": "me encanta", "en": "I love (it)" },
-        { "id": "probar", "latam": "probar", "en": "to try / to taste" },
-        { "id": "comida", "latam": "la comida", "en": "food; meal" },
-        { "id": "queso", "latam": "el queso", "en": "cheese" },
-        { "id": "juice", "latam": "el jugo", "spain": "el zumo", "en": "juice" },
-        { "id": "potato", "latam": "la papa", "spain": "la patata", "en": "potato" },
-        { "id": "jamon", "latam": "el jamón", "en": "ham", "note": "Jamón serrano / ibérico – a Spanish obsession." },
-        { "id": "suave", "latam": "suave", "en": "mild, soft" },
-        { "id": "fuerte", "latam": "fuerte", "en": "strong" },
-        { "id": "tarde", "latam": "tarde", "en": "late" },
-        { "id": "rico", "latam": "rico / rica", "en": "tasty, delicious", "note": "¡Qué rico! = Yum! Works everywhere." }
-      ],
+      "vocab": ["me-gusta", "me-encanta", "probar", "comida", "queso", "juice", "potato", "jamon", "suave", "fuerte", "tarde", "rico"],
       "grammar": {
         "title": "Gustar: “it pleases me”",
         "explanation": "Gustar works backwards compared to English. “Me gusta el queso” literally means “the cheese pleases me”. So the verb agrees with the THING you like:\n\nme gusta + one thing or a verb: Me gusta el queso. Me gusta cocinar.\nme gustan + several things: Me gustan los mangos.\n\nThe person goes in front: me (me), te (you), le (him/her/usted), nos (us), os 🇪🇸 (you all), les (them/ustedes).\n\nEncantar (to love) works the same way: Me encanta la tortilla.\n\nAgreeing: A mí también (me too) · A mí tampoco (me neither) – NOT “yo también” with gustar.",
@@ -328,20 +303,7 @@
           { "speaker": "Emma", "latam": "Un flan, por favor.", "en": "A flan, please." }
         ]
       },
-      "vocab": [
-        { "id": "menu-del-dia", "latam": "la comida corrida", "spain": "el menú del día", "en": "set lunch menu", "note": "Comida corrida is the Mexican name; in Colombia it's el corrientazo or menú ejecutivo." },
-        { "id": "de-primero", "latam": "de primero", "en": "for the first course" },
-        { "id": "de-segundo", "latam": "de segundo", "en": "for the main course" },
-        { "id": "postre", "latam": "el postre", "en": "dessert" },
-        { "id": "sopa", "latam": "la sopa", "en": "soup" },
-        { "id": "ensalada", "latam": "la ensalada", "en": "salad" },
-        { "id": "pollo", "latam": "el pollo", "en": "chicken" },
-        { "id": "pescado", "latam": "el pescado", "en": "fish (as food)", "note": "A live fish in the water is un pez." },
-        { "id": "pan", "latam": "el pan", "en": "bread" },
-        { "id": "cuanto-cuesta", "latam": "¿cuánto cuesta?", "en": "how much does it cost?" },
-        { "id": "barato", "latam": "barato / barata", "en": "cheap" },
-        { "id": "caro", "latam": "caro / cara", "en": "expensive" }
-      ],
+      "vocab": ["menu-del-dia", "de-primero", "de-segundo", "postre", "sopa", "ensalada", "pollo", "pescado", "pan", "cuanto-cuesta", "barato", "caro"],
       "grammar": {
         "title": "Gender and articles: el, la, los, las",
         "explanation": "Every Spanish noun is masculine or feminine – even food!\n\nMost words ending in -o are masculine: el pollo, el pescado.\nMost words ending in -a are feminine: la sopa, la ensalada.\nOthers you just learn: el pan, el postre, la leche. Watch out: el menú, el día, el problema.\n\nPlural: add -s (or -es after a consonant): los postres, las ensaladas, los panes.\n\n“A / some”: un pollo, una sopa, unos postres, unas ensaladas.",
@@ -496,19 +458,7 @@
           { "speaker": "Don Ernesto", "latam": "Son ocho euros. ¡Gracias, señorita, que le vaya bien!", "spain": "Son ocho euros. ¡Gracias, guapa, hasta luego!", "en": "That's eight euros. Thanks, have a good day!" }
         ]
       },
-      "vocab": [
-        { "id": "mercado", "latam": "el mercado", "en": "market" },
-        { "id": "un-kilo", "latam": "un kilo de…", "en": "a kilo of…" },
-        { "id": "medio-kilo", "latam": "medio kilo", "en": "half a kilo" },
-        { "id": "peach", "latam": "el durazno", "spain": "el melocotón", "en": "peach" },
-        { "id": "docena", "latam": "una docena", "en": "a dozen" },
-        { "id": "huevo", "latam": "el huevo", "en": "egg" },
-        { "id": "aguacate", "latam": "el aguacate", "en": "avocado", "note": "In Argentina, Chile and Peru: la palta." },
-        { "id": "dulce", "latam": "dulce", "en": "sweet" },
-        { "id": "algo-mas", "latam": "¿algo más?", "en": "anything else?" },
-        { "id": "aqui-tiene", "latam": "aquí tiene", "spain": "aquí tienes", "en": "here you are", "note": "Tiene = usted (polite), tienes = tú. Spanish market sellers often use tú." },
-        { "id": "todo", "latam": "todo", "en": "everything, all" }
-      ],
+      "vocab": ["mercado", "un-kilo", "medio-kilo", "peach", "docena", "huevo", "aguacate", "dulce", "algo-mas", "aqui-tiene", "todo"],
       "grammar": {
         "title": "This and that: este, ese",
         "explanation": "Este / esta = this (near me). Ese / esa = that (near you).\nThey change for gender and number, like adjectives:\n\neste durazno · esta papa · estos huevos · estas papas\nese queso · esa sopa · esos mangos · esas fresas\n\nOn their own they mean “this one / that one”: ¿Estas o esas? – These or those?\n\nQuantities are easy: un kilo de…, medio kilo de…, una docena de…",

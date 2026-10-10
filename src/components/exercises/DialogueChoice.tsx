@@ -1,14 +1,14 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import type { Exercise } from '../../types'
-import { pick, shuffle } from '../../lib/answers'
+import { pick } from '../../lib/answers'
 import AudioButton from '../AudioButton'
-import { OptionGrid, feedbackForOption } from './MultipleChoice'
+import { OptionGrid, feedbackForOption, useVariantOptions } from './MultipleChoice'
 import { Feedback, Prompt, type ExerciseProps } from './shared'
 
 type Dlg = Extract<Exercise, { type: 'dialogue' }>
 
 export default function DialogueChoice({ exercise, variant, onDone }: ExerciseProps<Dlg>) {
-  const options = useMemo(() => shuffle(exercise.options), [exercise])
+  const options = useVariantOptions(exercise.options, variant)
   const [picked, setPicked] = useState<number | null>(null)
   const fb = picked !== null ? feedbackForOption(options[picked], options) : null
   const chosen = picked !== null ? options[picked] : null
@@ -39,7 +39,7 @@ export default function DialogueChoice({ exercise, variant, onDone }: ExercisePr
       </div>
       <OptionGrid options={options} picked={picked} onPick={setPicked} />
       {fb && chosen && (
-        <Feedback state={{ ...fb, extra: chosen.feedback }} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />
+        <Feedback current={variant} state={{ ...fb, extra: chosen.feedback }} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />
       )}
     </div>
   )

@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run validate-content && tsc -b && vite build",
+    "build": "npm run validate-content && npm run validate:vocab && tsc -b && vite build",
     "preview": "vite preview",
     "validate-content": "node scripts/validate-content.mjs",
     "typecheck": "tsc -b",
-    "emulators": "firebase emulators:start --project demo-charla"
+    "emulators": "firebase emulators:start --project demo-charla",
+    "validate:vocab": "node scripts/validate-vocab.ts"
   },
   "dependencies": {
     "firebase": "^13.0.0",
@@ -26,5 +27,8 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "^8.3.4"
+  },
+  "engines": {
+    "node": ">=22.18"
   }
 }

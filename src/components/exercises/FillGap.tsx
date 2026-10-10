@@ -44,7 +44,7 @@ export default function FillGap({ exercise, variant, onDone }: ExerciseProps<Gap
         <AccentBar onInsert={(c) => setValue((v) => v + c)} />
         {!fb && <CheckButton disabled={!value.trim()} onClick={check} />}
       </form>
-      {fb && <Feedback state={fb} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />}
+      {fb && <Feedback current={variant} state={fb} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />}
     </div>
   )
 }

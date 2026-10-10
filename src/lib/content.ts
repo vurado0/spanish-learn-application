@@ -1,4 +1,4 @@
-import type { Lesson, PlacementTest, Unit, VocabItem } from '../types'
+import type { Lesson, PlacementTest, Unit } from '../types'
 import placementJson from '../content/placement.json'
 
 // Every JSON file in src/content/units becomes a unit — adding a unit = adding a file.
@@ -21,7 +21,3 @@ export function nextLessonId(id: string): string | undefined {
   const i = allLessons.findIndex((l) => l.id === id)
   return i >= 0 ? allLessons[i + 1]?.id : undefined
 }
-
-/** every vocabulary item in the course, by id */
-export const vocabIndex = new Map<string, VocabItem & { lessonId: string }>()
-allLessons.forEach((l) => l.vocab.forEach((v) => vocabIndex.set(v.id, { ...v, lessonId: l.id })))

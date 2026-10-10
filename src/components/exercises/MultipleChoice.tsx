@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
-import type { Exercise, McOption } from '../../types'
+import type { Exercise, McOption, Variant } from '../../types'
 import { shuffle } from '../../lib/answers'
+import { useData } from '../../context/DataContext'
 import VariantText from '../VariantText'
 import { Feedback, Prompt, type ExerciseProps, type FeedbackState } from './shared'
 
@@ -31,6 +32,15 @@ export function OptionGrid({
   )
 }
 
+/** only the selected variant's answers are offered, unless “show other variant too” is on */
+export function useVariantOptions<T extends McOption>(options: T[], variant: Variant): T[] {
+  const { settings } = useData()
+  return useMemo(
+    () => shuffle(options.filter((o) => settings.showOtherVariant || !o.variant || o.variant === variant)),
+    [options, variant, settings.showOtherVariant],
+  )
+}
+
 export function feedbackForOption(o: McOption, options: McOption[]): FeedbackState {
   const correctOnes = options.filter((x) => x.correct)
   return {
@@ -41,7 +51,7 @@ export function feedbackForOption(o: McOption, options: McOption[]): FeedbackSta
 }
 
 export default function MultipleChoice({ exercise, variant, onDone }: ExerciseProps<Mc>) {
-  const options = useMemo(() => shuffle(exercise.options), [exercise])
+  const options = useVariantOptions(exercise.options, variant)
   const [picked, setPicked] = useState<number | null>(null)
   const fb = picked !== null ? feedbackForOption(options[picked], options) : null
 
@@ -50,11 +60,11 @@ export default function MultipleChoice({ exercise, variant, onDone }: ExercisePr
       <Prompt>{exercise.prompt}</Prompt>
       {exercise.say && (
         <div className="mb-4 rounded-xl bg-stone-100 p-3">
-          <VariantText text={exercise.say} first={variant} />
+          <VariantText text={exercise.say} variant={variant} />
         </div>
       )}
       <OptionGrid options={options} picked={picked} onPick={setPicked} />
-      {fb && <Feedback state={fb} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />}
+      {fb && <Feedback current={variant} state={fb} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />}
     </div>
   )
 }

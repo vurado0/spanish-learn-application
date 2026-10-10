@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import type { Variant } from '../../types'
-import { variantLabel } from '../../lib/answers'
 
 export interface ExerciseProps<T> {
   exercise: T
@@ -27,8 +26,25 @@ export function Prompt({ children, sub }: { children: ReactNode; sub?: ReactNode
 }
 
 /** Instant feedback bar with a short explanation on mistakes. */
-export function Feedback({ state, explanation, onContinue }: { state: FeedbackState; explanation?: string; onContinue: () => void }) {
-  const label = variantLabel(state.variant)
+/** “✔ Correct” – or, when the answer was in the other variant, “✔ Correct – that's the 🇪🇸 Spain version” */
+export function correctLabel(matched: Variant | 'both' | undefined, current: Variant | undefined): string {
+  if (!matched || matched === 'both' || !current || matched === current) return '✔ Correct!'
+  return matched === 'spain' ? "✔ Correct – that's the 🇪🇸 Spain version" : "✔ Correct – that's the 🌎 Latin American version"
+}
+
+export function Feedback({
+  state,
+  explanation,
+  onContinue,
+  current,
+}: {
+  state: FeedbackState
+  explanation?: string
+  onContinue: () => void
+  /** variant currently shown – used to name the other variant when the learner used it */
+  current?: Variant
+}) {
+  const otherVariant = state.correct && !!current && !!state.variant && state.variant !== 'both' && state.variant !== current
   return (
     <div
       className={`animate-pop fixed inset-x-0 bottom-0 z-30 border-t-2 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:static sm:mt-6 sm:rounded-2xl sm:border-2 ${
@@ -38,16 +54,16 @@ export function Feedback({ state, explanation, onContinue }: { state: FeedbackSt
     >
       <div className="mx-auto max-w-2xl">
         <p className={`text-lg font-extrabold ${state.correct ? 'text-emerald-800' : 'text-red-800'}`}>
-          {state.correct ? `✔ Correct${label ? ` – ${label}` : '!'}` : '✘ Not quite'}
+          {state.correct ? correctLabel(state.variant, current) : '✘ Not quite'}
         </p>
         {state.accentWarning && state.expected && (
-          <p className="text-sm text-emerald-900">Watch the accents: <b>{state.expected}</b></p>
+          <p className="text-sm text-emerald-900">Watch the accent: <b>{state.expected}</b></p>
         )}
         {!state.correct && state.expected && (
           <p className="text-sm text-red-900">Correct answer: <b>{state.expected}</b></p>
         )}
         {state.extra && <p className="text-sm text-stone-700">{state.extra}</p>}
-        {explanation && (!state.correct || state.variant === 'latam' || state.variant === 'spain') && (
+        {explanation && (!state.correct || otherVariant) && (
           <p className="mt-1 text-sm text-stone-700">💡 {explanation}</p>
         )}
         <button type="button" autoFocus onClick={onContinue} className={`mt-3 w-full rounded-xl py-3 font-bold text-white ${state.correct ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-red-600 hover:bg-red-700'}`}>

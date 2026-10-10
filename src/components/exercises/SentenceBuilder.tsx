@@ -1,5 +1,6 @@
 import { useMemo, useState, type DragEvent } from 'react'
-import type { Exercise } from '../../types'
+import type { Exercise, Variant } from '../../types'
+import { useData } from '../../context/DataContext'
 import { checkAnswer, normalize, shuffle } from '../../lib/answers'
 import { CheckButton, Feedback, Prompt, type ExerciseProps, type FeedbackState } from './shared'
 
@@ -10,10 +11,12 @@ interface Tile {
   word: string
 }
 
-/** Tiles = the words of the 🌎 and 🇪🇸 answers (so both orders can be built) + distractors. */
-function makeTiles(ex: Build): Tile[] {
+/** Tiles = the words of the selected variant's answer (+ the other variant's when shown) + distractors. */
+function makeTiles(ex: Build, variant: Variant, both: boolean): Tile[] {
   const counts = new Map<string, number>()
-  const sentences = [ex.answers.latam[0], ex.answers.spain?.[0]].filter(Boolean) as string[]
+  const own = variant === 'spain' ? ex.answers.spain?.[0] ?? ex.answers.latam[0] : ex.answers.latam[0]
+  const other = variant === 'spain' ? ex.answers.latam[0] : ex.answers.spain?.[0]
+  const sentences = [own, both ? other : undefined].filter(Boolean) as string[]
   for (const s of sentences) {
     const local = new Map<string, number>()
     for (const w of s.replace(/[¿?¡!.,]/g, '').split(' ').filter(Boolean)) local.set(w, (local.get(w) ?? 0) + 1)
@@ -28,7 +31,8 @@ function makeTiles(ex: Build): Tile[] {
 }
 
 export default function SentenceBuilder({ exercise, variant, onDone }: ExerciseProps<Build>) {
-  const tiles = useMemo(() => makeTiles(exercise), [exercise])
+  const { settings } = useData()
+  const tiles = useMemo(() => makeTiles(exercise, variant, settings.showOtherVariant), [exercise, variant, settings.showOtherVariant])
   const [line, setLine] = useState<number[]>([])
   const [fb, setFb] = useState<FeedbackState | null>(null)
   const [dragId, setDragId] = useState<number | null>(null)
@@ -107,7 +111,7 @@ export default function SentenceBuilder({ exercise, variant, onDone }: ExerciseP
         ))}
       </div>
       {!fb && <CheckButton disabled={line.length === 0} onClick={check} />}
-      {fb && <Feedback state={fb} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />}
+      {fb && <Feedback current={variant} state={fb} explanation={exercise.explanation} onContinue={() => onDone(fb.correct)} />}
     </div>
   )
 }

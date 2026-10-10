@@ -44,10 +44,10 @@ for (const file of unitFiles) {
     if (!l.dialogue?.lines?.length) err(L, 'dialogue has no lines')
     l.dialogue?.lines?.forEach((x, i) => (!x.speaker || !x.latam || !x.en) && err(L, `dialogue line ${i} needs speaker/latam/en`))
     if (l.vocab && (l.vocab.length < 8 || l.vocab.length > 12)) warn.push(`${L}: ${l.vocab.length} words (spec: 8–12)`)
-    l.vocab?.forEach((v) => {
-      if (!v.id || !v.latam || !v.en) err(L, `vocab item needs id/latam/en: ${JSON.stringify(v)}`)
-      if (vocabIds.has(v.id)) err(L, `duplicate vocab id "${v.id}"`)
-      vocabIds.add(v.id)
+    // vocab = word ids from src/data/vocab (existence is checked by validate-vocab.ts)
+    l.vocab?.forEach((id) => {
+      if (typeof id !== 'string') err(L, `vocab must list word ids, got ${JSON.stringify(id)}`)
+      vocabIds.add(id)
     })
     if (!l.grammar?.title || !l.grammar?.explanation || !l.grammar?.examples?.length) err(L, 'grammar needs title, explanation, examples')
     if (!l.connector?.word || !l.connector?.examples?.length) err(L, 'connector needs word + examples')

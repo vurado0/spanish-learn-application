@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Exercise } from '../../types'
-import { checkAnswer, pick, shuffle } from '../../lib/answers'
+import { checkAnswer, pick } from '../../lib/answers'
 import { speak } from '../../lib/speech'
 import { useData } from '../../context/DataContext'
-import { OptionGrid, feedbackForOption } from './MultipleChoice'
+import { OptionGrid, feedbackForOption, useVariantOptions } from './MultipleChoice'
 import { AccentBar } from './FillGap'
 import { CheckButton, Feedback, Prompt, type ExerciseProps, type FeedbackState } from './shared'
 
@@ -12,7 +12,7 @@ type Listen = Extract<Exercise, { type: 'listen' }>
 export default function Listening({ exercise, variant, onDone }: ExerciseProps<Listen>) {
   const { settings } = useData()
   const text = pick(exercise.audio, variant)
-  const options = useMemo(() => shuffle(exercise.options ?? []), [exercise])
+  const options = useVariantOptions(exercise.options ?? [], variant)
   const [picked, setPicked] = useState<number | null>(null)
   const [value, setValue] = useState('')
   const [typedFb, setTypedFb] = useState<FeedbackState | null>(null)
